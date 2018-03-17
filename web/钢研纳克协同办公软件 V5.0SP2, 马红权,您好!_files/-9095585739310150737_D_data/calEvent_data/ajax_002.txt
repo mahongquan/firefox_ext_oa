@@ -1,0 +1,84 @@
+var taskAjaxManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=taskAjaxManager",
+     checkChildTaskTime: function(){
+                  return this.ajaxCall(arguments,"checkChildTaskTime");
+},
+     checkChildTaskWeightSum: function(){
+                  return this.ajaxCall(arguments,"checkChildTaskWeightSum");
+},
+     checkDecomposePurview: function(){
+                  return this.ajaxCall(arguments,"checkDecomposePurview");
+},
+     checkIfChildExist: function(){
+                  return this.ajaxCall(arguments,"checkIfChildExist");
+},
+     checkTaskIsFinished: function(){
+                  return this.ajaxCall(arguments,"checkTaskIsFinished");
+},
+     deleteTask: function(){
+                  return this.ajaxCall(arguments,"deleteTask");
+},
+     deleteTaskFeedback: function(){
+                  return this.ajaxCall(arguments,"deleteTaskFeedback");
+},
+     deleteTaskStatistics: function(){
+                  return this.ajaxCall(arguments,"deleteTaskStatistics");
+},
+     findMemberNames: function(){
+                  return this.ajaxCall(arguments,"findMemberNames");
+},
+     findTaskCount: function(){
+                  return this.ajaxCall(arguments,"findTaskCount");
+},
+     findTaskDetail: function(){
+                  return this.ajaxCall(arguments,"findTaskDetail");
+},
+     getProjectPhase: function(){
+                  return this.ajaxCall(arguments,"getProjectPhase");
+},
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     isContainCurrentTask: function(){
+                  return this.ajaxCall(arguments,"isContainCurrentTask");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     isTaskFeedbackExist: function(){
+                  return this.ajaxCall(arguments,"isTaskFeedbackExist");
+},
+     isTaskStatisticsExist: function(){
+                  return this.ajaxCall(arguments,"isTaskStatisticsExist");
+},
+     receiveWeekOrMonth: function(){
+                  return this.ajaxCall(arguments,"receiveWeekOrMonth");
+},
+     saveTaskStatisticsView: function(){
+                  return this.ajaxCall(arguments,"saveTaskStatisticsView");
+},
+     searchStatistics: function(){
+                  return this.ajaxCall(arguments,"searchStatistics");
+},
+     selectChildTaskInfoes: function(){
+                  return this.ajaxCall(arguments,"selectChildTaskInfoes");
+},
+     selectPesonInfo: function(){
+                  return this.ajaxCall(arguments,"selectPesonInfo");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+},
+     taskInfoDetailed: function(){
+                  return this.ajaxCall(arguments,"taskInfoDetailed");
+},
+     validateTask: function(){
+                  return this.ajaxCall(arguments,"validateTask");
+},
+     validateTaskView: function(){
+                  return this.ajaxCall(arguments,"validateTaskView");
+},
+     validateTreeTaskDetails: function(){
+                  return this.ajaxCall(arguments,"validateTreeTaskDetails");
+}
+});

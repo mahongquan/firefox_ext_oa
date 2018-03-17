@@ -1,0 +1,567 @@
+var knowledgeFavoriteManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=knowledgeFavoriteManager",
+     accessOneTime: function(){
+                  return this.ajaxCall(arguments,"accessOneTime");
+},
+     addPartTimeLibs: function(){
+                  return this.ajaxCall(arguments,"addPartTimeLibs");
+},
+     cancelDocLearning: function(){
+                  return this.ajaxCall(arguments,"cancelDocLearning");
+},
+     checkDocResourceIsSystem: function(){
+                  return this.ajaxCall(arguments,"checkDocResourceIsSystem");
+},
+     checkInDocResource: function(){
+                  return this.ajaxCall(arguments,"checkInDocResource");
+},
+     checkInDocResourceWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"checkInDocResourceWithoutAcl");
+},
+     checkInDocResourcesWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"checkInDocResourcesWithoutAcl");
+},
+     checkOrder: function(){
+                  return this.ajaxCall(arguments,"checkOrder");
+},
+     checkOutDocResource: function(){
+                  return this.ajaxCall(arguments,"checkOutDocResource");
+},
+     contentTypeExist: function(){
+                  return this.ajaxCall(arguments,"contentTypeExist");
+},
+     createCommonFolder: function(){
+                  return this.ajaxCall(arguments,"createCommonFolder");
+},
+     createCommonFolderWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"createCommonFolderWithoutAcl");
+},
+     createDoc: function(){
+                  return this.ajaxCall(arguments,"createDoc");
+},
+     createDocWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"createDocWithoutAcl");
+},
+     createFolderByTypeWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"createFolderByTypeWithoutAcl");
+},
+     createLink: function(){
+                  return this.ajaxCall(arguments,"createLink");
+},
+     createLinkWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"createLinkWithoutAcl");
+},
+     createLinks: function(){
+                  return this.ajaxCall(arguments,"createLinks");
+},
+     createLinksWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"createLinksWithoutAcl");
+},
+     createNewProject: function(){
+                  return this.ajaxCall(arguments,"createNewProject");
+},
+     deeperThanLimit: function(){
+                  return this.ajaxCall(arguments,"deeperThanLimit");
+},
+     deleteDocByResources: function(){
+                  return this.ajaxCall(arguments,"deleteDocByResources");
+},
+     deleteForumOneTime: function(){
+                  return this.ajaxCall(arguments,"deleteForumOneTime");
+},
+     deleteProject: function(){
+                  return this.ajaxCall(arguments,"deleteProject");
+},
+     docDownloadCompress: function(){
+                  return this.ajaxCall(arguments,"docDownloadCompress");
+},
+     docHistoryDownloadCompress: function(){
+                  return this.ajaxCall(arguments,"docHistoryDownloadCompress");
+},
+     docResourceEdit: function(){
+                  return this.ajaxCall(arguments,"docResourceEdit");
+},
+     docResourceExist: function(){
+                  return this.ajaxCall(arguments,"docResourceExist");
+},
+     docResourceNoChange: function(){
+                  return this.ajaxCall(arguments,"docResourceNoChange");
+},
+     existValidate: function(){
+                  return this.ajaxCall(arguments,"existValidate");
+},
+     favoriteCancel: function(){
+                  return this.ajaxCall(arguments,"favoriteCancel");
+},
+     fileIllegal: function(){
+                  return this.ajaxCall(arguments,"fileIllegal");
+},
+     findAllCheckedOutDocsByDays: function(){
+                  return this.ajaxCall(arguments,"findAllCheckedOutDocsByDays");
+},
+     findAllCheckoutDocsByDocLibIdByPage: function(){
+                  return this.ajaxCall(arguments,"findAllCheckoutDocsByDocLibIdByPage");
+},
+     findAllDocCount: function(){
+                  return this.ajaxCall(arguments,"findAllDocCount");
+},
+     findAllDocsByPage: function(){
+                  return this.ajaxCall(arguments,"findAllDocsByPage");
+},
+     findAllDocsByPageBySection: function(){
+                  return this.ajaxCall(arguments,"findAllDocsByPageBySection");
+},
+     findAllFiledDocs: function(){
+                  return this.ajaxCall(arguments,"findAllFiledDocs");
+},
+     findAllMyDocsByPage: function(){
+                  return this.ajaxCall(arguments,"findAllMyDocsByPage");
+},
+     findAllMyDocsByPageByDate: function(){
+                  return this.ajaxCall(arguments,"findAllMyDocsByPageByDate");
+},
+     findDocByType: function(){
+                  return this.ajaxCall(arguments,"findDocByType");
+},
+     findDocResourceByHql: function(){
+                  return this.ajaxCall(arguments,"findDocResourceByHql");
+},
+     findFiledDocsByPage: function(){
+                  return this.ajaxCall(arguments,"findFiledDocsByPage");
+},
+     findFirstDocResourceById: function(){
+                  return this.ajaxCall(arguments,"findFirstDocResourceById");
+},
+     findFolders: function(){
+                  return this.ajaxCall(arguments,"findFolders");
+},
+     findFoldersWithOutAcl: function(){
+                  return this.ajaxCall(arguments,"findFoldersWithOutAcl");
+},
+     findMyDocs4Rel: function(){
+                  return this.ajaxCall(arguments,"findMyDocs4Rel");
+},
+     findMyFolders: function(){
+                  return this.ajaxCall(arguments,"findMyFolders");
+},
+     findPageDocs: function(){
+                  return this.ajaxCall(arguments,"findPageDocs");
+},
+     findSubFolderDocs: function(){
+                  return this.ajaxCall(arguments,"findSubFolderDocs");
+},
+     forumOneTime: function(){
+                  return this.ajaxCall(arguments,"forumOneTime");
+},
+     getAdvancedQueryResult: function(){
+                  return this.ajaxCall(arguments,"getAdvancedQueryResult");
+},
+     getAllBorrowDoc: function(){
+                  return this.ajaxCall(arguments,"getAllBorrowDoc");
+},
+     getAllBorrowDocCount: function(){
+                  return this.ajaxCall(arguments,"getAllBorrowDocCount");
+},
+     getAllCommmonDoc: function(){
+                  return this.ajaxCall(arguments,"getAllCommmonDoc");
+},
+     getAllCommmonDocCount: function(){
+                  return this.ajaxCall(arguments,"getAllCommmonDocCount");
+},
+     getAllFirstChildren: function(){
+                  return this.ajaxCall(arguments,"getAllFirstChildren");
+},
+     getAllFoldersWithOutAcl: function(){
+                  return this.ajaxCall(arguments,"getAllFoldersWithOutAcl");
+},
+     getAllPersonAlShareDoc: function(){
+                  return this.ajaxCall(arguments,"getAllPersonAlShareDoc");
+},
+     getAllPersonAlShareDocCount: function(){
+                  return this.ajaxCall(arguments,"getAllPersonAlShareDocCount");
+},
+     getBody: function(){
+                  return this.ajaxCall(arguments,"getBody");
+},
+     getBorrowDocsByPage: function(){
+                  return this.ajaxCall(arguments,"getBorrowDocsByPage");
+},
+     getBorrowUserIds: function(){
+                  return this.ajaxCall(arguments,"getBorrowUserIds");
+},
+     getBorrowUserIdsByPage: function(){
+                  return this.ajaxCall(arguments,"getBorrowUserIdsByPage");
+},
+     getCheckStatus: function(){
+                  return this.ajaxCall(arguments,"getCheckStatus");
+},
+     getContentTypeManager: function(){
+                  return this.ajaxCall(arguments,"getContentTypeManager");
+},
+     getDocByFileId: function(){
+                  return this.ajaxCall(arguments,"getDocByFileId");
+},
+     getDocByType: function(){
+                  return this.ajaxCall(arguments,"getDocByType");
+},
+     getDocResBySourceId: function(){
+                  return this.ajaxCall(arguments,"getDocResBySourceId");
+},
+     getDocResSourceId: function(){
+                  return this.ajaxCall(arguments,"getDocResSourceId");
+},
+     getDocResourceById: function(){
+                  return this.ajaxCall(arguments,"getDocResourceById");
+},
+     getDocSortTable: function(){
+                  return this.ajaxCall(arguments,"getDocSortTable");
+},
+     getDocSourceType: function(){
+                  return this.ajaxCall(arguments,"getDocSourceType");
+},
+     getDocSourceTypeName: function(){
+                  return this.ajaxCall(arguments,"getDocSourceTypeName");
+},
+     getDocsByIds: function(){
+                  return this.ajaxCall(arguments,"getDocsByIds");
+},
+     getDocsByTypes: function(){
+                  return this.ajaxCall(arguments,"getDocsByTypes");
+},
+     getDocsInFolderByType: function(){
+                  return this.ajaxCall(arguments,"getDocsInFolderByType");
+},
+     getEntityNameWithAccountShort: function(){
+                  return this.ajaxCall(arguments,"getEntityNameWithAccountShort");
+},
+     getFavoriteSource: function(){
+                  return this.ajaxCall(arguments,"getFavoriteSource");
+},
+     getFolderLevelLimit: function(){
+                  return this.ajaxCall(arguments,"getFolderLevelLimit");
+},
+     getFoldersChainById: function(){
+                  return this.ajaxCall(arguments,"getFoldersChainById");
+},
+     getLatestDocsOfProject: function(){
+                  return this.ajaxCall(arguments,"getLatestDocsOfProject");
+},
+     getLatestDocsOfProjectByCondition: function(){
+                  return this.ajaxCall(arguments,"getLatestDocsOfProjectByCondition");
+},
+     getLockMsg: function(){
+                  return this.ajaxCall(arguments,"getLockMsg");
+},
+     getLockMsgAndStatus: function(){
+                  return this.ajaxCall(arguments,"getLockMsgAndStatus");
+},
+     getMaxOrder: function(){
+                  return this.ajaxCall(arguments,"getMaxOrder");
+},
+     getMinOrder: function(){
+                  return this.ajaxCall(arguments,"getMinOrder");
+},
+     getNameById: function(){
+                  return this.ajaxCall(arguments,"getNameById");
+},
+     getParentFrIdByResourceId: function(){
+                  return this.ajaxCall(arguments,"getParentFrIdByResourceId");
+},
+     getPersonalFolderOfUser: function(){
+                  return this.ajaxCall(arguments,"getPersonalFolderOfUser");
+},
+     getPersonalLibRootOfUser: function(){
+                  return this.ajaxCall(arguments,"getPersonalLibRootOfUser");
+},
+     getPhysicalPath: function(){
+                  return this.ajaxCall(arguments,"getPhysicalPath");
+},
+     getPhysicalPathDetail: function(){
+                  return this.ajaxCall(arguments,"getPhysicalPathDetail");
+},
+     getProjectFolderByProjectId: function(){
+                  return this.ajaxCall(arguments,"getProjectFolderByProjectId");
+},
+     getRootByLibId: function(){
+                  return this.ajaxCall(arguments,"getRootByLibId");
+},
+     getRootByLibIds: function(){
+                  return this.ajaxCall(arguments,"getRootByLibIds");
+},
+     getRootMapByLibIds: function(){
+                  return this.ajaxCall(arguments,"getRootMapByLibIds");
+},
+     getRootsByLibIds: function(){
+                  return this.ajaxCall(arguments,"getRootsByLibIds");
+},
+     getShareDocsByOwnerId: function(){
+                  return this.ajaxCall(arguments,"getShareDocsByOwnerId");
+},
+     getShareRootDocs: function(){
+                  return this.ajaxCall(arguments,"getShareRootDocs");
+},
+     getShareRootDocsByPage: function(){
+                  return this.ajaxCall(arguments,"getShareRootDocsByPage");
+},
+     getShareUserIds: function(){
+                  return this.ajaxCall(arguments,"getShareUserIds");
+},
+     getShareUserIdsByPage: function(){
+                  return this.ajaxCall(arguments,"getShareUserIdsByPage");
+},
+     getSimpleQueryResult: function(){
+                  return this.ajaxCall(arguments,"getSimpleQueryResult");
+},
+     getSummaryIdByAffairId: function(){
+                  return this.ajaxCall(arguments,"getSummaryIdByAffairId");
+},
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     getTextContent: function(){
+                  return this.ajaxCall(arguments,"getTextContent");
+},
+     getTheOpenType: function(){
+                  return this.ajaxCall(arguments,"getTheOpenType");
+},
+     getTreeNode: function(){
+                  return this.ajaxCall(arguments,"getTreeNode");
+},
+     getTreeRootNode: function(){
+                  return this.ajaxCall(arguments,"getTreeRootNode");
+},
+     getValidInfo: function(){
+                  return this.ajaxCall(arguments,"getValidInfo");
+},
+     getValidInfoForM1: function(){
+                  return this.ajaxCall(arguments,"getValidInfoForM1");
+},
+     hasDocsInProject: function(){
+                  return this.ajaxCall(arguments,"hasDocsInProject");
+},
+     hasDocsInProjects: function(){
+                  return this.ajaxCall(arguments,"hasDocsInProjects");
+},
+     hasDownloadPermission: function(){
+                  return this.ajaxCall(arguments,"hasDownloadPermission");
+},
+     hasEditPermission: function(){
+                  return this.ajaxCall(arguments,"hasEditPermission");
+},
+     hasFavorite: function(){
+                  return this.ajaxCall(arguments,"hasFavorite");
+},
+     hasFavoriteByIds: function(){
+                  return this.ajaxCall(arguments,"hasFavoriteByIds");
+},
+     hasFavoriteDoc: function(){
+                  return this.ajaxCall(arguments,"hasFavoriteDoc");
+},
+     hasOpenPermission: function(){
+                  return this.ajaxCall(arguments,"hasOpenPermission");
+},
+     hasPigeonholeSource: function(){
+                  return this.ajaxCall(arguments,"hasPigeonholeSource");
+},
+     hasPingHole: function(){
+                  return this.ajaxCall(arguments,"hasPingHole");
+},
+     hasSameName: function(){
+                  return this.ajaxCall(arguments,"hasSameName");
+},
+     hasSameNameAndSameTypeDr: function(){
+                  return this.ajaxCall(arguments,"hasSameNameAndSameTypeDr");
+},
+     iSearch: function(){
+                  return this.ajaxCall(arguments,"iSearch");
+},
+     iSearchPiged: function(){
+                  return this.ajaxCall(arguments,"iSearchPiged");
+},
+     initArcsLib: function(){
+                  return this.ajaxCall(arguments,"initArcsLib");
+},
+     initCaseLib: function(){
+                  return this.ajaxCall(arguments,"initCaseLib");
+},
+     initCorpLib: function(){
+                  return this.ajaxCall(arguments,"initCorpLib");
+},
+     initCustomLib: function(){
+                  return this.ajaxCall(arguments,"initCustomLib");
+},
+     initPersonalLib: function(){
+                  return this.ajaxCall(arguments,"initPersonalLib");
+},
+     insertDocLogViewForM1: function(){
+                  return this.ajaxCall(arguments,"insertDocLogViewForM1");
+},
+     isDocAppUnlocked: function(){
+                  return this.ajaxCall(arguments,"isDocAppUnlocked");
+},
+     isExist: function(){
+                  return this.ajaxCall(arguments,"isExist");
+},
+     isLibOnlyRoot: function(){
+                  return this.ajaxCall(arguments,"isLibOnlyRoot");
+},
+     isNeedSort: function(){
+                  return this.ajaxCall(arguments,"isNeedSort");
+},
+     isNotPartOfMyLib: function(){
+                  return this.ajaxCall(arguments,"isNotPartOfMyLib");
+},
+     isOwnerOfLib: function(){
+                  return this.ajaxCall(arguments,"isOwnerOfLib");
+},
+     isPersonalLib: function(){
+                  return this.ajaxCall(arguments,"isPersonalLib");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     isViewPerlBorrowDoc: function(){
+                  return this.ajaxCall(arguments,"isViewPerlBorrowDoc");
+},
+     judgeSamePigeonhole: function(){
+                  return this.ajaxCall(arguments,"judgeSamePigeonhole");
+},
+     lockState: function(){
+                  return this.ajaxCall(arguments,"lockState");
+},
+     lockWhenAct: function(){
+                  return this.ajaxCall(arguments,"lockWhenAct");
+},
+     logForward: function(){
+                  return this.ajaxCall(arguments,"logForward");
+},
+     moveDocWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"moveDocWithoutAcl");
+},
+     moveDocWithoutAcl4Project: function(){
+                  return this.ajaxCall(arguments,"moveDocWithoutAcl4Project");
+},
+     pigeonFormpotent: function(){
+                  return this.ajaxCall(arguments,"pigeonFormpotent");
+},
+     pigeonholeAsLink: function(){
+                  return this.ajaxCall(arguments,"pigeonholeAsLink");
+},
+     pigeonholeAsLinkWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"pigeonholeAsLinkWithoutAcl");
+},
+     queryFormpotent: function(){
+                  return this.ajaxCall(arguments,"queryFormpotent");
+},
+     recoidopertionLog: function(){
+                  return this.ajaxCall(arguments,"recoidopertionLog");
+},
+     removeBody: function(){
+                  return this.ajaxCall(arguments,"removeBody");
+},
+     removeDocWithAcl: function(){
+                  return this.ajaxCall(arguments,"removeDocWithAcl");
+},
+     removeDocWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"removeDocWithoutAcl");
+},
+     removeProjectFolderWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"removeProjectFolderWithoutAcl");
+},
+     renameDoc: function(){
+                  return this.ajaxCall(arguments,"renameDoc");
+},
+     renameDocWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"renameDocWithoutAcl");
+},
+     replaceDoc: function(){
+                  return this.ajaxCall(arguments,"replaceDoc");
+},
+     replaceDocWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"replaceDocWithoutAcl");
+},
+     saveAllDocResource: function(){
+                  return this.ajaxCall(arguments,"saveAllDocResource");
+},
+     saveBody: function(){
+                  return this.ajaxCall(arguments,"saveBody");
+},
+     saveDocFavorite: function(){
+                  return this.ajaxCall(arguments,"saveDocFavorite");
+},
+     saveOrder: function(){
+                  return this.ajaxCall(arguments,"saveOrder");
+},
+     setDocLearning: function(){
+                  return this.ajaxCall(arguments,"setDocLearning");
+},
+     setFolderCommentEnabled: function(){
+                  return this.ajaxCall(arguments,"setFolderCommentEnabled");
+},
+     setFolderRecommendEnabled: function(){
+                  return this.ajaxCall(arguments,"setFolderRecommendEnabled");
+},
+     setFolderVersionEnabled: function(){
+                  return this.ajaxCall(arguments,"setFolderVersionEnabled");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+},
+     sort: function(){
+                  return this.ajaxCall(arguments,"sort");
+},
+     unLockAfterAct: function(){
+                  return this.ajaxCall(arguments,"unLockAfterAct");
+},
+     updateBody: function(){
+                  return this.ajaxCall(arguments,"updateBody");
+},
+     updateDoc: function(){
+                  return this.ajaxCall(arguments,"updateDoc");
+},
+     updateDocAttFlag: function(){
+                  return this.ajaxCall(arguments,"updateDocAttFlag");
+},
+     updateDocFavorite: function(){
+                  return this.ajaxCall(arguments,"updateDocFavorite");
+},
+     updateDocResource: function(){
+                  return this.ajaxCall(arguments,"updateDocResource");
+},
+     updateDocResourceAfterPingHole: function(){
+                  return this.ajaxCall(arguments,"updateDocResourceAfterPingHole");
+},
+     updateDocSize: function(){
+                  return this.ajaxCall(arguments,"updateDocSize");
+},
+     updateDocWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"updateDocWithoutAcl");
+},
+     updateFileSize: function(){
+                  return this.ajaxCall(arguments,"updateFileSize");
+},
+     updateFileWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"updateFileWithoutAcl");
+},
+     updateFolderPigeonhole: function(){
+                  return this.ajaxCall(arguments,"updateFolderPigeonhole");
+},
+     updateLink: function(){
+                  return this.ajaxCall(arguments,"updateLink");
+},
+     updatePigeHoleFile: function(){
+                  return this.ajaxCall(arguments,"updatePigeHoleFile");
+},
+     updateProject: function(){
+                  return this.ajaxCall(arguments,"updateProject");
+},
+     updateProjectManagerAuth4ProjectFolder: function(){
+                  return this.ajaxCall(arguments,"updateProjectManagerAuth4ProjectFolder");
+},
+     uploadFile: function(){
+                  return this.ajaxCall(arguments,"uploadFile");
+},
+     uploadFileWithoutAcl: function(){
+                  return this.ajaxCall(arguments,"uploadFileWithoutAcl");
+}
+});

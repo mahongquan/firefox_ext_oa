@@ -50,17 +50,36 @@ function frm_load(beastURL) {
   beastImage.appendChild(newe);
   newe.insertAdjacentText("afterBegin", "请假单");
   newe.onclick = qingjia;
-  // var iframe = document.getElementById('main');
-  // console.log(iframe);
-  // if (iframe.attachEvent) {
-  //   iframe.attachEvent("onload", function() {
-  //     console.log(iframe.contentWindow.document.body.innerHTML);
-  //   });
-  // } else {
-  //   iframe.onload = function() {
-  //     console.log(iframe.contentWindow.document.body.innerHTML);
-  //   };
+  var newe = document.createElement("button");
+  beastImage.appendChild(newe);
+  newe.insertAdjacentText("afterBegin", "个人");
+  newe.onclick = personSpace;
+  var newe = document.createElement("button");
+  beastImage.appendChild(newe);
+  newe.insertAdjacentText("afterBegin", "todo");
+  newe.onclick = showTodoNew;
+}
+function  showTodoNew(){
+  //second_menu_content
+  //var menuUL=$("#menuUL")
+  var menus=$(".main_menu_a")
+  // for (var menu in menus){
+  //   console.log(menus[menu]);
   // }
+  var m0=$(".main_menu_a")[0];
+  console.log(m0);
+  m0.mouseenter();
+  //console.log($(m0));//.trigger("mouseenter");
+  //console.log($(".second_menu_item"));
+  // for item in items:
+  //   print(item.text)
+  // items[1].click();#firefox
+  // #items[4].find_element_by_tag_name("span").click()#phtomjs
+  // #time.sleep(5)
+}
+function personSpace() {
+        var a = $('#space_0');
+        a[0].click();
 }
 
 function qingjia() {

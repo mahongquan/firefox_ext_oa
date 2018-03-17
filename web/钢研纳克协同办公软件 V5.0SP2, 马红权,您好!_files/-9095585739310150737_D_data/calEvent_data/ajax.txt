@@ -1,0 +1,159 @@
+var calEventManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=calEventManager",
+     ajaxGetEventName: function(){
+                  return this.ajaxCall(arguments,"ajaxGetEventName");
+},
+     chackReportAuthReportIdAndViewId: function(){
+                  return this.ajaxCall(arguments,"chackReportAuthReportIdAndViewId");
+},
+     compareDate: function(){
+                  return this.ajaxCall(arguments,"compareDate");
+},
+     deleteCalEvent: function(){
+                  return this.ajaxCall(arguments,"deleteCalEvent");
+},
+     entrustMeg: function(){
+                  return this.ajaxCall(arguments,"entrustMeg");
+},
+     findArrangeTimeDate: function(){
+                  return this.ajaxCall(arguments,"findArrangeTimeDate");
+},
+     findCalEventState: function(){
+                  return this.ajaxCall(arguments,"findCalEventState");
+},
+     findCalEventViewData: function(){
+                  return this.ajaxCall(arguments,"findCalEventViewData");
+},
+     findIndexResumeCount: function(){
+                  return this.ajaxCall(arguments,"findIndexResumeCount");
+},
+     findIndexResumeIDList: function(){
+                  return this.ajaxCall(arguments,"findIndexResumeIDList");
+},
+     findSourceInfo: function(){
+                  return this.ajaxCall(arguments,"findSourceInfo");
+},
+     getAEmptyCalEvent: function(){
+                  return this.ajaxCall(arguments,"getAEmptyCalEvent");
+},
+     getAllCaleventView: function(){
+                  return this.ajaxCall(arguments,"getAllCaleventView");
+},
+     getAllOtherEdoc: function(){
+                  return this.ajaxCall(arguments,"getAllOtherEdoc");
+},
+     getAllProjectEvents: function(){
+                  return this.ajaxCall(arguments,"getAllProjectEvents");
+},
+     getAppEnumKey: function(){
+                  return this.ajaxCall(arguments,"getAppEnumKey");
+},
+     getAttsByCalId: function(){
+                  return this.ajaxCall(arguments,"getAttsByCalId");
+},
+     getBeginTime: function(){
+                  return this.ajaxCall(arguments,"getBeginTime");
+},
+     getCalEventById: function(){
+                  return this.ajaxCall(arguments,"getCalEventById");
+},
+     getCalEventByPlanId: function(){
+                  return this.ajaxCall(arguments,"getCalEventByPlanId");
+},
+     getCalEventByRecordId: function(){
+                  return this.ajaxCall(arguments,"getCalEventByRecordId");
+},
+     getCalEventViewSetion: function(){
+                  return this.ajaxCall(arguments,"getCalEventViewSetion");
+},
+     getCurDate: function(){
+                  return this.ajaxCall(arguments,"getCurDate");
+},
+     getDateForTypeAndModule: function(){
+                  return this.ajaxCall(arguments,"getDateForTypeAndModule");
+},
+     getIndexInfo: function(){
+                  return this.ajaxCall(arguments,"getIndexInfo");
+},
+     getMyOwnCalEventInfoBO: function(){
+                  return this.ajaxCall(arguments,"getMyOwnCalEventInfoBO");
+},
+     getPeopleRelateList: function(){
+                  return this.ajaxCall(arguments,"getPeopleRelateList");
+},
+     getStatisticCalEventInfoBOF8: function(){
+                  return this.ajaxCall(arguments,"getStatisticCalEventInfoBOF8");
+},
+     getStatistics: function(){
+                  return this.ajaxCall(arguments,"getStatistics");
+},
+     getStatisticsCalEventInfoBO: function(){
+                  return this.ajaxCall(arguments,"getStatisticsCalEventInfoBO");
+},
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     getTimeLine: function(){
+                  return this.ajaxCall(arguments,"getTimeLine");
+},
+     getTimeLineResetDate: function(){
+                  return this.ajaxCall(arguments,"getTimeLineResetDate");
+},
+     getTimeLineType: function(){
+                  return this.ajaxCall(arguments,"getTimeLineType");
+},
+     getViewDateByCon: function(){
+                  return this.ajaxCall(arguments,"getViewDateByCon");
+},
+     iSearch: function(){
+                  return this.ajaxCall(arguments,"iSearch");
+},
+     initStatisticsDate: function(){
+                  return this.ajaxCall(arguments,"initStatisticsDate");
+},
+     isHasDeleteByType: function(){
+                  return this.ajaxCall(arguments,"isHasDeleteByType");
+},
+     isOnePerson: function(){
+                  return this.ajaxCall(arguments,"isOnePerson");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     isReceiveMember: function(){
+                  return this.ajaxCall(arguments,"isReceiveMember");
+},
+     saveCalEvent: function(){
+                  return this.ajaxCall(arguments,"saveCalEvent");
+},
+     saveCalEventEntrust: function(){
+                  return this.ajaxCall(arguments,"saveCalEventEntrust");
+},
+     saveCalEventState: function(){
+                  return this.ajaxCall(arguments,"saveCalEventState");
+},
+     saveEntrustCalEvent: function(){
+                  return this.ajaxCall(arguments,"saveEntrustCalEvent");
+},
+     saveEventToExcel: function(){
+                  return this.ajaxCall(arguments,"saveEventToExcel");
+},
+     saveTimeLineByType: function(){
+                  return this.ajaxCall(arguments,"saveTimeLineByType");
+},
+     setHalfMinite: function(){
+                  return this.ajaxCall(arguments,"setHalfMinite");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+},
+     toCalEventVO: function(){
+                  return this.ajaxCall(arguments,"toCalEventVO");
+},
+     toSureIsRightDate: function(){
+                  return this.ajaxCall(arguments,"toSureIsRightDate");
+},
+     updateCalProName: function(){
+                  return this.ajaxCall(arguments,"updateCalProName");
+}
+});

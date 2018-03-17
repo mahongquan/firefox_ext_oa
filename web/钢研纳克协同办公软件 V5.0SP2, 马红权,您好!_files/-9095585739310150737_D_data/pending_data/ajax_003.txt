@@ -1,0 +1,285 @@
+var colManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=colManager",
+     checkAffairValid: function(){
+                  return this.ajaxCall(arguments,"checkAffairValid");
+},
+     checkCanDelete: function(){
+                  return this.ajaxCall(arguments,"checkCanDelete");
+},
+     checkForwardPermission: function(){
+                  return this.ajaxCall(arguments,"checkForwardPermission");
+},
+     checkIsCanRepeal: function(){
+                  return this.ajaxCall(arguments,"checkIsCanRepeal");
+},
+     checkTemplateCanModifyProcess: function(){
+                  return this.ajaxCall(arguments,"checkTemplateCanModifyProcess");
+},
+     checkTemplateCanUse: function(){
+                  return this.ajaxCall(arguments,"checkTemplateCanUse");
+},
+     checkVouchAudit: function(){
+                  return this.ajaxCall(arguments,"checkVouchAudit");
+},
+     colCheckAndupdateLock: function(){
+                  return this.ajaxCall(arguments,"colCheckAndupdateLock");
+},
+     colDelLock: function(){
+                  return this.ajaxCall(arguments,"colDelLock");
+},
+     countByCondition: function(){
+                  return this.ajaxCall(arguments,"countByCondition");
+},
+     deleteAffair: function(){
+                  return this.ajaxCall(arguments,"deleteAffair");
+},
+     deleteColSummaryUseHqlById: function(){
+                  return this.ajaxCall(arguments,"deleteColSummaryUseHqlById");
+},
+     exportDetaileExcel: function(){
+                  return this.ajaxCall(arguments,"exportDetaileExcel");
+},
+     formAddLock: function(){
+                  return this.ajaxCall(arguments,"formAddLock");
+},
+     getAffairById: function(){
+                  return this.ajaxCall(arguments,"getAffairById");
+},
+     getArchiveAffair: function(){
+                  return this.ajaxCall(arguments,"getArchiveAffair");
+},
+     getAttachmentListBySummaryId: function(){
+                  return this.ajaxCall(arguments,"getAttachmentListBySummaryId");
+},
+     getAttachmentsById: function(){
+                  return this.ajaxCall(arguments,"getAttachmentsById");
+},
+     getAttributeSettingInfo: function(){
+                  return this.ajaxCall(arguments,"getAttributeSettingInfo");
+},
+     getColAllMemberId: function(){
+                  return this.ajaxCall(arguments,"getColAllMemberId");
+},
+     getColCount: function(){
+                  return this.ajaxCall(arguments,"getColCount");
+},
+     getColSummaryById: function(){
+                  return this.ajaxCall(arguments,"getColSummaryById");
+},
+     getColSummaryByProcessId: function(){
+                  return this.ajaxCall(arguments,"getColSummaryByProcessId");
+},
+     getColSummaryForProject: function(){
+                  return this.ajaxCall(arguments,"getColSummaryForProject");
+},
+     getColSuperviseModelList: function(){
+                  return this.ajaxCall(arguments,"getColSuperviseModelList");
+},
+     getContentComponentType: function(){
+                  return this.ajaxCall(arguments,"getContentComponentType");
+},
+     getDealExplain: function(){
+                  return this.ajaxCall(arguments,"getDealExplain");
+},
+     getDoneAffairs: function(){
+                  return this.ajaxCall(arguments,"getDoneAffairs");
+},
+     getDoneList: function(){
+                  return this.ajaxCall(arguments,"getDoneList");
+},
+     getDraftOpinion: function(){
+                  return this.ajaxCall(arguments,"getDraftOpinion");
+},
+     getForwardMemberNames: function(){
+                  return this.ajaxCall(arguments,"getForwardMemberNames");
+},
+     getIsSamePigeonhole: function(){
+                  return this.ajaxCall(arguments,"getIsSamePigeonhole");
+},
+     getIsVouchByProcessId: function(){
+                  return this.ajaxCall(arguments,"getIsVouchByProcessId");
+},
+     getMoreList4SectionContion: function(){
+                  return this.ajaxCall(arguments,"getMoreList4SectionContion");
+},
+     getMyCollDeadlineNotEmpty: function(){
+                  return this.ajaxCall(arguments,"getMyCollDeadlineNotEmpty");
+},
+     getParentProceeObjectId: function(){
+                  return this.ajaxCall(arguments,"getParentProceeObjectId");
+},
+     getPendingAffairs: function(){
+                  return this.ajaxCall(arguments,"getPendingAffairs");
+},
+     getPendingList: function(){
+                  return this.ajaxCall(arguments,"getPendingList");
+},
+     getPermissionAccountId: function(){
+                  return this.ajaxCall(arguments,"getPermissionAccountId");
+},
+     getPigeonholeRight: function(){
+                  return this.ajaxCall(arguments,"getPigeonholeRight");
+},
+     getProcessId: function(){
+                  return this.ajaxCall(arguments,"getProcessId");
+},
+     getRelationAffairs: function(){
+                  return this.ajaxCall(arguments,"getRelationAffairs");
+},
+     getSaveToLocalOrPrintPolicy: function(){
+                  return this.ajaxCall(arguments,"getSaveToLocalOrPrintPolicy");
+},
+     getSentAffairIdByFormRecordId: function(){
+                  return this.ajaxCall(arguments,"getSentAffairIdByFormRecordId");
+},
+     getSentAffairs: function(){
+                  return this.ajaxCall(arguments,"getSentAffairs");
+},
+     getSentList: function(){
+                  return this.ajaxCall(arguments,"getSentList");
+},
+     getSentlist4Quote: function(){
+                  return this.ajaxCall(arguments,"getSentlist4Quote");
+},
+     getStatisticSearchCols: function(){
+                  return this.ajaxCall(arguments,"getStatisticSearchCols");
+},
+     getSummaryByCaseId: function(){
+                  return this.ajaxCall(arguments,"getSummaryByCaseId");
+},
+     getSummaryById: function(){
+                  return this.ajaxCall(arguments,"getSummaryById");
+},
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     getTemplateId: function(){
+                  return this.ajaxCall(arguments,"getTemplateId");
+},
+     getTempletePrePigholePath: function(){
+                  return this.ajaxCall(arguments,"getTempletePrePigholePath");
+},
+     getTrackInfo: function(){
+                  return this.ajaxCall(arguments,"getTrackInfo");
+},
+     getTrackInfosToString: function(){
+                  return this.ajaxCall(arguments,"getTrackInfosToString");
+},
+     getTrackList4BizConfig: function(){
+                  return this.ajaxCall(arguments,"getTrackList4BizConfig");
+},
+     getTrackListByAffairId: function(){
+                  return this.ajaxCall(arguments,"getTrackListByAffairId");
+},
+     getWaitSendAffairs: function(){
+                  return this.ajaxCall(arguments,"getWaitSendAffairs");
+},
+     getWaitSendList: function(){
+                  return this.ajaxCall(arguments,"getWaitSendList");
+},
+     getforwordMail: function(){
+                  return this.ajaxCall(arguments,"getforwordMail");
+},
+     insertComment: function(){
+                  return this.ajaxCall(arguments,"insertComment");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     queryByCondition: function(){
+                  return this.ajaxCall(arguments,"queryByCondition");
+},
+     recallNewflowSummary: function(){
+                  return this.ajaxCall(arguments,"recallNewflowSummary");
+},
+     replaceInlineAttachment: function(){
+                  return this.ajaxCall(arguments,"replaceInlineAttachment");
+},
+     saveAttachmentFromDomain: function(){
+                  return this.ajaxCall(arguments,"saveAttachmentFromDomain");
+},
+     saveColSummary: function(){
+                  return this.ajaxCall(arguments,"saveColSummary");
+},
+     saveDraft: function(){
+                  return this.ajaxCall(arguments,"saveDraft");
+},
+     saveOpinionDraft: function(){
+                  return this.ajaxCall(arguments,"saveOpinionDraft");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+},
+     transCancelTrack: function(){
+                  return this.ajaxCall(arguments,"transCancelTrack");
+},
+     transComeFromWaitSend: function(){
+                  return this.ajaxCall(arguments,"transComeFromWaitSend");
+},
+     transDoForward: function(){
+                  return this.ajaxCall(arguments,"transDoForward");
+},
+     transDoZcdb: function(){
+                  return this.ajaxCall(arguments,"transDoZcdb");
+},
+     transFinishWorkItem: function(){
+                  return this.ajaxCall(arguments,"transFinishWorkItem");
+},
+     transFinishWorkItemPublic: function(){
+                  return this.ajaxCall(arguments,"transFinishWorkItemPublic");
+},
+     transPigeonhole: function(){
+                  return this.ajaxCall(arguments,"transPigeonhole");
+},
+     transPigeonholeDeleteStepBackDoc: function(){
+                  return this.ajaxCall(arguments,"transPigeonholeDeleteStepBackDoc");
+},
+     transRepal: function(){
+                  return this.ajaxCall(arguments,"transRepal");
+},
+     transResend: function(){
+                  return this.ajaxCall(arguments,"transResend");
+},
+     transSend: function(){
+                  return this.ajaxCall(arguments,"transSend");
+},
+     transSendImmediate: function(){
+                  return this.ajaxCall(arguments,"transSendImmediate");
+},
+     transSetFinishedFlag: function(){
+                  return this.ajaxCall(arguments,"transSetFinishedFlag");
+},
+     transShowSummary: function(){
+                  return this.ajaxCall(arguments,"transShowSummary");
+},
+     transStepBack: function(){
+                  return this.ajaxCall(arguments,"transStepBack");
+},
+     transStepStop: function(){
+                  return this.ajaxCall(arguments,"transStepStop");
+},
+     transTakeBack: function(){
+                  return this.ajaxCall(arguments,"transTakeBack");
+},
+     transferTemplate: function(){
+                  return this.ajaxCall(arguments,"transferTemplate");
+},
+     updateAffairIdentifierForRelationAuth: function(){
+                  return this.ajaxCall(arguments,"updateAffairIdentifierForRelationAuth");
+},
+     updateAffairStateWhenClick: function(){
+                  return this.ajaxCall(arguments,"updateAffairStateWhenClick");
+},
+     updateAppointStepBack: function(){
+                  return this.ajaxCall(arguments,"updateAppointStepBack");
+},
+     updateColInfo: function(){
+                  return this.ajaxCall(arguments,"updateColInfo");
+},
+     updateColSummary: function(){
+                  return this.ajaxCall(arguments,"updateColSummary");
+},
+     updateTempleteHistory: function(){
+                  return this.ajaxCall(arguments,"updateTempleteHistory");
+}
+});

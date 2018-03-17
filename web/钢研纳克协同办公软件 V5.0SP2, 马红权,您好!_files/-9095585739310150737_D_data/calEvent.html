@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html class="h100b over_hidden"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript">
+  var _ctxPath = '/seeyon', _ctxServer = 'http://oa.ncschina.com:80/seeyon';
+  var _locale = 'zh_CN',_isDevelop = false,_sessionid = 'ACBA94B0BDC376D603A9D0F0060F7239',_isModalDialog = false;
+  
+  var _resourceCode = "";
+  var seeyonProductId="2";
+</script>
+<link rel="stylesheet" href="all-min.css">
+
+<link rel="stylesheet" href="skin_003.css">
+
+
+<script type="text/javascript" src="../i18n_zh_CN.js"></script>
+
+<script type="text/javascript" src="all-min.js"></script>
+
+<script type="text/javascript" src="calendar-zh_CN.js"></script>
+
+<script type="text/javascript" src="calEvent_data/main.html"></script>
+<script type="text/javascript">
+$.ctx._currentPathId = 'calendar_calEvent_arrangeMonthTime';
+$.ctx._pageSize = 20;
+$.ctx.fillmaps = null;
+</script>
+<script type="text/javascript" src="ajax_002.txt"></script>
+
+
+
+<script type="text/javascript" src="calEvent_data/ajax_002.txt"></script>
+<script type="text/javascript">
+    var dialog = null;
+    var isContinuous = false;
+    /**
+     * 查看任务详细信息页面
+     * @param id 任务编号
+     */
+    function viewTaskInfo(id,isBtnEidt,isViewTree) {
+        var title = "任务内容";
+        var isEidt = "";
+        var isTree = "";
+		var taskAjax = new taskAjaxManager();
+		var isTask = taskAjax.validateTask(id);
+        if(isTask != null && !isTask) {
+            $.alert({
+                'msg' : "此任务已被删除！",
+                ok_fn : function() {
+                    refreshPage();
+                }
+            });
+            return;
+        }
+        var type = $("#show_type").val();
+        var isView = taskAjax.validateTaskView(id);
+        if(isView != null && !isView) {
+			$.alert("您与当前任务无关，无权查看当前任务信息！   ");
+				return;
+        }
+        
+        if (isBtnEidt == 0) {
+            isEidt = "&isBtnEidt=0";
+        }
+        if(isViewTree == 1) {
+            isTree = "&isViewTree=1";
+        }
+        dialog = $.dialog({
+                    url : _ctxPath
+                            + '/taskmanage/taskinfo.do?method=taskDetailIndex&id='
+                            + id + isEidt +isTree,
+                    width : $(getCtpTop()).width() - 100,
+                    height : $(getCtpTop()).height() - 100,
+                    title : title,
+                    targetWindow : getCtpTop(),
+                    buttons : [ {
+                        text : "关闭",
+                        handler : function() {
+                            dialog.getClose({'dialogObj' : dialog });
+                        }
+                    } ]
+                });
+    }
+    
+    /**
+     * 新建任务功能
+     * @param obj 任务编号
+     */
+    function newTaskInfo(obj){
+        var startTime = obj.beginDate ? obj.beginDate : "";
+        var flag = obj.flag ? obj.flag : 0;
+        dialog = $.dialog({
+            id : 'new_task',
+            url : _ctxPath + '/taskmanage/taskinfo.do?method=newTaskInfo&from=Personal&optype=new&beginDate='+startTime+"&flag="+flag,
+            width : 600,
+            height : 500,
+			isClear:false,
+            title : "新建任务",
+            targetWindow : getCtpTop(),
+            transParams : {
+                planData : obj.planId ? obj : ""
+            },
+            bottomHTML : "<div class='common_checkbox_box clearfix'><label class='margin_r_10 hand' for='continuous_add'><input id='continuous_add' class='radio_com' name='continuous' value='0' type='checkbox'>连续添加</label></div>",
+            closeParam:{
+                'show':true,
+                handler:function(){
+                    if(isContinuous == true || isContinuous == "true") {
+                       if(obj.runFunc) {
+                           obj.runFunc();
+                       }
+                    }
+                }
+            },
+            buttons : [ {
+                text : "确定",
+                handler : function() {
+                    var isChecked = dialog.getObjectById("continuous_add")[0].checked;
+                    var objParam = new Object();
+                    objParam.dialogObj = dialog;
+                    objParam.isChecked = isChecked;
+                    if(obj.runFunc) {
+                        objParam.runFunc = obj.runFunc;
+                    }
+                    var ret = dialog.getReturnValue(objParam);
+                    if(isChecked == true || isChecked == "true") {
+                        if(ret == true || ret == "true") {
+                            isContinuous = true;
+                        }
+                    }
+                }
+            }, {
+                text : "取消",
+                handler : function() {
+                    if(isContinuous == true || isContinuous == "true") {
+                        if(obj.runFunc) {
+                            obj.runFunc();
+                        }
+                    }
+                    dialog.close();
+                }
+            } ]
+        });
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  var _ctxPath = '/seeyon', _ctxServer = 'http://oa.ncschina.com:80/seeyon';
+  var _locale = 'zh_CN',_isDevelop = false,_sessionid = 'ACBA94B0BDC376D603A9D0F0060F7239',_isModalDialog = false;
+  
+  var _resourceCode = "";
+  var seeyonProductId="2";
+</script>
+<link rel="stylesheet" href="all-min.css">
+
+<link rel="stylesheet" href="skin_003.css">
+
+
+<script type="text/javascript" src="../i18n_zh_CN.js"></script>
+
+<script type="text/javascript" src="all-min.js"></script>
+
+<script type="text/javascript" src="calendar-zh_CN.js"></script>
+
+<script type="text/javascript" src="calEvent_data/main.html"></script>
+<script type="text/javascript">
+$.ctx._currentPathId = 'calendar_calEvent_arrangeMonthTime';
+$.ctx._pageSize = 20;
+$.ctx.fillmaps = null;
+</script>
+<script type="text/javascript" src="ajax_002.txt"></script>
+
+
+
+<script type="text/javascript">
+	var dialogCalEventAdd; //新增dialog
+	var dialogCalEventUpdate; //修改dialog
+
+	//这个是为了关闭窗口，如果用户需要刷新页面，则需要将reloadDate传进入
+	function viewDialogClose(id, reloadDate,isList) {
+	   if(id=="hasError"){
+	        dialogCalEventAdd.enabledBtn("sure");
+	   }else{
+	       if (id == -1) { //新增窗口
+               dialogCalEventAdd.close();
+           } else if (id == "entrust") { //委托窗口
+               dialogCalEventEntrust.close();
+           } else if (id == "delete") { //删除窗口
+               dialogCalEventDelete.close();
+           } else { //修改窗口、即查看窗口
+               dialogCalEventUpdate.close();
+               if (typeof (searchobj) != 'undefined'&&typeof(curButtonClick)=='undefined') {
+                    search(searchobj.g.getReturnValue());
+               }
+           }
+           if (reloadDate == 'true'&&(isList==null||isList=="")) {
+        	   if($.browser.msie&&parseInt($.browser.version,10)>=11){ //ie11下刷新会卡死，不需要参数'true'
+        		   window.location.reload(); 
+        	   }else{
+        		   window.location.reload(true);
+        	   }
+              
+           }else if(reloadDate == 'true'){
+               search(null);//这个地方是为了解决IE11新建事件，刷新列表时卡死的问题
+           }
+	   }
+	}
+	//這裡的方法主要的為了協同、计划、关联项目转事件用到的js。
+	//beginDate 开始时间
+	//formId 协同ID 或者计划ID
+	//appID 应用模块ID 也就是说 协同 == 1 计划 == 5
+	//endDate 结束时间 （计划转事件用的参数）
+	//subject 标题（计划转事件用的参数）
+	//signifyType 重要程度 （计划转事件用的参数）这里说明一下，计划转过来的重要程度有可能不止事件本身的几种。如果不满足，则默认为重要紧急
+	//receiveMemberId接收人ID
+	// dateType 日期类型 1.日期 2 时间
+	//isListObj是否是从列表中的新建中进，列表进来的话，新建的话，刷新页面的时候IE11容易卡死
+	function AddCalEvent(beginDate,formId,appID,endDate,subject,signifyType,receiveMemberId,dateType,isListObj) {
+		var url = "";
+		var isList="";
+		if (typeof (beginDate) == 'undefined'||beginDate==null) {
+			url = _ctxPath + '/calendar/calEvent.do?method=createCalEvent';
+		} else {
+			url = _ctxPath
+					+ '/calendar/calEvent.do?method=createCalEvent&beginDate='
+					+ beginDate;
+		}
+		if (typeof (formId) != 'undefined'&&formId!=null) {
+			url = url + "&fromId=" + formId;
+		}
+		
+		if (typeof (appID) != 'undefined'&&appID!=null) {
+            url = url + "&appID=" + appID;
+        }
+		if (typeof (endDate) != 'undefined'&&endDate!=null) {
+			url = url + "&endDate=" + endDate;
+		}
+		
+		if (typeof (subject) != 'undefined'&&subject!=null) {
+            url = url + "&subject=" + encodeURIComponent(subject);
+        }
+		if (typeof (signifyType) != 'undefined'&&signifyType!=null) {
+			url = url + "&signifyType=" + signifyType;
+		}
+		if (typeof (receiveMemberId) != 'undefined'&&receiveMemberId!=null) {
+			url = url + "&receiveMemberId=" + receiveMemberId;
+		}
+		if (typeof (dateType) != 'undefined'&&dateType!=null) {
+		  url = url + "&dateType=" + dateType;
+		}
+		if (typeof (isListObj) != 'undefined'&&isListObj!=null) {
+	          isList = isListObj.isList;
+	        }
+		dialogCalEventAdd = $.dialog( {
+		    id  : "dialogCalEventAdd",
+			url : url,
+			width : 600,
+			height : 465,
+			checkMax : true,
+			targetWindow : getCtpTop(),
+			transParams : {
+				diaClose : viewDialogClose,
+				isview : "true",
+				isList :isList
+			},
+			title : "新建事件",
+			buttons : [ {
+				id : "sure",
+				text : "确定",
+				handler : function() {
+					var isFalse = dialogCalEventAdd.getReturnValue();
+					if(isFalse){
+					  dialogCalEventAdd.disabledBtn("sure");					  
+					}
+				}
+			}, {
+				id : "cancel",
+				text : "取消",
+				handler : function() {
+					dialogCalEventAdd.close();
+				}
+			} ]
+		});
+	}
+	//本方法和上面方法功能一样，区别在与增加了一个recordid的参数，但由于该方法在其他多处被引用，且不便于增加参数，因此新建一个同名方法，参数为对象
+	function AddCalEventObj(obj) {
+		var beginDate = obj.startTime;
+		var formId = obj.planId;
+		var appID = obj.appId;
+		var endDate = obj.endTime;
+		var subject = obj.eventDesc;
+		var signifyType = obj.importantLevel;
+		var receiveMemberId = obj.receiveMemberId;
+		var dateType = obj.dateType;
+		var recordId = obj.recordId;
+		var isList = obj.isList;
+		var url = "";
+		if (typeof (beginDate) == 'undefined') {
+			url = _ctxPath + '/calendar/calEvent.do?method=createCalEvent';
+		} else {
+			url = _ctxPath
+					+ '/calendar/calEvent.do?method=createCalEvent&beginDate='
+					+ beginDate;
+		}
+		if (typeof (formId) != 'undefined') {
+			url = url + "&fromId=" + formId;
+		}
+		
+		if (typeof (appID) != 'undefined') {
+            url = url + "&appID=" + appID;
+        }
+		if (typeof (endDate) != 'undefined') {
+			url = url + "&endDate=" + endDate;
+		}
+		
+		if (typeof (subject) != 'undefined') {
+            url = url + "&subject=" + encodeURIComponent(subject);
+        }
+		if (typeof (signifyType) != 'undefined') {
+			url = url + "&signifyType=" + signifyType;
+		}
+		if (typeof (receiveMemberId) != 'undefined') {
+			url = url + "&receiveMemberId=" + receiveMemberId;
+		}
+		if (typeof (dateType) != 'undefined') {
+		  url = url + "&dateType=" + dateType;
+		}
+		if (typeof (recordId) != 'undefined') {
+			url = url + "&recordid=" + recordId;
+		}
+		dialogCalEventAdd = $.dialog( {
+		    id  : "dialogCalEventAdd",
+			url : url,
+			width : 600,
+			height : 465,
+			checkMax : true,
+			targetWindow : getCtpTop(),
+			transParams : {
+				diaClose : viewDialogClose,
+				isview : "true",
+				isList : isList
+			},
+			title : "新建事件",
+			buttons : [ {
+				id : "sure",
+				text : "确定",
+				handler : function() {
+					var isFalse = dialogCalEventAdd.getReturnValue();
+					if(isFalse){
+					  dialogCalEventAdd.disabledBtn("sure");
+					}
+				}
+			}, {
+				id : "cancel",
+				text : "取消",
+				handler : function() {
+					dialogCalEventAdd.close();
+				}
+			} ]
+		});
+	}
+</script>
+<style type="text/css" media="screen">
+  html,body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+  }
+</style>
+<script type="text/javascript" src="calEvent_data/ajax.txt"></script>
+<script type="text/javascript" src="calEvent_data/showTimeLineData.js"></script>
+<script type="text/javascript" src="calEvent_data/dhtmlxscheduler-debug.js"></script>
+<script type="text/javascript" src="calEvent_data/zh_CN-debug.js"></script>
+<script type="text/javascript">
+var curType = "month";
+var curNextDate = new Date();
+var curUserID = "7298597487386510009";
+var calevents = eval([]);
+$(function() {
+  var curTypeNum;
+  if(curType=="day"){
+    curTypeNum=0;
+  }
+  if(curType=="week"){
+    curTypeNum=1;
+  }
+  if(curType=="month"){
+    curTypeNum=2;
+  }
+  $("#dhx_cal_common_tabs li").removeClass("current").eq(curTypeNum).addClass("current");
+});
+
+function refleshPage(){
+    var curDate = new Date('2018', '2','17');
+    dateChange(curType, curDate);
+}
+
+function init() {
+  scheduler.url = "arrangeMonthTime"; //由于事件视图、时间安排、各个时间控件portal都调用了这个js，所以刷新的时候，需要知道刷新的到底是哪个页面
+  scheduler.config.multi_day = true;//日视图、周视图允许显示全天、跨天日程
+  scheduler.config.xml_date = "%Y-%m-%d %H:%i";//数据时间格式
+  scheduler.config.dblclick_create = false;//禁止双击创建
+  scheduler.config.drag_create = false;//禁止拖拽创建
+  scheduler.config.drag_resize = false;//日视图、周视图禁拖拽改变时间
+  scheduler.config.drag_move = false;//月视图禁止拖拽改变时间
+  scheduler.config.hour_size_px = 84;//时间高度
+  scheduler.config.scroll_hour = "14.0";//定位初始时间
+  scheduler.config.tabClick = dateChange;
+  scheduler.config.prevClick = dateChange;
+  scheduler.config.nextClick = dateChange;
+    if ('arrangeMonthTime'=='arrangeMonthTime'){ //时间视图的月视图——点击会议、任务等单击事件
+      if ('arrangeMonthTimeForView'=='arrangeMonthTimeForView'){ //日程事件的点击事件查看详细信息--日程事件portal月视图
+       scheduler.getId = function (id) { //单击事件，参数为事件id
+    	    var calEvent = this.getEvent(id);
+            showDate(calEvent,refleshPage);
+        }
+       scheduler.config.goToPage =function (date) { //点击具体某一天进行穿透
+          var curTime = date.split(" ")[0]; // 当前的日期格式为 yyyy - MM-dd HH：mm 取【0】的意思是只取日期
+           url = _ctxPath+"/calendar/calEvent.do?method=calEventIndex&calEventViewSetion=true&curDate="+curTime;
+           setTimeout(function(){  
+             window.parent.location.href = url;
+          },0);  
+        }
+       }
+     if('arrangeMonthTimeForView'!='arrangeMonthTimeForView'){ //时间视图portal月视图
+       scheduler.getId = function (id) { //单击事件，参数为事件id
+          var calEvent = this.getEvent(id);
+          showDate(calEvent,refleshPage);
+       }
+       scheduler.config.goToPage =function (date) { //点击具体某一天进行穿透
+          var curTime = date.split(" ")[0]; // 当前的日期格式为 yyyy - MM-dd HH：mm 取【0】的意思是只取日期
+          url = _ctxPath+"/calendar/calEvent.do?method=arrangeTime&type=day&selectedDate="+curTime+"&curDay="+curTime;
+          setTimeout(function(){  
+             window.parent.location.href = url;
+          },0);  
+       }
+       scheduler.maxLength = 3;//全天、跨天日程显示多少条
+     }
+     scheduler.isPortal = true;//是否在portal显示     
+     scheduler.xy.nav_height = 20;//导航高度
+     scheduler.dayEvent = [];
+     $(".dhx_cal_prev_button,.dhx_cal_next_button,.dhx_cal_date").css("margin-top","0")
+  }
+  if('arrangeMonthTime'=='arrangeWeeKTime' || ''=='6'){
+    var _body = $('body').width(); //这里的判断主要是时间安排portal的周视图窄栏处理
+    if (_body < 700) {
+      $('#scheduler_here').css( {
+        width : "1260px"
+      });
+      $('html').css( {
+        "overflow-x": 'auto',
+        "overflow-y":"hidden"
+      });
+      $(".dhx_cal_navline").css({   
+      "position":"fixed"
+      })
+      $(".stadic_body_top_bottom").css("top",0)
+      $(".dhx_cal_prev_button,.dhx_cal_next_button,.dhx_cal_date").css("margin-top","0")
+
+    }
+    scheduler.maxLength = 3;//全天、跨天日程显示多少条
+  }
+  if ('arrangeMonthTime'=='arrangeTime'){
+    scheduler.maxLength = 6;//全天、跨天日程显示多少条
+    scheduler.xy.nav_height = 40;//导航高度
+  }
+  if('arrangeMonthTime'=='calEventView'){
+    scheduler.maxLength = 6;//全天、跨天日程显示多少条
+    scheduler.xy.nav_height = 40;//导航高度
+    scheduler.config.clickMenu = [
+                                  {
+                                    name : "新建事件",
+                                    handle : function() {
+                                      AddCalEvent(scheduler.config.currentDateTime);
+                                      }
+                                    }
+                              ];
+  }
+  if('arrangeMonthTime'!='calEventView'){
+    ///////////////////////////////屏蔽出我的会议日程视图 start
+    if (''!='6'){ 
+      if('arrangeMonthTime'!='calEventView4RelateMember'){
+      scheduler.config.clickMenu = getRightMenu();//单击是否有菜单
+      }
+    }
+    ///////////////////////////////屏蔽出我的会议日程视图 end
+  }
+      
+  scheduler.xy.bar_height = 30;//全天、跨天日程之前的间隔
+  scheduler.attachEvent("onClick",function(id) {
+	         var calEvent = this.getEvent(id);
+             showDate(calEvent,refleshPage);
+          });
+  scheduler.attachEvent("onDblClick", function() {
+    return false;
+  });
+  scheduler.config.xml_date = "%Y-%m-%d %H:%i";
+  scheduler.init('scheduler_here', new Date('2018', '2','17'), 'month');//初始化显示当天日期+周视图
+  $("#itemize").bind({
+      mouseover: function () {
+          $("#itemize_content").removeClass("hidden");
+      },
+      mouseout: function () {
+          $("#itemize_content").addClass("hidden");
+      }
+  });
+  var object = new Array();
+  var calevent = null;
+  if (calevents != null && calevents.length > 0) {
+    for ( var i = 0; i < calevents.length; i++) {
+      calevent = calevents[i].timeCalEvent;
+      var cur = new Object();
+      cur.id = calevent.id;
+      cur.type = calevent.type;
+      cur.states = calevent.states;
+      cur.content = calevent.content; //加上了图标的字符串
+      if (cur.type == "event") {
+        cur.shareType = calevent.shareType;
+        cur.receiveMemberId = calevent.receiveMemberId;
+        cur.createUserId = calevent.createUserId;
+        if (calevent.states == 4) {
+          cur.set_disable = 'true';
+        }
+      } else if (cur.type == "plan") {
+        if (calevent.states == 3) {
+          cur.set_disable = 'true';
+        }
+      } else if (cur.type == "task") {
+        if (calevent.milestone == "1") { 
+          var _tempStr = "right"; 
+          if ($.browser.msie) { 
+            if ($.browser.version == '6.0' || $.browser.version == '7.0') { 
+              _tempStr= ""; 
+            } 
+          } 
+          cur.ico = "milestone "+_tempStr; 
+        } 
+        if (calevent.states == "4") {
+          cur.set_disable = 'true';
+        }
+      } else if (cur.type == "meeting") {
+        if (calevent.states == 30 || calevent.states == 40 || calevent.states == -10) {
+          cur.set_disable = 'true';
+        }
+        cur.canView = calevent.canView;
+        ///////////////////////////////屏蔽出我的会议日程视图 start  
+        if(''=='6'){
+          if(!calevent.canView) {
+            calevent.subject = '已有会议';
+          }
+        }
+        ///////////////////////////////屏蔽出我的会议日程视图 end  
+      } else if (cur.type == "collaboration") {
+        cur.ico = "work_time_set_16";
+        if (calevent.states == "4") {
+          cur.set_disable = 'true';
+        }
+      } else if (cur.type == "edoc") {
+        cur.ico = "work_time_set_16";
+        if (calevent.states == 4) {
+          cur.set_disable = 'true';
+        }
+      }
+      cur.start_date = calevent.beginDate;
+      cur.end_date = calevent.endDate;
+      cur.text = calevent.subject;
+      object[i] = cur;
+    }
+  }
+  scheduler.parse(object, "json");
+  
+  if (''=='6'){
+    initPersonTab();
+  }
+}
+
+function getRightMenu(){
+    var arr = new Array();
+    var object2 = new Object();
+    object2.type = "line";
+    if($.ctx.resources.contains('F09_meetingArrange')){
+      var object1 = new Object();
+      object1.name = "新建会议";
+      object1.handle = function(){newMeeting(scheduler.config.currentDateTime);};
+      arr.push(object1);
+      arr.push(object2);
+    }
+    if($.ctx.resources.contains('F02_planListHome')){
+      var object1 = new Object();
+      object1.name = "新建计划";
+      object1.handle = function(){newPlan(scheduler.config.currentDateTime);};
+      arr.push(object1);
+      arr.push(object2);
+    }
+    if($.ctx.resources.contains('F02_taskPage') && "false" != true){
+      var object1 = new Object();
+      object1.name = "新建任务";
+      object1.handle = function(){newTask(scheduler.config.currentDateTime);};
+      arr.push(object1);
+      arr.push(object2);
+    }
+    if($.ctx.resources.contains('F02_eventlist')){
+      var object1 = new Object();
+      object1.name = "新建事件";
+      object1.handle = function(){AddCalEvent(scheduler.config.currentDateTime);};
+      arr.push(object1);
+    }
+    return arr;
+  }
+
+function dateChange(type, nextDate) {
+  curNextDate = nextDate;
+      if(''=='6'){
+        dateChangeOfMeeting(type, nextDate);
+      }
+      else{
+          var url = _ctxPath + "/calendar/calEvent.do?method="+scheduler.url+"&type="+ type;
+          try {
+            var temp=nextDate.split('-');
+            nextDate = new Date(temp[0], (temp[1]-1), temp[2]);
+          } catch (e) {}
+          var selectedDate = nextDate.format("yyyy-MM-dd");
+          url = url + "&selectedDate=" + selectedDate;
+          if (type == "day") {
+            curDay = nextDate.format("yyyy-MM-dd");
+            url = url + "&curDay=" + curDay;
+          } else if (type == "week") {
+            var weekStart = getFirstDateOfWeek(nextDate).format("yyyy-MM-dd");
+            var weekEnd = getLastDateOfWeek(nextDate).format("yyyy-MM-dd");
+            url = url + "&weekStart=" + weekStart;
+            url = url + "&weekEnd=" + weekEnd;
+          } else if (type == "month") {
+            var year = nextDate.format("yyyy");
+            var month = nextDate.format("MM");
+            var start = "01";
+            var end = getLastDateOfMonth(nextDate.format("yyyy"), nextDate.format("MM"));
+            var monthStart = year + "-" + month + "-" + start;
+            var monthEnd = year + "-" + month + "-" + end;
+            url = url + "&monthStart=" + monthStart;
+            url = url + "&monthEnd=" + monthEnd;
+            var source = "arrangeMonthTimeForView";
+            if(source == "timearrange"){
+              url = url + "&source=timearrange";
+            }else if(source == "arrangeMonthTimeForView"){
+              url = url +"&source=arrangeMonthTimeForView";
+            }
+          }
+          if(typeof (relateMemberID) != 'undefined'){
+            url = url + "&relateMemberID="+relateMemberID;
+          }
+          setTimeout(function(){  
+            window.location.href = url;
+          },0);  
+      }
+}
+
+</script>
+
+<script type="text/javascript">
+/**
+ * 新建任务
+ */
+function newTask(time) {
+	var o = new Object();
+	if(typeof (time) == 'undefined'){
+		o.flag = 1;
+	}else{
+		time = time.split(" ");
+		var o = new Object();
+		o.beginDate = time[0];
+		o.flag = 1;
+	}
+	o.runFunc = refleshPage;
+	newTaskInfo(o);
+}
+
+/**
+ * 新建计划
+ */
+function newPlan(time){
+	var url = _ctxPath;
+	url = url + "/plan/plan.do?method=newPlan&beginDate = ";
+	url = url + time;
+	if("arrangeMonthTime"=="arrangeWeeKTime"){
+		setTimeout(function(){  
+			window.parent.location.href = url;
+		},0);  
+	}
+	if("arrangeMonthTime"!="arrangeWeeKTime"){
+    	setTimeout(function(){  
+    		window.location.href = url;
+    	},0);  
+	}
+}
+
+/**
+ * 新建会议
+ */
+function newMeeting(time){
+    var affairId = "";
+    var collaborationFrom = "";
+    var url = _ctxPath + "/meetingNavigation.do?method=entryManager&entry=meetingArrange&listMethod=create&affairId="+affairId+"&collaborationFrom="+collaborationFrom+"&formOper=new&time=" + time;
+    if("arrangeMonthTime"=="arrangeWeeKTime"){
+           setTimeout(function(){  
+      		window.parent.location.href = url;
+      	 },0);  
+    }
+    if("arrangeMonthTime"!="arrangeWeeKTime"){
+          setTimeout(function(){  
+      		window.location.href = url;
+      	},0);  
+    }
+}
+
+</script>
+
+<title>事件视图</title>
+
+<style>
+  .dhx_cal_prev_button,.dhx_cal_next_button,.dhx_cal_date {
+        margin-top: 0px;
+  }
+</style>
+
+</head>
+<body onload="init();">
+  <div id="scheduler_here" class="dhx_cal_container" style="width: 100%; height: 108%;margin-top:-1px;">
+      <div class="dhx_cal_navline" style="padding-left: 210px; width: 426px; height: 20px; left: 0px; top: 0px;">
+        <div style="position:absolute; top: 2px; right:255px;">
+          <div class="dhx_cal_prev_button" id="dhx_cal_prev_button" style="margin-top: 0px;">&nbsp;</div>
+          <div class="dhx_cal_date" id="dhx_cal_date" style="right: 273px; margin-top: 0px;">2018年 03月</div>
+          <div class="dhx_cal_next_button" id="dhx_cal_next_button" style="margin-top: 0px;">&nbsp;</div>
+          <div class="dhx_cal_tab hidden" style="right: 76px;"></div>
+        </div>
+      </div>
+      <div class="dhx_cal_header" id="dhx_cal_header" style="width: 426px; height: 20px; left: -1px; top: 21px;"><div class="dhx_scale_bar" style="font-size: 12px; width: 59px; height: 18px; left: 0px; top: 0px;">星期一</div><div class="dhx_scale_bar" style="font-size: 12px; width: 60px; height: 18px; left: 60px; top: 0px;">星期二</div><div class="dhx_scale_bar" style="font-size: 12px; width: 60px; height: 18px; left: 121px; top: 0px;">星期三</div><div class="dhx_scale_bar" style="font-size: 12px; width: 60px; height: 18px; left: 182px; top: 0px;">星期四</div><div class="dhx_scale_bar" style="font-size: 12px; width: 60px; height: 18px; left: 243px; top: 0px;">星期五</div><div class="dhx_scale_bar" style="font-size: 12px; width: 60px; height: 18px; left: 304px; top: 0px;">星期六</div><div class="dhx_scale_bar" style="font-size: 12px; width: 60px; height: 18px; left: 365px; top: 0px;">星期日</div></div>
+      <div class="dhx_cal_data dhx_resize_denied dhx_move_denied" style="height: 183px; width: 426px; left: 0px; top: 42px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td class="dhx_before dhx_month_body align_center" style="height: 32px; width: 59px; line-height: 32px;" title="26" id="dhx_26"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>26</td><td class="dhx_before dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="27" id="dhx_27"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>27</td><td class="dhx_before dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="28" id="dhx_28"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>28</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="01" id="dhx_01"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>01</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="02" id="dhx_02"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>02</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="03" id="dhx_03"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>03</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="04" id="dhx_04"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>04</td></tr><tr><td class="dhx_month_body align_center" style="height: 32px; width: 59px; line-height: 32px;" title="05" id="dhx_05"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>05</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="06" id="dhx_06"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>06</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="07" id="dhx_07"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>07</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="08" id="dhx_08"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>08</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="09" id="dhx_09"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>09</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="10" id="dhx_10"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>10</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="11" id="dhx_11"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>11</td></tr><tr><td class="dhx_month_body align_center" style="height: 32px; width: 59px; line-height: 32px;" title="12" id="dhx_12"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>12</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="13" id="dhx_13"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>13</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="14" id="dhx_14"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>14</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="15" id="dhx_15"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>15</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="16" id="dhx_16"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>16</td><td class="dhx_now dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="17" id="dhx_17"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>17</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="18" id="dhx_18"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>18</td></tr><tr><td class="dhx_month_body align_center" style="height: 32px; width: 59px; line-height: 32px;" title="19" id="dhx_19"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>19</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="20" id="dhx_20"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>20</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="21" id="dhx_21"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>21</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="22" id="dhx_22"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>22</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="23" id="dhx_23"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>23</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="24" id="dhx_24"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>24</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="25" id="dhx_25"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>25</td></tr><tr><td class="dhx_month_body align_center" style="height: 32px; width: 59px; line-height: 32px;" title="26" id="dhx_26"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>26</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="27" id="dhx_27"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>27</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="28" id="dhx_28"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>28</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="29" id="dhx_29"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>29</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="30" id="dhx_30"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>30</td><td class="dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="31" id="dhx_31"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>31</td><td class="dhx_after dhx_month_body align_center" style="height: 32px; width: 60px; line-height: 32px;" title="01" id="dhx_01"><span style="position:relative;width:0;height:0;float:left;"><div class="hasEvent_true hidden" style="position: relative;"></div></span>01</td></tr></tbody></table></div>
+  </div>
+  <div id="showEvent" class="hidden h100b padding_lr_5">
+      <p class="hidden padding_l_5 padding_t_5" id="all_DayTitle">全天/跨日:</p>
+      <ul id="allday_event" class="padding_l_5 padding_tb_5"></ul>
+      <ul class="border_t_dashed padding_l_5 padding_t_5" id="oneday_event"></ul>
+  </div>
+
+
+<script>
+    $(function () {
+        //火狐浏览器，样式兼容js
+        var ff_hasEvent_true = setInterval(function () {
+            var _obj = $(".hasEvent_true");
+            if (_obj.size() > 0) {
+                _obj.css({ "position": "relative" });
+                $(".dhx_cal_data td").css("line-height", $(".dhx_cal_data td").height() + "px");
+                //处理ie8无边线
+                $(".dhx_cal_data td").removeClass("relative");
+                //清除计时器
+                clearInterval(ff_hasEvent_true);
+            }
+        }, 200);
+    })
+</script></body></html>

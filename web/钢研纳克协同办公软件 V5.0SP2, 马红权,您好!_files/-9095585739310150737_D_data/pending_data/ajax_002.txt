@@ -1,0 +1,69 @@
+var pendingManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=pendingManager",
+     affairList2PendingRowList: function(){
+                  return this.ajaxCall(arguments,"affairList2PendingRowList");
+},
+     getAffairCountByApp: function(){
+                  return this.ajaxCall(arguments,"getAffairCountByApp");
+},
+     getAffairsByCategoryAndImpLevl: function(){
+                  return this.ajaxCall(arguments,"getAffairsByCategoryAndImpLevl");
+},
+     getAffairsIsOverTime: function(){
+                  return this.ajaxCall(arguments,"getAffairsIsOverTime");
+},
+     getAgentPendingCount: function(){
+                  return this.ajaxCall(arguments,"getAgentPendingCount");
+},
+     getCollAffairs: function(){
+                  return this.ajaxCall(arguments,"getCollAffairs");
+},
+     getGroupByApp: function(){
+                  return this.ajaxCall(arguments,"getGroupByApp");
+},
+     getGroupByImportment: function(){
+                  return this.ajaxCall(arguments,"getGroupByImportment");
+},
+     getGroupByIsOverTime: function(){
+                  return this.ajaxCall(arguments,"getGroupByIsOverTime");
+},
+     getGroupBySubState: function(){
+                  return this.ajaxCall(arguments,"getGroupBySubState");
+},
+     getJoinMeetingCount: function(){
+                  return this.ajaxCall(arguments,"getJoinMeetingCount");
+},
+     getMoreAgentList4SectionContion: function(){
+                  return this.ajaxCall(arguments,"getMoreAgentList4SectionContion");
+},
+     getMoreList4SectionContion: function(){
+                  return this.ajaxCall(arguments,"getMoreList4SectionContion");
+},
+     getPendingAffairList: function(){
+                  return this.ajaxCall(arguments,"getPendingAffairList");
+},
+     getPendingCount: function(){
+                  return this.ajaxCall(arguments,"getPendingCount");
+},
+     getPendingList: function(){
+                  return this.ajaxCall(arguments,"getPendingList");
+},
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     getZcdbAffairList: function(){
+                  return this.ajaxCall(arguments,"getZcdbAffairList");
+},
+     hasResPerm: function(){
+                  return this.ajaxCall(arguments,"hasResPerm");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+},
+     transInitChartData: function(){
+                  return this.ajaxCall(arguments,"transInitChartData");
+}
+});

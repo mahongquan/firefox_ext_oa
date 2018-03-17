@@ -1,0 +1,2397 @@
+<!DOCTYPE html>
+<html class="h100b over_hidden"><head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=IE7;IE=8;IE=9;IE=10">
+
+
+
+
+	
+
+
+
+
+
+
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-store"> 
+<meta http-equiv="Pragma" content="no-cache"> 
+
+
+
+<script type="text/javascript">
+  var _locale = 'zh_CN';
+  var _ctxPath = '/seeyon';
+  var _isDevelop = false;
+</script>
+<script type="text/javascript" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/i18n_zh_CN.js"></script>
+
+<script type="text/javascript" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/frame-min.js"></script>
+<script type="text/javascript" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/knowledgeBrowseUtils.js"></script>
+
+<script type="text/javascript">
+  $.ctx = {};
+  $.ctx.customize = {"productView":"false","grid_pref":"{\"dee_deeDataDesign_selectDeeDeeDataList\":{\"id\":\"1\",\"pk_timeitem\":\"1\",\"timeitemname\":\"1\",\"timeitemunit\":\"1\"}}","recent_FormReportListSection_capacity":"50","recent_FormReportListSection":"[{\"id\":\"-4662519314536445692\",\"name\":\"DB数据汇总查询\"}]"};
+  $.ctx.CurrentUser = {"id":"7298597487386510009","loginAccountName":"北京仪器分公司","name":"马红权","canSendSMS":false,"loginAccount":"-9095585739310150737"};
+  $.ctx.menu = [{"name":"协同工作","id":"-4751259066364441679","target":"","icon":"Collaboration.png","sorted":true,"items":[{"name":"主题空间","id":"-7382284343554457562","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/portal\/spaceController.do?method=showThemSpace&themType=19","resourceCode":"T03_cooperation_work"},{"name":"新建事项","id":"-4140425781984149261","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/collaboration\/collaboration.do?method=newColl&rescode=F01_newColl","resourceCode":"F01_newColl"},{"name":"待发事项","id":"-8306075607604378311","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/collaboration\/collaboration.do?method=listWaitSend","resourceCode":"F01_listWaitSend"},{"name":"已发事项","id":"3908880089061278395","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/collaboration\/collaboration.do?method=listSent","resourceCode":"F01_listSent"},{"name":"待办事项","id":"-74745459456393211","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/collaboration\/collaboration.do?method=listPending","resourceCode":"F01_listPending"},{"name":"已办事项","id":"-1170093474986179706","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/collaboration\/collaboration.do?method=listDone","resourceCode":"F01_listDone"},{"name":"督办事项","id":"2272495001459507804","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/supervise\/supervise.do?method=listSupervise&app=1","resourceCode":"F01_supervise"}],"url":null,"resourceCode":null},{"name":"表单应用","id":"-2480427965080909155","target":"","icon":"FormEngine.png","sorted":true,"items":[{"name":"主题空间","id":"144760001172621381","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/portal\/spaceController.do?method=showThemSpace&themType=25","resourceCode":"T03_form_application"},{"name":"表单查询","id":"-7080776067937645441","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/form\/queryResult.do?method=queryIndex","resourceCode":"T05_formQuery"},{"name":"表单统计","id":"-1760548293269241145","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/report\/queryReport.do?method=index","resourceCode":"F08_reportviewindex"},{"name":"表单栏目配置","id":"6873441147727266208","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/form\/formSection.do?method=index","resourceCode":"T05_formSection"}],"url":null,"resourceCode":null},{"name":"业务生成器","id":"2345991731884477998","target":"","icon":"BusinessSolutionsGenerator.png","sorted":true,"items":[{"name":"基础数据","id":"-4325582076455204361","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/form\/formData.do?method=unflowForm&formType=3","resourceCode":"T05_unflowBasicData"},{"name":"信息管理","id":"-5548038733928905841","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/form\/formData.do?method=unflowForm&formType=2","resourceCode":"T05_unflowInfoData"}],"url":null,"resourceCode":null},{"name":"公文管理","id":"7928573621177172775","target":"","icon":"OfficialDocument.png","sorted":true,"items":[{"name":"主题空间","id":"-2546490331665904065","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/portal\/spaceController.do?method=showThemSpace&themType=21","resourceCode":"T03_edoc_manage"},{"name":"发文管理","id":"3474200851856048410","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/edocController.do?method=entryManager&entry=sendManager","resourceCode":"F07_sendManager"},{"name":"收文管理","id":"5724648786685347881","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/edocController.do?method=entryManager&entry=recManager","resourceCode":"F07_recManager"},{"name":"签报管理","id":"-2417718186751342932","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/edocController.do?method=entryManager&entry=signReport","resourceCode":"F07_signReport"},{"name":"公文查询","id":"-7082135099623389205","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/edocController.do?method=edocSearchMain","resourceCode":"F07_edocSearch"},{"name":"公文督办","id":"-6166474418141707926","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/supervise\/supervise.do?method=listSupervise&app=4","resourceCode":"F07_edocSupervise"}],"url":null,"resourceCode":null},{"name":"目标管理","id":"3278273162661414918","target":"","icon":"ManagementbyObjectives.png","sorted":true,"items":[{"name":"主题空间","id":"-5716671469804893533","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/portal\/spaceController.do?method=showThemSpace&themType=20","resourceCode":"T03_objective_manage"},{"name":"时间视图","id":"7818692527006044155","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/calendar\/calEvent.do?method=arrangeTime","resourceCode":"F02_timeArrangelist"},{"name":"工作计划","id":"-7161143440221910122","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/plan\/plan.do?method=planListHome","resourceCode":"F02_planListHome"},{"name":"工作任务","id":"-1496500052010907896","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/taskmanage\/taskinfo.do?method=listTasksIndex&from=Personal","resourceCode":"F02_taskPage"},{"name":"日程事件","id":"4165935459437856527","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/calendar\/calEvent.do?method=calEventIndex","resourceCode":"F02_eventlist"},{"name":"关联项目","id":"5028653440970148128","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/project.do?method=getAllProjectList&more=true","resourceCode":"F02_projectPersonPage"}],"url":null,"resourceCode":null},{"name":"会议管理","id":"-7662770484306425904","target":"","icon":"Conference.png","sorted":true,"items":[{"name":"主题空间","id":"6715094807595598991","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/portal\/spaceController.do?method=showThemSpace&themType=22","resourceCode":"T03_meeting_manage"},{"name":"会议安排","id":"7130070469576838156","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/meetingNavigation.do?method=entryManager&entry=meetingArrange","resourceCode":"F09_meetingArrange"},{"name":"待开会议","id":"4385342544790374402","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/meetingNavigation.do?method=entryManager&entry=meetingPending","resourceCode":"F09_meetingPending"},{"name":"已开会议","id":"-3484804851946402694","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/meetingNavigation.do?method=entryManager&entry=meetingDone","resourceCode":"F09_meetingDone"},{"name":"会议资源","id":"-2432808706500506332","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/meetingroom.do?method=index","resourceCode":"F09_meetingRoom"}],"url":null,"resourceCode":null},{"name":"知识社区","id":"-339788257495134854","target":"","icon":"KnowledgeCommunity.png","sorted":true,"items":[{"name":"个人知识中心","id":"31537862233575255","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/doc\/knowledgeController.do?method=personalKnowledgeCenterIndex&openFlag=docRead","resourceCode":"F04_showKnowledgeNavigation"},{"name":"知识广场","id":"-4125720164935580067","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/doc\/knowledgeController.do?method=toKnowledgeSquare","resourceCode":"F04_knowledgeSquareFrame"},{"name":"文档中心","id":"-5739332168962522608","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/doc.do?method=docIndex&openLibType=1","resourceCode":"F04_docIndex"},{"name":"我的博客","id":"2076810835240370958","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/blog.do?method=blogHome","resourceCode":"F04_blogHome"},{"name":"文档库管理","id":"-6132230294784159770","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/doc.do?method=docLibsConfig&openLibType=1","resourceCode":"F04_docLibsConfig"},{"name":"博客管理","id":"5709971016527530152","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/blog.do?method=listAllArticleAdmin","resourceCode":"F04_listAllArticleAdmin"}],"url":null,"resourceCode":null},{"name":"文化建设","id":"9027674737881466566","target":"","icon":"CultureConstruction.png","sorted":true,"items":[{"name":"新闻","id":"6321568925262823484","target":"","icon":"","sorted":false,"items":[{"name":"集团新闻","id":"-7341963075675733398","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/newsData.do?method=index&spaceType=3","resourceCode":"F05_newsIndexGroup"},{"name":"单位新闻","id":"-124936515553112307","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/newsData.do?method=index&spaceType=2","resourceCode":"F05_newsIndexAccount"}],"url":null,"resourceCode":null},{"name":"公告","id":"-5729411610704592104","target":"","icon":"","sorted":false,"items":[{"name":"集团公告","id":"6975848499760154204","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/bulData.do?method=index&spaceType=3","resourceCode":"F05_bulIndexGroup"},{"name":"单位公告","id":"-4161126842094894391","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/bulData.do?method=index&spaceType=2","resourceCode":"F05_bulIndexAccount"}],"url":null,"resourceCode":null},{"name":"讨论","id":"7076330043303739587","target":"","icon":"","sorted":false,"items":[{"name":"集团讨论","id":"-2343445729455944069","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/bbs.do?method=listLatestFiveArticleAndAllBoard&group=true","resourceCode":"F05_bbsIndexGroup"},{"name":"单位讨论","id":"-1089588988266921304","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/bbs.do?method=listLatestFiveArticleAndAllBoard&group=false","resourceCode":"F05_bbsIndexAccount"}],"url":null,"resourceCode":null},{"name":"调查","id":"-848013052253156204","target":"","icon":"","sorted":false,"items":[{"name":"集团调查","id":"-504345917734171973","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/inquirybasic.do?method=recent_or_check&group=group","resourceCode":"F05_inquiryIndexGroup"},{"name":"单位调查","id":"-3289695524616125489","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/inquirybasic.do?method=recent_or_check&group=account","resourceCode":"F05_inquiryIndexAccount"}],"url":null,"resourceCode":null}],"url":null,"resourceCode":null},{"name":"协同驾驶舱","id":"7256192114101012975","target":"","icon":"PerformanceAnalysis.png","sorted":true,"items":[{"name":"主题空间","id":"-8868445576873029754","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/portal\/spaceController.do?method=showThemSpace&themType=23","resourceCode":"T03_performance_analysis"},{"name":"绩效查询","id":"-8684794008633326019","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/performanceReport\/performanceQuery.do?method=queryIndex","resourceCode":"F08_queryindex"},{"name":"协同立方","id":"-4085369113353764326","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/colCube\/colCube.do?method=goColCube","resourceCode":"F08_colCube"}],"url":null,"resourceCode":null},{"name":"综合办公","id":"6684467749913774069","target":"","icon":"Service.png","sorted":true,"items":[{"name":"车辆管理","id":"1129626726747226288","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/autoInfo.do?method=index","resourceCode":"F03_officeAuto"},{"name":"办公用品管理","id":"3673124742736727834","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/stockInfo.do?method=index","resourceCode":"F03_officeStock"},{"name":"办公设备管理","id":"-2011248634280391103","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/asset.do?method=jumpUrl&url=office\/asset\/frameset","resourceCode":"F03_officeAsset"},{"name":"图书资料管理","id":"6224428167828947368","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/book.do?method=jumpUrl&url=office\/book\/frameset","resourceCode":"F03_officeBook"}],"url":null,"resourceCode":null},{"name":"我的工具","id":"3882007168396053391","target":"","icon":"PersonalTools.png","sorted":true,"items":[{"name":"电子邮件","id":"-6534789333929803035","target":"","icon":"","sorted":false,"items":[{"name":"写邮件","id":"-8038536378586215881","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/webmail.do?method=create","resourceCode":"F12_mailcreate"},{"name":"收件箱","id":"-6390872192282179183","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/webmail.do?method=list&jsp=inbox","resourceCode":"F13_mailinbox"},{"name":"发件箱","id":"-748662200447120889","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/webmail.do?method=list&jsp=sent","resourceCode":"F14_mailsent"},{"name":"草稿箱","id":"6042012936312144710","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/webmail.do?method=list&jsp=draft","resourceCode":"F15_maildraft"},{"name":"垃圾箱","id":"-2449314684162260959","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/webmail.do?method=list&jsp=trash","resourceCode":"F16_mailtrash"},{"name":"邮件设置","id":"-7438136955784442882","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/webmail.do?method=list&jsp=set","resourceCode":"F17_mailset"},{"name":"查找邮件","id":"-793039369049323516","target":"mainfrm","icon":"","sorted":false,"items":null,"url":"\/webmail.do?method=search","resourceCode":"F18_mailsearch"}],"url":null,"resourceCode":null},{"name":"综合查询","id":"-8434000500218049565","target":"mainfrm","icon":"b.jpg","sorted":false,"items":null,"url":"\/isearch.do?method=index","resourceCode":"F12_isearch"},{"name":"通讯录","id":"-567434236207741830","target":"mainfrm","icon":"b.jpg","sorted":false,"items":null,"url":"\/addressbook.do?method=homeEntry","resourceCode":"F12_addressbook"},{"name":"便签","id":"-6430227679354337273","target":"mainfrm","icon":"b.jpg","sorted":false,"items":null,"url":"\/commonTools.do?method=notepager","resourceCode":"F12_notepager"},{"name":"计算器","id":"2802045511217858838","target":"mainfrm","icon":"b.jpg","sorted":false,"items":null,"url":"\/commonTools.do?method=calculator","resourceCode":"F12_calculator"},{"name":"万年历","id":"5209333621490863516","target":"mainfrm","icon":"b.jpg","sorted":false,"items":null,"url":"\/commonTools.do?method=calendar","resourceCode":"F12_calendar"},{"name":"常用链接","id":"-2858576481537275006","target":"mainfrm","icon":"b.jpg","sorted":false,"items":null,"url":"\/portal\/linkSystemController.do?method=linkSystemMore&doType=1","resourceCode":"T03_conmmonList"},{"name":"系统帮助","id":"1450774369316718139","target":"newWindow","icon":"","sorted":false,"items":null,"url":"\/main.do?method=showHelp","resourceCode":"F13_help"},{"name":"关于A8","id":"-5810051334704771402","target":"newWindow","icon":"","sorted":false,"items":null,"url":"\/main.do?method=showAbout","resourceCode":"T3_showAbout"}],"url":null,"resourceCode":null},{"name":"工作服管理","id":"-1972138154557550733","target":null,"icon":"common.png","sorted":true,"items":[{"name":"工作服领取申请单","id":"13815697383913","target":null,"icon":"common.png","sorted":false,"items":null,"url":"\/collaboration\/collaboration.do?method=newColl&from=bizconfig&firstName=%E5%B7%A5%E4%BD%9C%E6%9C%8D%E7%AE%A1%E7%90%86&secondName=%E5%B7%A5%E4%BD%9C%E6%9C%8D%E9%A2%86%E5%8F%96%E7%94%B3%E8%AF%B7%E5%8D%95&menuId=-1972138154557550733&templateId=-6067911603596343851","resourceCode":"000_\/collabora_33740"},{"name":"工服领用历史","id":"13815697384065","target":null,"icon":"common.png","sorted":false,"items":null,"url":"\/form\/business.do?method=listBizColList&srcFrom=bizconfig&firstName=%E5%B7%A5%E4%BD%9C%E6%9C%8D%E7%AE%A1%E7%90%86&secondName=%E5%B7%A5%E6%9C%8D%E9%A2%86%E7%94%A8%E5%8E%86%E5%8F%B2&menuId=-1972138154557550733&templeteId=-6067911603596343851","resourceCode":"000_\/form\/busi_79586"}],"url":null,"resourceCode":null},{"name":"资质、证照借阅","id":"-3731909920218725974","target":null,"icon":"common.png","sorted":true,"items":[{"name":"资质、证照信息","id":"14072950031971","target":null,"icon":"common.png","sorted":false,"items":null,"url":"\/form\/formData.do?method=getFormMasterDataList&srcFrom=bizconfig&firstName=%E8%B5%84%E8%B4%A8%E3%80%81%E8%AF%81%E7%85%A7%E5%80%9F%E9%98%85&secondName=%E8%B5%84%E8%B4%A8%E3%80%81%E8%AF%81%E7%85%A7%E4%BF%A1%E6%81%AF&formId=-653897110033905618&formTemplateId=-952486862918627436&type=baseInfo","resourceCode":"000_\/form\/form_85849"},{"name":"资质、证照借阅审批单","id":"14077173402611","target":null,"icon":"common.png","sorted":false,"items":null,"url":"\/collaboration\/collaboration.do?method=newColl&from=bizconfig&firstName=%E8%B5%84%E8%B4%A8%E3%80%81%E8%AF%81%E7%85%A7%E5%80%9F%E9%98%85&secondName=%E8%B5%84%E8%B4%A8%E3%80%81%E8%AF%81%E7%85%A7%E5%80%9F%E9%98%85%E5%AE%A1%E6%89%B9%E5%8D%95&menuId=-3731909920218725974&templateId=5752499590682395142","resourceCode":"000_\/collabora_82078"},{"name":"资质、证照借阅审批单(列表)","id":"14077173402753","target":null,"icon":"common.png","sorted":false,"items":null,"url":"\/form\/business.do?method=listBizColList&srcFrom=bizconfig&firstName=%E8%B5%84%E8%B4%A8%E3%80%81%E8%AF%81%E7%85%A7%E5%80%9F%E9%98%85&secondName=%E8%B5%84%E8%B4%A8%E3%80%81%E8%AF%81%E7%85%A7%E5%80%9F%E9%98%85%E5%AE%A1%E6%89%B9%E5%8D%95%28%E5%88%97%E8%A1%A8%29&menuId=-3731909920218725974&templeteId=5752499590682395142","resourceCode":"000_\/form\/busi_21308"}],"url":null,"resourceCode":null},{"name":"请款管理","id":"-4546694776661194736","target":null,"icon":"common.png","sorted":true,"items":[{"name":"请款审批单","id":"14361004610821","target":null,"icon":"common.png","sorted":false,"items":null,"url":"\/collaboration\/collaboration.do?method=newColl&from=bizconfig&firstName=%E8%AF%B7%E6%AC%BE%E7%AE%A1%E7%90%86&secondName=%E8%AF%B7%E6%AC%BE%E5%AE%A1%E6%89%B9%E5%8D%95&menuId=-4546694776661194736&templateId=-5941230379804703032","resourceCode":"000_\/collabora_81079"},{"name":"发票结算单","id":"14361004638475","target":null,"icon":"common.png","sorted":false,"items":null,"url":"\/collaboration\/collaboration.do?method=newColl&from=bizconfig&firstName=%E8%AF%B7%E6%AC%BE%E7%AE%A1%E7%90%86&secondName=%E5%8F%91%E7%A5%A8%E7%BB%93%E7%AE%97%E5%8D%95&menuId=-4546694776661194736&templateId=1654126428832156452","resourceCode":"000_\/collabora_84651"},{"name":"业务人员查询信息","id":"14360942844061","target":null,"icon":"common.png","sorted":false,"items":null,"url":"\/form\/formData.do?method=getFormMasterDataList&srcFrom=bizconfig&firstName=%E8%AF%B7%E6%AC%BE%E7%AE%A1%E7%90%86&secondName=%E4%B8%9A%E5%8A%A1%E4%BA%BA%E5%91%98%E6%9F%A5%E8%AF%A2%E4%BF%A1%E6%81%AF&formId=-1500345037204142385&formTemplateId=2562725312317964513&type=baseInfo","resourceCode":"000_\/form\/form_68007"},{"name":"请款审批单(列表)","id":"14361004610893","target":null,"icon":"common.png","sorted":false,"items":null,"url":"\/form\/business.do?method=listBizColList&srcFrom=bizconfig&firstName=%E8%AF%B7%E6%AC%BE%E7%AE%A1%E7%90%86&secondName=%E8%AF%B7%E6%AC%BE%E5%AE%A1%E6%89%B9%E5%8D%95%28%E5%88%97%E8%A1%A8%29&menuId=-4546694776661194736&templeteId=-5941230379804703032","resourceCode":"000_\/form\/busi_48498"},{"name":"发票结算单(列表)","id":"14361004638527","target":null,"icon":"common.png","sorted":false,"items":null,"url":"\/form\/business.do?method=listBizColList&srcFrom=bizconfig&firstName=%E8%AF%B7%E6%AC%BE%E7%AE%A1%E7%90%86&secondName=%E5%8F%91%E7%A5%A8%E7%BB%93%E7%AE%97%E5%8D%95%28%E5%88%97%E8%A1%A8%29&menuId=-4546694776661194736&templeteId=1654126428832156452","resourceCode":"000_\/form\/busi_72477"}],"url":null,"resourceCode":null}];
+  $.ctx.space = [["2306505623437658455",null,"\/seeyon\/personal\/-9095585739310150737_D.psml","个人空间","0","1","5","2"],["1855866118197365620",null,"\/seeyon\/corporation\/-9095585739310150737.psml","北分空间","0","5","2","2"],["3542421856666798216",null,"\/seeyon\/group\/-1730833917365171641.psml","纳克空间","0","6","3","2"],["876852643659465907",null,"\/seeyon\/custom\/876852643659465907.psml","财务空间(纳克职能部门)","0","100","4","2"]];
+  $.ctx.template = [{"id":"141322537970846464","name":"首页-蓝色标准风格","portalHotspots":[{"name":"集团LOGO","type":1,"description":"","module":1,"entityId":"-9095585739310150737","display":1,"hotspotkey":"groupLogo","hotspotvalue":"default\/images\/logo.png","entityLevel":"Group","tiling":0,"ext3":"1","ext1":"0","ext2":"0","ext4":"-9095585739310150737","ext5":null,"ext7":null,"ext6":null,"ext8":null,"ext9":null,"ext10":null,"templateid":"141322537970846464","id":"-1","new":true,"extraMap":{}},{"name":"单位LOGO","type":1,"description":"","module":1,"entityId":"-9095585739310150737","display":0,"hotspotkey":"accountLogo","hotspotvalue":"default\/images\/logo.png","entityLevel":"Account","tiling":0,"ext3":"1","ext1":"1","ext2":"0","ext4":"-9095585739310150737","ext5":null,"ext7":null,"ext6":null,"ext8":null,"ext9":null,"ext10":null,"templateid":"141322537970846464","id":"-1","new":true,"extraMap":{}},{"name":"集团简称","type":0,"description":"","module":1,"entityId":"-9095585739310150737","display":0,"hotspotkey":"groupName","hotspotvalue":"钢研纳克","entityLevel":"Group,Account","tiling":0,"ext3":"1","ext1":"2","ext2":"1","ext4":"-9095585739310150737","ext5":null,"ext7":null,"ext6":null,"ext8":null,"ext9":null,"ext10":null,"templateid":"141322537970846464","id":"-1","new":true,"extraMap":{}},{"name":"单位名称","type":0,"description":"","module":1,"entityId":"-9095585739310150737","display":0,"hotspotkey":"accountName","hotspotvalue":"北京仪器分公司","entityLevel":"Account","tiling":0,"ext3":"1","ext1":"3","ext2":"1","ext4":"-9095585739310150737","ext5":null,"ext7":null,"ext6":null,"ext8":null,"ext9":null,"ext10":null,"templateid":"141322537970846464","id":"-1","new":true,"extraMap":{}},{"name":"横幅图片","type":1,"description":"","module":1,"entityId":"-9095585739310150737","display":1,"hotspotkey":"hbackpic","hotspotvalue":"default\/11111111111.jpg","entityLevel":"Group,Account","tiling":0,"ext3":"0","ext1":"4","ext2":"0","ext4":"-9095585739310150737","ext5":null,"ext7":null,"ext6":null,"ext8":null,"ext9":null,"ext10":null,"templateid":"141322537970846464","id":"-1","new":true,"extraMap":{}},{"name":"首页背景图","type":1,"description":"","module":1,"entityId":"-9095585739310150737","display":1,"hotspotkey":"backpic","hotspotvalue":"default\/images\/index_bg.jpg","entityLevel":"Group,Account,Member","tiling":1,"ext3":"0","ext1":"5","ext2":"0","ext4":"-9095585739310150737","ext5":null,"ext7":null,"ext6":null,"ext8":null,"ext9":null,"ext10":null,"templateid":"141322537970846464","id":"-1","new":true,"extraMap":{}},{"name":"空间页签颜色","type":2,"description":"","module":1,"entityId":"-9095585739310150737","display":1,"hotspotkey":"sbcolor","hotspotvalue":"#397ac0","entityLevel":"Group,Account,Member","tiling":0,"ext3":"0","ext1":"6","ext2":"0","ext4":"-9095585739310150737","ext5":null,"ext7":null,"ext6":null,"ext8":null,"ext9":null,"ext10":null,"templateid":"141322537970846464","id":"-1","new":true,"extraMap":{}},{"name":"左面板背景色","type":2,"description":"","module":1,"entityId":"-9095585739310150737","display":1,"hotspotkey":"kbcolor","hotspotvalue":"#e6e6e6","entityLevel":"Group,Account,Member","tiling":0,"ext3":"0","ext1":"7","ext2":"0","ext4":"-9095585739310150737","ext5":null,"ext7":null,"ext6":null,"ext8":null,"ext9":null,"ext10":null,"templateid":"141322537970846464","id":"-1","new":true,"extraMap":{}}]}];
+  $.ctx.shortcut = [{"sort":"1","items":[{"sort":"1","items":[],"checked":true,"idKey":"menu_-7732004021612100617","pIdKey":"menu_-8830502753594488956","nameKey":"新建事项","urlKey":"\/collaboration\/collaboration.do?method=newColl&rescode=F01_newColl","iconKey":"commonshotcut.gif","iconSkin":""},{"sort":"3","items":[],"checked":true,"idKey":"menu_9162200917700461620","pIdKey":"menu_-8830502753594488956","nameKey":"新建计划","urlKey":"\/plan\/plan.do?method=newPlan","iconKey":"commonshotcut.gif","iconSkin":""},{"sort":"4","items":[],"checked":true,"idKey":"menu_-161633461972480845","pIdKey":"menu_-8830502753594488956","nameKey":"新建会议","urlKey":"\/meetingNavigation.do?method=entryManager&entry=meetingArrange&listType=create","iconKey":"commonshotcut.gif","iconSkin":""},{"sort":"5","items":[],"checked":true,"idKey":"menu_4599441089782106533","pIdKey":"menu_-8830502753594488956","nameKey":"新建邮件","urlKey":"\/webmail.do?method=create","iconKey":"commonshotcut.gif","iconSkin":""}],"checked":true,"idKey":"menu_-8830502753594488956","pIdKey":"menu_0","nameKey":"新建","urlKey":"","iconKey":"New.gif","iconSkin":""},{"sort":"2","items":[],"checked":true,"idKey":"menu_6975672660502134921","pIdKey":"menu_0","nameKey":"时间安排","urlKey":"\/calendar\/calEvent.do?method=arrangeTime","iconKey":"SchedulePlan.gif","iconSkin":""},{"sort":"3","items":[],"checked":true,"idKey":"menu_-7506057464002293794","pIdKey":"menu_0","nameKey":"绩效查询","urlKey":"\/performanceReport\/performanceQuery.do?method=queryIndex","iconKey":"PerformanceQuery.gif","iconSkin":""},{"sort":"4","items":[],"checked":true,"idKey":"menu_6483964819832588449","pIdKey":"menu_0","nameKey":"通讯录","urlKey":"\/addressbook.do?method=homeEntry","iconKey":"Contacts.gif","iconSkin":""},{"sort":"5","items":[],"checked":true,"idKey":"menu_5495680312369824433","pIdKey":"menu_0","nameKey":"关联系统","urlKey":"\/portal\/linkSystemController.do?method=linkSystemMore&doType=0","iconKey":"Related.gif","iconSkin":""},{"sort":"6","items":[],"checked":true,"idKey":"menu_-1676919384944393023","pIdKey":"menu_0","nameKey":"我的邮件","urlKey":"\/webmail.do?method=list&jsp=inbox","iconKey":"Inbox.gif","iconSkin":""},{"sort":"7","items":[],"checked":true,"idKey":"menu_7433919187500615362","pIdKey":"menu_0","nameKey":"综合查询","urlKey":"\/isearch.do?method=index","iconKey":"SearchEngine.gif","iconSkin":""}];
+  $.ctx.concurrentAccount = [{"name":"北京仪器分公司","id":"-9095585739310150737","entityType":"Account","accessIds":[],"isCanAccess":true,"accessScopeLevels":[],"childrenAccounts":[],"properties":{"unitCategory":null,"unitMail":"","fax":"","accessLevels":null,"address":"","chiefLeader":"","zipCode":"","ldapOu":"","telephone":"","permissionType":"0","ipAddress":""},"type":"Account","path":"00000004","valid":true,"shortName":"北京仪器分公司","group":false,"superior":"-1730833917365171641","isInternal":true,"parentPath":"0000","isGroup":false,"levelScope":-1,"sortIdType":"1","secondName":"","superiorName":"","description":"","status":1,"code":"3","orgAccountId":"-9095585739310150737","createTime":"2018-02-05 15:45","updateTime":"2018-02-05 15:45","sortId":"21","enabled":true,"isDeleted":false}];
+  $.ctx.handleMenu = function(handle) {
+    var mu = $.ctx.menu;
+    if (mu) {
+      for ( var i = 0; i < mu.length; i++) {
+        _hd(mu[i], handle);
+      }
+    }
+    return mu;
+  }
+  function _hd(mu, handle) {
+    handle(mu);
+    var cm = mu.items;
+    if (cm) {
+      for ( var i = 0; i < cm.length; i++) {
+        var c = cm[i];
+        _hd(c, handle);
+      }
+    }
+  }
+  //å¤´åå°å
+  var memberImageUrl = "/seeyon/apps_res/v3xmain/images/personal/pic.gif";
+  //èåæ°æ®
+  var menu = $.ctx.menu;
+  var memberMenus = $.ctx.menu;
+  //èåé»è®¤æ¾ç¤ºä¸ªæ°
+  var _default = 8;
+  var currentSpaceId = null;
+  var currentSpaceForNC = "";
+  
+  //ä¸»é¡µé¢å·æ°æ§å¶åé
+  var isOpenCloseWindow = true;
+  
+  var hasShowSpaceOwnerMenu = false;
+  
+  var isAdmin = "false";
+  
+  var isCtpTop = true;
+  
+  //æ¾ç¤ºäº§åå¯¼èª
+  var productVersion = "A8";
+  var productView_check = $.ctx.customize.productView;
+  var productView_Obj;
+  var isProductViewRefresh = "";
+  function showProductView(){
+      productView_Obj = $.dialog({
+        id:'productView',
+          width: 1000,
+          height: 640,
+          checkMax : false,
+          type: 'panel',
+          url:"/seeyon/portal/portalController.do?method=showProductView",
+          shadow:true,
+          showMask:true,
+          panelParam:{
+            'show':false,
+            'margins':false
+          }
+      });
+  }
+  
+  function logout(closeAll){
+      //ç¬¬ä¸æ¹æ¥è¡¨ï¼å¸è½¯æ¥è¡¨ï¼éåºç»å½
+      if("false" == "true") {
+          logoutFR(); 
+      }
+	  if (closeAll) {
+		  isDirectClose = false;
+		  window.close();
+	  } else {
+      	  //UCä¸­å¿
+          if("true" == "true" && "false" != "true"){
+            var isExit = clickCloseUC();
+            if (!isExit) {
+              return;
+            }
+          }
+          
+		  $.confirm({
+	        'type' : 1,
+	        'msg': "您确定要退出系统？",
+	        ok_fn: function () {
+	          isDirectClose = false;
+	          if("true" == "true" && "false" != "true"){
+	            closeUC();//å³é­UC
+	          }
+	          //ç»æç²¾çµ
+		      unloadA8genius = true;
+		      endA8genius();
+	      try { //OA-19281 ä¿®å¤IEä¸ç¹å»éåºï¼ä½è§¦åiframeå·¥ä½åºåçonbeforeunloadäºä»¶å¹¶éæ©çå¨å½åé¡µé¢æ¶ï¼æ­¤è·³è½¬ä¼åºç°jså¼å¸¸çé®é¢ï¼éè¿å¿½ç¥å¼å¸¸çæ¹å¼å¤ç
+	          window.location.href = _ctxPath+"/main.do?method=logout";
+              }catch(e){}
+	        },
+	        cancel_fn:function(){
+	          isDirectClose = true;
+	        }
+	  	  });
+	  }
+  }
+  function chanageLoginAccount(accountId){
+    var accountList = $.ctx.concurrentAccount;
+    var chgAccountName = null;
+    for(var i=0 ; i < accountList.length; i++){
+      if(accountList[i].id == accountId){
+        chgAccountName = accountList[i].shortName;
+      }
+    }
+    $.confirm({
+      'type' : 1,
+      'msg': "您将进入 "+chgAccountName+" 办公!",
+      ok_fn: function () {
+        isOpenCloseWindow = false;
+        isDirectClose = false;
+        window.location.href = _ctxPath+"/main.do?method=changeLoginAccount&login.accountId="+accountId;
+      },
+      cancel_fn:function(){
+        isDirectClose = true;
+        $("#chanageLoginAccount").find("option").each(function(i,obj){
+            if(obj.value == $.ctx.CurrentUser.loginAccount){
+              obj.selected = true;
+            }else{
+              obj.selected = false;
+            }
+        });
+      }
+    });
+  }
+  var enterCount = 0;
+  
+  var dogHeadId = "";
+  
+  var passedCheck = false;
+
+  
+  var isCanSendSMS = "false";
+  
+  
+  var isEnableMsgSound = false;
+  
+  var msgClosedEnable = false;
+  
+  var isSysMessageWindowEyeable = false;
+  
+  var isPerMessageWindowEyeable = false;
+
+  //å­å¨æ¶æ¯
+  var msgProperties = new Properties();
+  //æ»å±æ¶æ¯ä¸ªæ°
+  var msgTotalCount = 0;
+  //æ¶æ¯é¾æ¥
+  var messageLinkConstants = new Properties();
+  //æ¯å¦ä¸ºç²¾çµæ¶æ¯
+  var isA8geniusMsg = false;
+  
+  var message_header_system_label = "系统消息";
+  var message_header_person_label = "在线消息";
+  var message_person_reply_label = "回复";
+  var message_header_unit_label = "条";
+  var message_header_close_alt = "关闭";
+  var message_header_max_alt = "最大化";
+  var message_header_mini_alt = "最小化";
+  var message_header_more_alt = "更多";
+  
+  //æ·»å "å¿å"åèµ·èåç§°ä½ä¸ºå¨å±åé
+  var ANNONYMOUS_NAME = "匿名";
+
+  var v3x = new V3X();
+  v3x.init("/seeyon", "zh-cn");
+  v3x.loadLanguage("/apps_res/agent/js/i18n");
+  
+  var indexErr = "请输入关键字";
+  
+  /**
+   * å¯ç è¶ææé
+   * @returns
+   */
+  function checkPwdIsExpired(){
+    //æç¤ºå¯ç è¿æ
+    //&& !v3x.isIpad
+    if(false){
+      
+          
+          
+              
+              var pwdMsg = $.messageBox({
+                  'type': 100,
+                  'msg': "<div class='msgbox_img_2' style='float:left'></div><div class='margin_t_5 margin_l_5' style='float:left'>密码已过期，请及时修改！</div>",
+                  'title': "系统提示",
+                  buttons: [{
+                      id:'btn1',
+                      text: "确定",
+                      handler: function () { toModifyPasswd();pwdMsg.close(); }
+                  }, {
+                      id:'btn2',
+                      text: "取消",
+                      handler: function () { pwdMsg.close(); }
+                  }]
+              });
+              
+          
+          
+      
+    }
+  }
+  
+  function toModifyPasswd(){
+    if("false"=="true"){
+            //ç³»ç»ç®¡çå
+            getCtpTop().main.location = "/seeyon/manager.do?method=managerFrame&result=true";
+            }else if("false"=="true"){
+            //å®¡è®¡ç®¡çå 
+                getCtpTop().main.location = "/seeyon/manager.do?method=managerFrame&from=audit&result=true";
+            }else if("false"=="true"){
+            //éå¢ç®¡çå
+                getCtpTop().main.location = "/seeyon/accountManager.do?method=groupManagerFrame&result=true";
+            }else if("false"=="true"){
+            //åä½ç®¡çå
+                getCtpTop().main.location = "/seeyon/accountManager.do?method=managerFrame&result=true";
+            }else {
+                getCtpTop().main.location = "/seeyon/individualManager.do?method=managerFrame";
+            }
+  }
+  
+  function agentAlert(){ //å¿é¡»æ¾å¨iframeåé¢ï¼åºç¨Iframeè¦è°ç¨
+    
+    if("false"=="true"){
+        var dialogAgent = $.dialog({
+            id: 'dialogAgent',
+            url: '/seeyon/agent.do?method=agentAlert&ids=&message=',
+            title: "提示",
+            width: 410,
+            height: 200
+        });
+    }
+  }
+</script><script language="javascript" type="text/javascript" charset="UTF-8" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/zh-cn_002.js"></script><script language="javascript" type="text/javascript" charset="UTF-8" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/license.js"></script><script language="javascript" type="text/javascript" charset="UTF-8" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/zh-cn.js"></script>
+<script type="text/javascript" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/jquery.js"></script>
+<script type="text/javascript" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/frame-common.js"></script>
+<link href="http://oa.ncschina.com/seeyon/common/images/A8/favicon.ico" type="image/x-icon" rel="icon">
+<link rel="stylesheet" type="text/css" href="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/frame-common.css">
+<script type="text/javascript">
+
+messageLinkConstants.put("message.link.formtrigger.msg.unflow", "/seeyon/content/content.do?method=index&isFullPage=true&moduleId={0}&moduleType={1}&rightId={2}&contentType=20&viewState=2");
+messageLinkConstants.put("message.link.cal.reply", "/seeyon/calendar/calEvent.do?method=editCalEvent&id={0}&random={1}");
+messageLinkConstants.put("message.link.news.writedetail", "/seeyon/newsData.do?method=writeDetail&id={0}&from=message");
+messageLinkConstants.put("message.link.edoc.done", "/seeyon/edocController.do?method=detailIFrame&from=Done&affairId={0}");
+messageLinkConstants.put("message.link.news.auditing", "/seeyon/newsData.do?method=audit&id={0}&from=message");
+messageLinkConstants.put("message.link.project.leaveWord", "/seeyon/guestbook.do?method=moreLeaveWordModel&project={1}&departmentId={0}&fromModel=top");
+messageLinkConstants.put("message.link.department.leaveWord", "/seeyon/guestbook.do?method=moreLeaveWordModel&project={1}&departmentId={0}&fromModel=top");
+messageLinkConstants.put("message.link.hr.salary.open", "/seeyon/hrViewSalary.do?method=viewSalary&fromMessage=true");
+messageLinkConstants.put("message.link.col.supervise", "/seeyon/collaboration/collaboration.do?method=summary&openFrom=supervise&summaryId={0}");
+messageLinkConstants.put("message.link.news.assessor.audit", "/seeyon/newsData.do?method=userView&id={0}&t={1}&auditFlag=0&from=message");
+messageLinkConstants.put("message.link.bul.alreadyaudit", "/seeyon/bulData.do?method=userView&id={0}&t={1}&auditFlag=0&from=message");
+messageLinkConstants.put("message.link.edoc.sended", "/seeyon/edocController.do?method=detailIFrame&from=sended&affairId={0}");
+messageLinkConstants.put("message.link.bul.writedetail", "/seeyon/bulData.do?method=writeDetail&id={0}&from=message");
+messageLinkConstants.put("message.link.mt.summary_send", "/seeyon/mtMeeting.do?method=showSummary&id={0}");
+messageLinkConstants.put("message.link.edoc.docview", "/seeyon/edocController.do?method=detailIFrame&from=doc&summaryId={0}");
+messageLinkConstants.put("message.link.plan.summary", "/seeyon/plan/plan.do?method=initPlanDetailFrame&planId={0}");
+messageLinkConstants.put("message.link.doc.open.recommend", "doc/knowledgeController.do?method=getDocRecommend");
+messageLinkConstants.put("message.link.sap.synchLog", "/seeyon/sap.do?method=synchLog");
+messageLinkConstants.put("message.link.news.open", "/seeyon/newsData.do?method=userView&id={0}&auditFlag=0&from=message");
+messageLinkConstants.put("message.link.office.asset", "/seeyon/asset.do?method=create_perm&from=message&fs=1&id={0}");
+messageLinkConstants.put("message.link.edoc.pending", "/seeyon/edocController.do?method=detailIFrame&from=Pending&affairId={0}");
+messageLinkConstants.put("message.link.space.leaveWord", "/seeyon/guestbook.do?method=moreLeaveWordModel&project={1}&departmentId={0}&fromModel=top&custom=true");
+messageLinkConstants.put("message.link.doc.open.learning", "/seeyon/doc.do?method=docOpenIframeOnlyId&docResId={0}&openFrom=docLearning");
+messageLinkConstants.put("message.link.col.done.detail", "/seeyon/collaboration/collaboration.do?method=summary&openFrom=listDone&affairId={0}&contentAnchor={1}");
+messageLinkConstants.put("message.link.exchange.register.receive", "/seeyon/exchangeEdoc.do?method=edit&id={0}&modelType=received");
+messageLinkConstants.put("message.link.doc.open.index", "/seeyon/doc.do?method=docOpenIframeOnlyId&docResId={0}&openFrom=glwd");
+messageLinkConstants.put("message.link.office.stock", "/seeyon/stockAudit.do?method=edit&from=message&applyId={0}");
+messageLinkConstants.put("message.link.doc.openfromborrow", "/seeyon/doc.do?method=docOpenIframeOnlyId&docResId={0}&fromFlag=BorrowMsg&isBorrowOrShare=true");
+messageLinkConstants.put("message.link.doc.open.only", "/seeyon/doc.do?method=docOpenIframeOnlyId&docResId={0}");
+messageLinkConstants.put("message.link.taskmanage.view", "/seeyon/taskmanage/taskinfo.do?method=taskDetailIndex&id={0}");
+messageLinkConstants.put("message.link.plan.send", "/seeyon/plan/plan.do?method=initPlanDetailFrame&planId={0}");
+messageLinkConstants.put("message.link.edoc.supervise.detail", "/seeyon/edocSupervise.do?method=detail&summaryId={0}&isOpenFrom=supervise");
+messageLinkConstants.put("message.link.bbs_reply", "/seeyon/bbs.do?method=showPost&articleId={0}&boardId={1}&resourceMethod={2}&from=message");
+messageLinkConstants.put("message.link.doc.folder.open", "/seeyon/doc.do?method=docHomepageIndex&docResId={0}");
+messageLinkConstants.put("message.link.bbs.auditing", "/seeyon/bbs.do?method=showPost&articleId={0}&boardId={1}&from=message");
+messageLinkConstants.put("message.link.office.auto", "/seeyon/autoAudit.do?method=edit&from=message&applyId={0}");
+messageLinkConstants.put("message.link.doc.open.borrowHandle", "doc/knowledgeController.do?method=borrowHandle");
+messageLinkConstants.put("message.link.exchange.sent", "/seeyon/exchangeEdoc.do?method=edit&modelType=sent&id={0}&affairId={1}");
+messageLinkConstants.put("message.link.col.waiSend", "/seeyon/collaboration/collaboration.do?method=summary&openFrom=listWaitSend&affairId={0}&contentAnchor={1}");
+messageLinkConstants.put("message.link.exchange.registered", "/seeyon/edocController.do?method=edocRegister&registerId={0}");
+messageLinkConstants.put("message.link.NC.message", "javascript:getA8Top().openNCPending('{0}', '{1}', '{2}')");
+messageLinkConstants.put("message.link.project.info", "/seeyon/project.do?method=projectInfo&projectId={0}");
+messageLinkConstants.put("message.link.bul.alreadyauditing", "/seeyon/bulData.do?method=userView&id={0}&auditFlag=0&from=message");
+messageLinkConstants.put("message.link.mt.send", "/seeyon/mtMeeting.do?method=myDetailFrame&id={0}&proxy={1}&proxyId={2}&state=10");
+messageLinkConstants.put("message.link.col.done.newflow", "/seeyon/collaboration/collaboration.do?method=summary&openFrom=listDone&affairId={0}&contentAnchor={1}&newflowBaseSummaryId={2}&processId={3}&relativeProcessId={4}");
+messageLinkConstants.put("message.link.bulletin.open", "/seeyon/bulData.do?method=userView&id={0}&auditFlag=0&from=message");
+messageLinkConstants.put("message.link.exchange.register.pending", "/seeyon/edocController.do?method=entryManager&entry=recManager&listType=newEdoc&comm=register&edocType={0}&recieveId={1}&edocId={2}");
+messageLinkConstants.put("message.link.inq.alreadyauditing", "/seeyon/inquirybasic.do?method=showInquiryFrame&bid={0}&alauditFlag=0&from=message");
+messageLinkConstants.put("message.link.exchange.send", "/seeyon/exchangeEdoc.do?method=sendDetail&modelType=toSend&id={0}&affairId={1}");
+messageLinkConstants.put("message.link.relateMember.set.leader", "/seeyon/relateMember.do?method=setRelateMember&memberId={0}&relatedId={1}&oper={2}");
+messageLinkConstants.put("message.link.plan.reply", "/seeyon/plan/plan.do?method=initPlanDetailFrame&planId={0}");
+messageLinkConstants.put("message.link.mt.reply", "/seeyon/mtMeeting.do?method=myDetailFrame&id={0}&state=10&contentAnchor={1}");
+messageLinkConstants.put("message.link.mt.invite", "/seeyon/mtMeeting.do?method=myDetailFrame&id={0}&proxy={1}&proxyId={2}&state=10");
+messageLinkConstants.put("message.link.bul.auditing", "/seeyon/bulData.do?method=audit&id={0}&from=message");
+messageLinkConstants.put("message.link.inquiry.send", "/seeyon/inquirybasic.do?method=showInquiryFrame&bid={0}&surveytypeid={1}&message=message");
+messageLinkConstants.put("message.link.news.assessor.auditing", "/seeyon/newsData.do?method=userView&id={0}&auditFlag=0&from=message");
+messageLinkConstants.put("message.link.uc.fax.message", "/seeyon/ext/fax/fax/faxDetail.jsp?id={0}");
+messageLinkConstants.put("message.link.formtrigger.msg.flow", "/seeyon/collaboration/collaboration.do?method=summary&openFrom=listDone&summaryId={0}");
+messageLinkConstants.put("message.link.cal.view", "/seeyon/calendar/calEvent.do?method=editCalEvent&id={0}&random={1}");
+messageLinkConstants.put("message.link.mt.summary", "/seeyon/mtSummary.do?method=myDetailFrame&mId={0}&recordId={1}&proxy={2}&proxyId={3}");
+messageLinkConstants.put("message.link.edoc.supervise.main", "/seeyon/edocSupervise.do?method=mainEntry");
+messageLinkConstants.put("message.link.office.meetingroom", "/seeyon/meetingroom.do?method=createPerm&openWin=1&id={0}");
+messageLinkConstants.put("message.link.taskmanage.viewfromreply", "/seeyon/taskmanage/taskinfo.do?method=taskDetailIndex&id={0}");
+messageLinkConstants.put("message.link.mt.room_perm", "/seeyon/meetingroom.do?method=createPerm&id={0}&proxy={1}&proxyId={2}&openWin=1");
+messageLinkConstants.put("message.link.news.alreadyauditing", "/seeyon/newsData.do?method=audit&id={0}&from=message");
+messageLinkConstants.put("message.link.edoc.waitSend", "/seeyon/edocController.do?method=detailIFrame&from=listWaitSend&affairId={0}");
+messageLinkConstants.put("message.link.mt.mtCreater", "/seeyon/mtMeeting.do?method=myDetailFrame&id={0}&proxy={1}&proxyId={2}&state=10");
+messageLinkConstants.put("message.link.office.book", "/seeyon/book.do?method=create_perm&from=message&show=1&id={0}");
+messageLinkConstants.put("message.link.webservice.message", "javascript:getA8Top().v3x.openWindow({url : '{0}',workSpace: 'yes'})");
+messageLinkConstants.put("message.link.inq.auditing", "/seeyon/inquirybasic.do?method=survey_check&bid={0}&from=message");
+messageLinkConstants.put("message.link.taskmanage.viewfeedback", "/seeyon/taskmanage/taskinfo.do?method=taskDetailIndex&id={0}&msgLocation=Feedback");
+messageLinkConstants.put("message.link.bbs.open", "/seeyon/bbs.do?method=showPost&articleId={0}&resourceMethod={1}&from=message");
+messageLinkConstants.put("message.link.exchange.receive", "/seeyon/exchangeEdoc.do?method=receiveDetail&modelType=toReceive&id={0}");
+messageLinkConstants.put("message.link.col.pending", "/seeyon/collaboration/collaboration.do?method=summary&openFrom=listPending&affairId={0}&contentAnchor={1}");
+messageLinkConstants.put("message.link.formbizconfig.view", "/seeyon/form/formSection.do?method=show&type=view&id={0}&from=Message");
+
+
+
+
+
+var isNeedEndA8genius = true;
+
+//å»¶è¿1ç§å è½½ç²¾çµæ§ä»¶
+var ufa = null;
+var unloadA8genius = false;
+var isGeniusReady = 0;
+setTimeout(initGenius, 1000);
+function initGenius(){
+    try {
+        // å è½½ç²¾çµæ§ä»¶åå·²ç»ç»åºï¼åæ­¢å è½½æ§ä»¶
+        if (unloadA8genius) {
+            return;
+        }
+        
+        if (ufa == null || typeof(ufa) == 'undefined') {
+            ufa = new ActiveXObject("UFIDA_IE_Addin.Assistance");
+            var topA8 = document.getElementById('top-a8');
+            if (topA8) {
+                topA8.setAttribute("title", v3x.getMessage("V3XLang.genius"));
+            }
+            if ("false" == "false") {
+                ufa.StartupAssistance('http://oa.ncschina.com', '80', "mahongquan", "马红权", 'ACBA94B0BDC376D603A9D0F0060F7239');
+            }
+        }
+    } catch (e) {}
+    
+    isGeniusReady = 1;
+    showDowloadPicture("quartz");
+}
+
+/**
+ * æ¹éä¸è½½å¾æ æ§å¶
+ */
+var flag = true;
+function showDowloadPicture(type){
+    if (flag) {
+        var downloadDiv = document.getElementById("download-td");
+        if (downloadDiv) {
+            if ("doc" == type) {
+                downloadDiv.style.display = "";
+                flag = false;
+            } else {
+                if (getCtpTop().xmlDoc) {
+                    var result = getCtpTop().xmlDoc.GetDownloadState("7298597487386510009");
+                    if (result == "FD_STATE_DOWNLOADING") {
+                        downloadDiv.style.display = "";
+                        flag = false;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * æ¹éä¸è½½çªå£
+ */
+function showDownloadFile(){
+    try {
+        getCtpTop().xmlDoc.ShowWindow("7298597487386510009");
+    } catch (e) {
+        alert(v3x.getMessage("V3XLang.batch_download_control_error"));
+    }
+}
+
+function checkGeniusVersion(){
+    try {
+        var geniusVersion = ufa.getGeniusVersion();
+        if (geniusVersion == null || geniusVersion != "5.0.0.1") {
+        	alert(v3x.getMessage("V3XLang.genius_version"));
+            return false;
+        }
+    } catch (e) {
+    	alert(v3x.getMessage("V3XLang.genius_version"));
+        return false;
+    }
+    return true;
+}
+
+
+/**
+ * æç²¾çµæ¶åæ¢å°ç²¾çµ,æ²¡ç²¾çµæ¶å¼¹åºå³äº;
+ */
+function startA8genius(){
+    if (isGeniusReady < 1) {
+    	return;
+    }
+    
+    try {
+        if (ufa == null || typeof(ufa) == 'undefined') {
+            showAbout();
+        } else {
+            if (!checkGeniusVersion()) {
+                return;
+            }
+
+        	//UCä¸­å¿
+			var isExit = true;
+          	if("true" == "true" && "false" != "true"){
+              isExit = clickCloseUC();
+          	}
+          	if (isExit) {
+          		if("true" == "true" && "false" != "true"){
+    	          closeUC();//å³é­UC
+    	        }
+                isNeedEndA8genius = false;
+          		logout(true);
+            }
+        }
+    } catch (e) {
+        showAbout();
+    }
+}
+
+function endA8genius(){
+    if (isNeedEndA8genius) {
+        try {
+            if (ufa == null || typeof(ufa) == 'undefined') {
+                ufa = new ActiveXObject("UFIDA_IE_Addin.Assistance");
+            }
+            ufa.LogoutUser("ACBA94B0BDC376D603A9D0F0060F7239");
+        } catch (e) {}
+    } else {
+        if (!checkGeniusVersion()) {
+            return;
+        }
+        ufa.DisplayAssistanceWindow("ACBA94B0BDC376D603A9D0F0060F7239");
+    }
+}
+
+//å³äºå¼¹åºçªå£
+function showAbout(){
+    var dialog = $.dialog({
+        id: "showAbout",
+        url: "/seeyon/main.do?method=showAbout",
+        width: 504,
+        height: 303,
+        title: "关于",
+        buttons: [{
+            text: "关闭",
+            handler: function () {
+                dialog.close();
+            }
+        }]
+    });
+}
+
+//ç³»ç»å¸®å©å¼¹åºçªå£
+function showHelp(){
+	var url = "/seeyon/help/user_2.html";
+	if ("false" == "true") {
+		url = "/seeyon/help/system_2.html";
+	} else if ("false" == "true") {
+		url = "/seeyon/help/audit_2.html";
+	} else if ("false" == "true") {
+		url = "/seeyon/help/group_2.html";
+	} else if ("false" == "true") {
+		url = "/seeyon/help/unit_2.html";
+	}
+	
+	v3x.openWindow({
+		url: url,
+		width:"700",
+		height:"640",
+		scrollbars:"yes",
+		resizable:"yes",
+		dialogType:"open"
+	});
+}
+
+var xmlDoc = null;
+if("false"!="true"){
+    getDom();
+}
+function getDom(){
+    if(xmlDoc == null){
+        try{
+            xmlDoc = new ActiveXObject( "SeeyonFileDownloadLib.SeeyonFileDownload");
+            xmlDoc.AddUserParam("zh_CN", "mahongquan", "ACBA94B0BDC376D603A9D0F0060F7239", "7298597487386510009");
+        }catch(ex1){
+          /**
+           * TODO:ææ¶å±è½æ§ä»¶å è½½å¼å¸¸
+           */
+            //alert("æ¹éä¸è½½æ§ä»¶å è½½éè¯¯ : " + ex1.message);
+        }
+    }
+    return xmlDoc;
+}
+var isDirectClose = true;
+var firstLeave = 0;
+window.onbeforeunload = function(){
+	firstLeave++;
+   function getActiveElement(win){
+	   try{
+		var currentWin = win.document.activeElement;
+		if(currentWin == null){return currentWin;}
+		for(var i = 0; i < 7; i++){
+			var _tg = currentWin.tagName.toLowerCase();
+			if(_tg!= 'iframe'){  
+				return currentWin;
+			}
+			else{
+				currentWin = currentWin.contentWindow.document.activeElement;
+			}
+		}
+		   
+     }catch(e){
+	   
+     }
+  }
+  if(isDirectClose){
+	if(document.all){
+	  var event = event = window.event || event;
+	  var _activeElement = getActiveElement(window);
+		if((firstLeave == 1)||(_activeElement == null) || (_activeElement!=null && _activeElement.tagName.toLowerCase() != 'a')){
+			window.event.returnValue = "";
+		}
+	}else{
+		return "";
+	}
+  }
+}
+window.onunload = onbeforeunload_handler;
+function onbeforeunload_handler(){
+  if(!onbeforunloadFlag){return;}
+  if(true && (typeof(isOpenCloseWindow) == "undefined" || isOpenCloseWindow)) {
+    isOpenCloseWindow = false;
+    
+    //å³é­UC
+    if("true" == "true" && "false" != "true"){
+        closeUC();
+    }
+
+  	//åæ¢ç²¾çµ
+	endA8genius();
+    if (!isNeedEndA8genius) {
+        return;
+    }
+    
+    var ua = navigator.userAgent;
+    if(ua.indexOf('Chrome') == -1) {
+      $.ajax({
+        url : _ctxPath + "/main.do?method=logout",
+        async : true
+      });
+      //OA-27717 IE10æä¸åalertå¤çï¼å¯è½ä¼äº§çéåºè¯·æ±åéå¤±è´¥ï¼ä½ä¸å­å¨å¤§çå®å¨éæ£ï¼å ä¸ºç³»ç»å·æå®æ¶æ£æµæºå¶ï¼30ç§å·¦å³ä¸æä½ä¼èªå¨æçº¿å¤çï¼
+      //if(navigator.appName == "Microsoft Internet Explorer" && ua.indexOf('MSIE 10') != -1)
+        //alert("已退出系统！");
+    }
+    //ç¬¬ä¸æ¹æ¥è¡¨ï¼å¸è½¯æ¥è¡¨ï¼éåºç»å½
+    if ("false" == "true") {
+    	logoutFR(); 
+    }
+  }
+}
+     //å¦ææç¬¬ä¸æ¹æ¥è¡¨ï¼å¸è½¯æ¥è¡¨ï¼æä»¶ï¼æ§è¡åç¹ç»å½
+	 if ("false" == "true") {
+         loginFR();
+	 }
+    /**åç¹ç»å½å°å¸è½¯æ¥è¡¨*/
+  function loginFR(){
+	  var thridReportManager_ = new thridReportManager();
+	  thridReportManager_.isConnect({success:function(retObj){
+		  if("false" != "true" && (retObj == "true" || retObj == true)){
+    	      var username = cjkEncode("mahongquan");
+    	      var url = "?op=touchfs&fsusername=" + username + "&fspassword=ThisUserCheckNeedIgnore";
+    	      $("head").append("<iframe id='FR_main' src='"+url+"' style='width:0px,height:0px;display:none'></iframe>");
+    	}
+	  }});
+  }
+  function cjkEncode(text) {       
+      if (text == null) {       
+          return "";       
+      }       
+      var newText = "";       
+      for (var i = 0; i < text.length; i++) {       
+          var code = text.charCodeAt (i);        
+          if (code >= 128 || code == 91 || code == 93) {//91 is "[", 93 is "]".       
+              newText += "[" + code.toString(16) + "]";       
+          } else {       
+              newText += text.charAt(i);       
+          }       
+      }       
+      return newText;       
+  }
+	/**å¸è½¯æ¥è¡¨éåºç»å½*/
+    function logoutFR(){
+        var thridReportManager_ = new thridReportManager();
+        thridReportManager_.isConnect({success:function(retObj){
+            //éåºå¸è½¯æ¶å¢å å¤æ­ç¬¬ä¸æ¹æ¥è¡¨å¼ææ¯å¦å¯å¨çä»£ç 
+            if("false" != "true" && (retObj == "true" || retObj == true)){
+                var url = "?op=auth_logout"; 
+                $("#FR_main").attr("src", url);
+            }
+        }});
+    }
+    if("false"=="true"){
+      hideLogo();
+      hideLogoutButton();
+      $("#collapse_banner").click();
+     }
+</script>
+	
+	
+<script type="text/javascript" charset="UTF-8" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/shared.js"></script>
+<script type="text/javascript" charset="UTF-8" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/jsjac.js"></script>
+<script type="text/javascript" charset="UTF-8" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/uc_onlinemsg.js"></script>
+<script type="text/javascript">
+	//-1：普遍失败
+	//-2：人员未同步
+	//-3：UC服务器未启动
+	//-4：UC服务器地址不正确、防火墙阻止
+	//-5：IE插件未安装
+	var connectionStatus = 0;
+	var winUC = null; //UC中心
+	var winIM = null; //聊天窗口
+	var hasMsg = false; //是否有消息
+	var onlineStatus = 'ico16 online1'; //如果A8 打开 uc未打开的时候默认的uc状态为上线
+	var ucSSOManager = RemoteJsonService.extend({
+    	jsonGateway: "/seeyon/ajax.do?method=ajaxAction&managerName=ucSSOManager",
+    	loginUC: function(){
+			return this.ajaxCall(arguments,"loginUC");
+    	}
+	});
+	var ssoManager = new ucSSOManager();
+
+	var host;
+	var port;
+	var jid;
+	var pass;
+	var status;
+	var receiveMessage = "true";
+	var curUserName = "马红权";
+	var curUserPhoto;
+	try {
+		curUserPhoto = memberImageUrl;
+	} catch (e) {
+		curUserPhoto = "/seeyon/apps_res/v3xmain/images/personal/pic.gif";
+	}
+	var roster;
+	var con;
+	var _PhotoMap = new Properties();
+	var _MemberId2Jid= new Properties();
+	var noticeProperties = new Properties();
+
+	function newJSJaCIQ() {
+		return new JSJaCIQ();
+	}
+
+	function newJSJaCMessage() {
+		return new JSJaCMessage();
+	}
+
+	function handleIQ(aIQ) {
+	}
+
+	function handlePresence(aPresence) {
+	}
+
+	function handleMessage(oMsg) {
+		var from = cutResource(oMsg.getFrom());
+		var msgType = oMsg.getType();
+		
+		if (msgType == 'error') {
+			var errorType = oMsg.getNode().getElementsByTagName('service-unavailable');
+			if (errorType.length < 1) {
+				return;
+			} else {
+				roster.DeleteUser.put(from, true);
+			}
+		}
+		//项目组系统组添加时发起协议
+		if (msgType == 'no_tip_kitout_group' || msgType == 'no_tip_destroy_group') {
+			roster.DisabledChatUser.put(from, true);
+			return ;
+		}
+		//项目组系统租剔除人员以及删除时发起协议
+		if (msgType == 'no_tip_add_group') {
+			roster.DisabledChatUser.remove(from);
+			return ;
+		}
+		if (msgType == 'add_group' || msgType == 'destroy_group' || msgType == 'exit_group' || msgType == 'kitout_group') {
+			var notice = '';
+			var groupname = oMsg._getAttribute("groupname");
+			if (msgType == 'add_group') {
+				roster.DisabledChatUser.remove(from);
+				notice = $.i18n('uc.title.addgroup.js', groupname);
+			} else if (msgType == 'destroy_group') {
+				roster.DisabledChatUser.put(from, true);
+				notice = $.i18n('uc.title.groupdissolved.js', groupname);
+			} else if (msgType == 'exit_group') {
+				var memberName = '';
+				try{
+					memberName = oMsg._getAttribute("name");
+				}catch(e){
+					
+				}
+				notice = memberName + $.i18n('uc.title.groupexit.js', groupname);
+			} else if (msgType == 'kitout_group') {
+				roster.DisabledChatUser.put(from, true);
+				notice = $.i18n('uc.title.groupkicked.js', groupname);
+			}
+			if (winUC && !winUC.closed) {
+				winUC.showNotice(random, notice);
+			} else {
+				if (receiveMessage == "true") {
+					var random = Math.floor(Math.random() * 100000000);
+					noticeProperties.put(random, notice);
+					showPerNotice(random, notice, isA8geniusMsg ? "genius" : "a8");
+				}
+			}
+			return;
+		}
+		
+
+		var user = roster.getChatUserByJID(from);
+		if (user == null) {
+			user = roster.addChatUser(from);
+		}
+
+		var atts = new ArrayList();
+		if (msgType == 'filetrans') {
+			var items = oMsg.getNode().getElementsByTagName('filetrans');
+			for (var i = 0; i < items.length; i++) {
+				try {
+					var item = items.item(i);
+					var attId = item.getElementsByTagName('id').item(0).firstChild.nodeValue;
+					var attName = item.getElementsByTagName('name').item(0).firstChild.nodeValue;
+					var attSize = item.getElementsByTagName('size').item(0).firstChild.nodeValue;
+					atts.add(new UC_ATTACHMENT(attId, attName, attSize));
+				} catch(e) {}
+			}
+		}
+		if (msgType == 'image') {
+			var items = oMsg.getNode().getElementsByTagName('image');
+			for (var i = 0; i < items.length; i++) {
+				try {
+					var item = items.item(i);
+					var attId = item.getElementsByTagName('id').item(0).firstChild.nodeValue;
+					var attName = item.getElementsByTagName('name').item(0).firstChild.nodeValue;
+					var attSize = item.getElementsByTagName('size').item(0).firstChild.nodeValue;
+					atts.add(new UC_ATTACHMENT(attId, attName, attSize));
+				} catch(e) {}
+			}
+		}
+		
+		var microtalk = null;
+		if (msgType == 'microtalk') {
+			var items = oMsg.getNode().getElementsByTagName('microtalk');
+			try {
+				var item = items.item(0);
+				var mId = item.getElementsByTagName('id').item(0).firstChild.nodeValue;
+				var mSize = item.getElementsByTagName('size').item(0).firstChild.nodeValue;
+				microtalk = new UC_ATTACHMENT(mId, 'mictalk', mSize);
+			} catch(e) {}
+		}
+		
+		var msg;
+		var time = oMsg._getAttribute('timestamp');
+		if (time != null) {
+			time = hrTime(time);
+		} else {
+			time = $.i18n('uc.title.today.js') + parseDateTime();
+		}
+		if (oMsg.getType() == 'error') {
+			user.name = oMsg.getGroupname();
+			msg = new UC_MESSAGE(2, from, oMsg.getGroupname(), oMsg.getUser(), oMsg.getName(), oMsg.getBody(), atts, microtalk, true, time);
+		}else{
+			if (from.indexOf('@group') >= 0) {
+				user.name = oMsg.getGroupname();
+				msg = new UC_MESSAGE(2, from, oMsg.getGroupname(), oMsg.getUser(), oMsg.getName(), oMsg.getBody(), atts, microtalk, false, time);
+			} else {
+				user.name = oMsg.getName();
+				msg = new UC_MESSAGE(1, from, oMsg.getName(), from, oMsg.getName(), oMsg.getBody(), atts, microtalk,false, time);
+			}
+		}
+		
+		var showMsgBox = true;
+		if (winUC && !winUC.closed) {//页签模式聊天已打开
+			try {
+				if (!winIM || winIM.closed || !winIM.chat.getTab(user.id)) {
+					winUC.document.getElementById('ucmain').contentWindow.$('#Uc_Msg').attr('style', 'background-position-y:-862px');
+					winUC.document.getElementById('ucmain').contentWindow.$('#Uc_Msg').addClass('current');
+					hasMsg = true;
+				}
+				var pageChat = winUC.document.getElementById('ucmain').contentWindow.$("li[pageChatJid='" + from + "']");
+				var pageChatMore = winUC.document.getElementById('ucmain').contentWindow.$("a[pageChatJid='" + from + "']");
+				if (pageChat.length > 0) {
+					pageChat.eq(0).find('a').addClass('uc_msg');
+	  		    	showMsgBox = false;
+	  		    } else if (pageChatMore.length > 0) {
+	  		    	winUC.document.getElementById('ucmain').contentWindow.$('#pageChatTabsMore').eq(0).addClass('uc_msg');
+	  		    	pageChatMore.addClass('uc_msg');
+	  		    	showMsgBox = false;
+	  		    }
+			} catch (e) {}
+		}
+		
+		if (winIM && !winIM.closed && winIM.chat.getTab(user.id)) {//聊天窗口已打开
+			try {
+				winIM.putMsgHTML(user.id, msg);
+				showMsgBox = false;
+				winIM.startUCActionTitle(winIM.ucStandardTitle, $.i18n('uc.title.msg.js', user.name));
+			} catch (e) {}
+		}
+
+		if (showMsgBox) {
+			user.chatmsgs.add(msg);
+			var photo = _PhotoMap.get(msg.userjid);
+			if (winUC && !winUC.closed) {//UC中心已打开
+				if (photo == null) {
+					var iq = new JSJaCIQ();
+					iq.setIQ(msg.userjid, 'get');
+					iq.appendNode(iq.buildNode('vcard', {'xmlns' : 'vcard-photo'}));
+					con.send(iq, getMemberPhoto, '1');
+				} else {
+					winUC.showMessage();
+					winUC.startUCActionTitle($.i18n('uc.title.js'), $.i18n('uc.title.js') + " - " + $.i18n('uc.title.msg.js', user.name));
+				}
+			} else if (receiveMessage == "true") {//UC中心和聊天窗口都未打开，A8显示消息提示
+				if (photo == null) {
+					var iq = new JSJaCIQ();
+					iq.setIQ(msg.userjid, 'get');
+					iq.appendNode(iq.buildNode('vcard', {'xmlns' : 'vcard-photo'}));
+					con.send(iq, getMemberPhoto, '2');
+				}
+				
+				showMessage(msg, null, "", isA8geniusMsg ? "genius" : "a8");
+			} else {
+				if (photo == null) {
+					var iq = new JSJaCIQ();
+					iq.setIQ(msg.userjid, 'get');
+					iq.appendNode(iq.buildNode('vcard', {'xmlns' : 'vcard-photo'}));
+					con.send(iq, getMemberPhoto, '3');
+				}
+			}
+		}
+	}
+
+	function getMemberPhoto(iq, type) {
+		var photo = v3x.baseURL + "/apps_res/v3xmain/images/personal/pic.gif";
+		var item = iq.getNode().getElementsByTagName('photo').item(0);
+		if (item && item.firstChild) {
+			photo = item.firstChild.nodeValue;
+		}
+		_PhotoMap.put(iq.getFrom(), photo);
+		
+		if (type == '1') {
+			winUC.showMessage();
+		}
+	}
+
+	function handleError(e) {
+		switch (e.getAttribute('code')) {
+		case '401':
+			try {
+				console.log("Exception: 401");
+			} catch (e) {}
+			//$.alert("身份验证失败!");
+			//window.close();
+			break;
+		case '503':
+			try {
+				console.log("Exception: 503");
+			} catch (e) {}
+			
+			if (!isA8Exit) {
+				connectionStatus = -4;
+				jid = null;
+				if (winUC && !winUC.closed) {
+					winUC.alert($.i18n('uc.title.ucnotconnect.2.js'));
+				}
+				closeUC();
+			}
+			break;
+		case '500':
+			try {
+				console.log("Exception: 500");
+			} catch (e) {}
+			break;
+		case '600':
+			//getA8Top().showLogoutMsg($.i18n("uc.loginUserState.loginAnotherone.js"));
+			break;
+		default:
+			$.alert("An Error Occured:\nCode: " + e.getAttribute('code') + "\nType: " + e.getAttribute('type') + "\nCondition: " + e.firstChild.nodeName);
+			break;
+		}
+	}
+
+	function handleConnected() {
+		con.send(new JSJaCPresence());
+		connectionStatus = 1;
+	}
+
+	function handleDisconnected() {
+		if (!isA8Exit) {
+			connectionStatus = -1;
+		}
+	}
+
+	function initConnection() {
+		try {
+			if (connectionStatus == 1) {
+				return;
+			}
+			if (connectionStatus != -5) {
+				ssoManager.loginUC("7298597487386510009", {
+		            success: function(result){
+						if (!result) {
+							connectionStatus = -3;
+							return;
+						}
+			
+						status = result['state'];
+						if (status == '-1') {
+							connectionStatus = -3;
+							return;
+						} else if (status == '-2') {
+							connectionStatus = -2;
+							return;
+						}
+						var islocal = result['islocal'];
+						host = result['ip'];
+						port = result['port'];
+						jid = result['jid'];
+						pass = result['token'];
+						if (islocal == "true") {
+							var documentLocation = document.location.href;
+							documentLocation = documentLocation.substring(documentLocation.indexOf('//') + 2);
+							if (documentLocation.indexOf('/') > -1) {
+								documentLocation = documentLocation.substring(0, documentLocation.indexOf('/'));
+								if (documentLocation.indexOf(':') > -1) {
+									documentLocation = documentLocation.substring(0, documentLocation.indexOf(':'));
+								}
+							}
+							try{
+								host = host.substring(0, host.indexOf('//') + 2) + documentLocation;
+							}catch(e){
+							}
+						}
+						receiveMessage = result['receiveMessage'];
+						if (!host || !port || !jid) {
+							connectionStatus = -1;
+							return;
+						}
+						createConnection();
+		            }
+		        });
+			}
+		} catch (e) {
+			connectionStatus = -5;
+			try {
+				console.log("Exception: " + e);
+			} catch (e) {}
+		}
+	}
+
+	function createConnection() {
+		try {
+			var HTTPBASE = host + ":" + port + "/http-bind/";
+			var	JABBERSERVER = jid.substring(jid.indexOf('@') + 1, jid.length);
+			var DEFAULTRESOURCE = "web";
+			
+			roster = new Roster();
+			
+			var oArgs = {
+				httpbase : HTTPBASE,
+				timerval : 2000
+			};
+			con = new JSJaCHttpBindingConnection(oArgs);
+
+			con.registerHandler('message', handleMessage);
+			con.registerHandler('presence', handlePresence);
+			con.registerHandler('iq', handleIQ);
+			con.registerHandler('onconnect', handleConnected);
+			con.registerHandler('onerror', handleError);
+			con.registerHandler('ondisconnect', handleDisconnected);
+
+			oArgs = {
+				domain : JABBERSERVER,
+				resource : DEFAULTRESOURCE,
+				username : jid.substring(0, jid.indexOf('@')),
+				pass : pass,
+				uchost : host
+			};
+			con.connect(oArgs);
+		} catch (e) {
+			connectionStatus = -5;
+			try {
+				console.log("Exception: " + e);
+			} catch (e) {}
+		}
+	}
+
+	function clickCloseUC() {
+		try {
+			//关闭聊天窗口
+			if (winIM && !winIM.closed) {
+				if (confirm($.i18n('uc.title.winImExit.js'))) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		} catch (e) {}
+		return true;
+	}
+
+	var ucnotconnectDialog;
+	function checkUCStatus() {
+		if (connectionStatus != 1) {
+			if (connectionStatus == 0) {
+				showAlertBox($.i18n('uc.title.ucconnect.js'));
+			} else if (connectionStatus == -1 || connectionStatus == -4) {
+				showAlertBox($.i18n('uc.title.ucnotconnect.2.js'));
+			} else if (connectionStatus == -2) {
+				showAlertBox($.i18n('uc.title.notMember.js'));
+			} else if (connectionStatus == -3) {
+				showAlertBox($.i18n('uc.title.ucnotconnect.1.js'));
+			} else if (connectionStatus == -5) {
+				if (isA8geniusMsg) {
+					alert($.i18n('uc.title.ucnotconnect.4.js'));
+				} else {
+					if (v3x.isMSIE) {
+						ucnotconnectDialog = $.dialog({
+				            htmlId: 'ucnotconnect',
+				            title: $.i18n('uc.title.ucnotconnect.0.js'),
+				            url: "/seeyon/genericController.do?ViewPage=apps/uc/downLoadIESet",
+				            isClear: false,
+				            width: 425,
+				            height: 150
+				        });
+					} else {
+						$.alert($.i18n('uc.title.ucnotconnect.2.js'));
+					}
+				}
+			}
+			return false;
+		}
+		return true;
+	}
+	
+	function getUCStatus() {
+		if (connectionStatus != 1) {
+			if (connectionStatus == 0) {
+				return $.i18n('uc.title.ucconnect.js');
+			} else if (connectionStatus == -1 || connectionStatus == -4 || connectionStatus == -5) {
+				return $.i18n('uc.title.ucnotconnect.2.js');
+			} else if (connectionStatus == -2) {
+				return $.i18n('uc.title.notMember.js');
+			} else if (connectionStatus == -3) {
+				return $.i18n('uc.title.ucnotconnect.1.js');
+			}
+		}
+		return '';
+	}
+
+	//打开UC中心
+	function openWinUC(from, type) {
+		if (!checkUCStatus()) {
+			return;
+		}
+
+		if (!type) {
+			type = "msg";
+		}
+		
+		if (winUC && !winUC.closed) {
+        	winUC.focus();
+        	try {
+            	if (type) {
+        			winUC.clickAll(type);
+                }
+            } catch (e) {}
+        } else {
+            var width = window.screen.availWidth;
+            var height = window.screen.availHeight;
+        	msgProperties.clear();
+        	colseMessageWindow("person", "a8");
+        	winUC = window.open(_ctxPath + "/uc/chat.do?method=index&from=" + from + "&showtype=" + type, "", "left=0,top=0,width=" + width + ",height=" + height + ",location=no,menubar=no,resizable=no,scrollbars=no,titlebar=no,toolbar=no,status=no,depended=yes,alwaysRaised=yes");
+        	winUC.resizeTo(width, height);
+        }
+	}
+
+	function sendUCMessage(name, memberId) {
+		if (!checkUCStatus()) {
+			return;
+		}
+		
+		if (_MemberId2Jid.get(memberId)) {
+			openWinIM(name, _MemberId2Jid.get(memberId));
+		} else {
+			getJids(name, memberId);
+		}
+	}
+
+	function getJids(name, memberId) {
+		var iq = newJSJaCIQ();
+		iq.setIQ(null, 'get');
+		var query = iq.setQuery('jabber:iq:seeyon:office-auto');
+		var organization = iq.buildNode('organization', {'xmlns': 'organization:staff:getjid:query'});
+		var memberids = iq.buildNode('memberids');
+		memberids.appendChild(iq.buildNode('memberid', memberId));
+		organization.appendChild(memberids);
+		query.appendChild(organization);
+		var params= new Properties();
+		params.put("name", name);
+		params.put("memberId", memberId);
+		con.send(iq, handleJids, params);
+	}
+
+	function handleJids(iq, params) {
+	    var items = iq.getNode().getElementsByTagName('jid');
+	    if (!items) {
+	        return;
+	    }
+	    for (var i = 0; i < items.length; i++) {
+		    try {
+		    	_MemberId2Jid.put(items.item(i).getAttribute('memberid'), items.item(i).firstChild.nodeValue);
+			} catch(e){}
+	    }
+	    if (_MemberId2Jid.get(params.get("memberId"))) {
+		    openWinIM(params.get("name"), _MemberId2Jid.get(params.get("memberId")));
+		} else {
+			$.alert("人员不存在");
+		}
+	}
+
+	function openWinIM(name, jid){
+		openWinIMEscape(name, jid, true)
+	}
+
+	//打开聊天窗口
+	function openWinIMEscape(name, jid, isEscape){
+		if (roster.DisabledChatUser.get(jid)) {
+			alert($.i18n('uc.group.notinfo.js'));
+			return;
+		}
+		
+		var user = roster.getChatUserByJID(jid);
+		if (user == null) {
+			user = roster.addChatUser(jid);
+ 		}
+ 		if (name) {
+ 			if (isEscape) {
+ 				user.name = name.escapeHTML();
+ 			} else {
+ 				user.name = name;
+ 			}
+ 	 	}
+ 		
+	    try {
+		    //关闭消息提示框
+		    var tId = jid.substring(0, jid.indexOf('@'));
+		    var tableId = tId + "_Table";
+		    if (winUC && !winUC.closed) {
+			    if (winUC.$("#" + tableId).length > 0) {
+		    		winUC.removeMessage(tableId);
+			    }
+		    } else {
+		    	if ($("#" + tableId).length > 0) {
+			    	removeMsgFromBox("person", tableId, tId, isA8geniusMsg ? "genius" : "a8");
+			    }
+			}
+		} catch (e) {}
+		
+	    if (!winIM || winIM.closed) {
+	        var left = (window.screen.availWidth - 930 - 20) / 2;
+	        var top = (window.screen.availHeight - 615 - 40) / 2;
+	        winIM = window.open(_ctxPath + "/uc/chat.do?method=chat&jid=" + user.jid, "", "left=" + left + ",top=" + top + ",width=715,height=565,location=no,menubar=no,resizable=no,scrollbars=no,titlebar=no,toolbar=no,status=no,depended=yes,alwaysRaised=yes");
+	    } else {
+        	try {
+		        winIM.focus();
+		        if (winIM.chat.getTab(user.id)) {
+		            winIM.chat.setCurrentTab(user.id);
+		        } else {
+		            winIM.chat.addSingleTab({
+		                id: user.id,
+		                name: user.name,
+		                jid: user.jid
+		            });
+		            
+		            if (user.chatmsgs.size() > 0) {
+		                for (var i = 0; i < user.chatmsgs.size(); i++) {
+		                    winIM.putMsgHTML(user.id, user.chatmsgs.get(i));
+		                }
+		                user.chatmsgs.clear();
+		            }
+		        }
+            } catch (e) {}
+	    }
+	}
+
+	var isA8Exit = false;
+    function closeUC(){
+    	try {
+			isA8Exit = true;
+			
+			//关闭聊天窗口
+			if (winIM && !winIM.closed) {
+				winIM.close();
+			}
+			
+			//关闭UC中心
+			if (winUC && !winUC.closed) {
+				winUC.close();
+			}
+		} catch (e) {}
+	}
+    
+    function showAlertBox(msg) {
+    	if (isA8geniusMsg) {
+    		alert(msg);
+    	} else {
+    		$.alert(msg);
+    	}
+    }
+	
+	/**
+	  * 创建协同讨论组
+	  * colId 协同ID
+	  * colName 协同标题
+	  * colMembers 协同参与人员ID集合
+	*/
+    function createCollaborationTeam(colMembers , colId , colName) {
+    	if (!checkUCStatus()) {
+			return;
+		}
+		
+    	var isIncludeUserId = false;
+    	if (colMembers.length > 100) {
+    		$.alert($.i18n('uc.tab.max300.js'));
+    	} else {
+        	var memberList = new ArrayList();
+        	memberList.addSingle("7298597487386510009");
+    		for (var i = 0; i < colMembers.length; i++) {
+    			memberList.addSingle(colMembers[i]);
+    	    }
+    		colName = colName.replace(new RegExp('&nbsp;', 'g'), ' ');
+    		var iq = newJSJaCIQ();
+    		iq.setFrom(jid);
+    	    iq.setIQ('group.localhost', 'get');
+    	    var query = iq.setQuery('seeyon:coporaty:group:create');
+    	    var groupInfo = iq.buildNode('group_info');
+    	    groupInfo.appendChild(iq.buildNode('group_type', '', '5'));
+    	    groupInfo.appendChild(iq.buildNode('coporaty_id', '', colId));
+    	    groupInfo.appendChild(iq.buildNode('group_name', '', colName));
+    	    var groupMembers = iq.buildNode('group_members');
+    	    for (var j = 0; j < memberList.size(); j++) {
+    	    	groupMembers.appendChild(iq.buildNode('group_member', '', memberList.get(j)));
+    	    }
+    	    groupInfo.appendChild(iq.buildNode('group_member_num', '', memberList.size()));
+    	    groupInfo.appendChild(groupMembers);
+    	    query.appendChild(groupInfo);
+    	    con.send(iq, createCollaborationResult);
+    	}
+	}
+
+	/**
+	  * 创建协同讨论组结果
+	*/
+    function createCollaborationResult(iq) {
+    	if (iq.getType == 'error') {
+    		$.alert($.i18n('uc.group.Notcreate.js'));
+    	} else {
+        	var groupInfo = iq.getNode().getElementsByTagName('group_info')[0];
+    		var groupId = groupInfo.getAttribute('I');
+    		var groupName = groupInfo.getAttribute('NA');
+    		openWinIMEscape(groupName, groupId,false);
+    	}
+    }
+    
+   	function pushOnlineState(onlineStae) {
+   		if (getUCStatus() != '') {
+			return;
+		}
+		
+		var onlineStatus = "";
+		if (onlineStae == "online3") {
+			onlineStatus = "busy";
+		}
+		if (onlineStae == "online1") {
+			onlineStatus = "available";
+		}
+		if (onlineStae == "online2") {
+			onlineStatus = "away";
+		}
+		if (onlineStae == "online4") {
+			onlineStatus = "nodisturb";
+		}
+		
+		var presscen = new JSJaCPresence();
+		presscen.setType('available');
+		presscen.setStatus(onlineStatus);
+		presscen.setShow('chat');
+		presscen.setPriority('10');
+		con.send(presscen, getStateByPush);
+   	}
+   	
+   	function getStateByPush(ps){
+   		try {
+	   		var status = '';
+	   		switch(ps.getStatus()) {
+		   		case 'available' : 
+		   			status = 1; 
+		   			break;
+		   		case 'busy' : 
+		   			status = 3; 
+		   			break;
+		   		case 'away' : 
+		   			status = 2; 
+		   			break;
+		   		case 'nodisturb' : 
+		   			status = 4; 
+		   			break;
+		   		default : 
+		   			status = 0;		
+	   		}
+	   		if (winUC && !winUC.closed) {
+	   			if (status != 0) {
+	   				winUC.document.getElementById('ucmain').contentWindow.$('#onlinState').attr('class', 'ico16 online' + status + ' margin_r_5');
+	   				if (winUC.document.getElementById('ucmain').contentWindow.$('#myselfstatus')) {
+	   					winUC.document.getElementById('ucmain').contentWindow.$('#myselfstatus').attr('class', 'onlineState ico16 online' + status);
+	   				}
+	   			}
+	   		} else {
+	   			//如果uc中心未打开则保存修改的状态
+	   			onlineStatus = 'ico16 online' + status;
+	   		}
+	   	}catch(e){
+	
+	   	}
+   	}
+</script>
+	
+	
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>钢研纳克协同办公软件 V5.0SP2, 马红权,您好!</title>
+    <script type="text/javascript" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/frount-debug.js"></script>
+    <link rel="stylesheet" type="text/css" href="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/frount.css">
+    
+    <script type="text/javascript">
+    var ajaxCalEventBean = new calEventManager();
+    var timeLineObj;
+    var curUserID = "7298597487386510009";
+    var menucolorset = false;
+    var timeLineDate = null;
+    var _mainMenuId = "";
+    var _clickMenuId = "";
+    var _shortCutId = "";//刷新页面不出总导图
+        $(document).ready(function () {
+          //人员头像
+          $("#avatar > img").attr("src",memberImageUrl);
+          //登出
+          $("#logout").click(function(){
+	          logout();
+          });
+          //前进
+          $("#historyForward").click(function(){
+            historyForward();
+          });
+          //后退
+          $("#historyBack").click(function(){
+            historyBack();
+          });
+          //左导航控制
+          $("#closeopenleft").click(function(){
+        	  if($(this).attr("class")=="openLeft"){
+        		  showLeftNavigation();
+        	  }else{
+	            hideLeftNavigation();
+        	  }
+            //$("#main").attr("src",$("#main").attr("src"));
+          });
+          //刷新
+          $("#refreshPage").click(function(){
+            reFlesh();
+          });
+          //产品导图
+          $("#productView_btn").click(function(){
+            isProductViewRefresh = false;
+            showProductView();
+          });
+          
+          //兼职单位切换
+          var concurrentAccount = $.ctx.concurrentAccount;
+          if(concurrentAccount!=null&&concurrentAccount.length>1){
+            
+            var selectHtml = "<select id='chanageLoginAccount' style='width:180px;height:24px;' onchange=\"chanageLoginAccount(this.value)\">";
+            for(var i=0; i<concurrentAccount.length; i++){
+              selectHtml +="<option value=\""+concurrentAccount[i].id+"\"";
+              if(concurrentAccount[i].id == $.ctx.CurrentUser.loginAccount){
+                selectHtml += " selected ";
+              }
+              selectHtml +=">"+concurrentAccount[i].shortName+"</option>";
+            }
+            selectHtml +="</select>";
+            $("#accountSelector").append(selectHtml);
+            
+          }else{
+            $("#accountSelector").hide();
+          }
+          
+          
+            $.autoInitDiv();
+            
+            $.initSearch();
+            
+            
+            //我的快捷
+            initShortcuts($.ctx.shortcut);
+            
+            $("#my_set").click(function(){
+              showShortcut('/portal/portalController.do?method=personalInfo');
+            });
+            $("#my_agent").click(function(){
+            	showShortcut('/collaboration/pending.do?method=morePending&from=Agent');
+            });
+            if("false" != "true"){
+            	try {
+                ajaxCalEventBean.getTimeLineResetDate("",{
+                  success : function (lineDate){
+                        timeLineDate = lineDate;
+                        timeLineObj = initTimeLineDate();
+                  }
+                });
+            	
+        		} catch (e) {
+        			// TODO: handle exception
+        		} 
+            }
+            //空间显示-兼容NC的applet刷新
+            if(!currentSpaceForNC){
+              initSpaceNavigation($.ctx.space);
+            }else{
+              refreshNavigation(currentSpaceForNC);
+              currentSpaceForNC = null;
+            }
+            
+            //显示系统菜单
+            showMenus(menu);
+            //检测密码超期
+            checkPwdIsExpired();
+            //代理提醒
+            if(_shortCutId==""){
+            agentAlert();
+            }
+            //显示产品导航
+            if("false" == isAdmin&&"A8" == productVersion){
+              $(".handle_icons").css({"width":"200px"});
+              $(".searchArea").css({"right":"210px"});
+              $("#productView_btn").show();
+              if("false" != productView_check){
+            	if(!(_shortCutId!="" || isProductViewRefresh == "true")){
+	                showProductView();
+            	}
+              }
+            }else{
+              $("#productView_btn").hide();
+            }
+            //banner折叠
+            $("#collapse_banner").toggle(
+              function () {
+                $('.searchArea').hide();
+                $('#search_iframe').hide();
+                $(this).removeClass('unfold_icon').addClass("collapse_icon");
+				$(this).attr("title","展开");
+                $('#logo').css({
+                    'height':37,
+					'width':59
+                });
+                $('#accountNameDiv').css({
+                    'marginTop':8
+                });
+                $('#accountSecondNameDiv').hide();
+                $('#area_l').css({
+                    'height':37
+                });
+                $('#area_r').css({
+                    height:32,
+                    'paddingTop':5
+                });
+                $('#stadic_layout_head').height(47);
+                if ($.browser.msie && $.browser.version == '6.0') {
+                  $('#stadic_layout_head').height(42);
+                }
+                $('#stadic_layout_body').css({
+                    'top':47
+                });
+                if(timeLineObj){
+	                timeLineObj.reset({
+	                    autoHeight:-30
+	                });
+                }
+                $.autoInitDiv();
+              },
+              function () {
+                $('.searchArea').hide();
+                $('#search_iframe').hide();
+                $(this).removeClass("collapse_icon").addClass('unfold_icon');
+                $(this).attr("title","收缩");
+                $('#logo').css({
+                    'width':'auto',
+                    'height':64
+                });
+                $('#accountNameDiv').css({
+                    'marginTop':15
+                });
+                $('#accountSecondNameDiv').show();
+                $('#area_l').css({
+                    'height':64
+                });
+                $('#area_r').css({
+                    'height':40,
+                    'paddingTop':20
+                });
+                $('#stadic_layout_head').height(74);
+                $('#stadic_layout_body').css({
+                    'top':74
+                });
+                if(timeLineObj){
+	                timeLineObj.reset({
+	                    autoHeight:0
+	                });
+                }
+                $.autoInitDiv();
+              }
+            );
+            
+            $.initOnLine();
+            
+            //在线消息
+            initMessage("30");
+            if("false" == "true"){
+              $("#main").attr("src",_ctxPath+"/portal/portalController.do?method=showSystemNavigation");
+              if(menu && menu.length>0){
+                var _menu0 = menu[0];
+                $.initBackNavigation(_menu0);
+                $('#main_layout_right').width(5);
+                $('#content_layout_body_right').hide();
+                $('#content_layout_body_left_content').css('marginRight',10);
+              }
+              $('#homeIcon').click(function(){
+                $("#main").attr("src",_ctxPath+"/portal/portalController.do?method=showSystemNavigation");
+              });
+              $('#helpIcon').click(function(){
+                showHelp();
+              });
+            }
+            $("#remind_msg").click(function(){
+                $("#main").attr("src", _ctxPath+"/message.do?method=showMessages&showType=0&readType=notRead");
+            });
+            if("false"=="true"){
+      	     hideLogo();
+      	     hideLogoutButton();
+      	     $("#collapse_banner").click();
+            }
+
+            //热点
+            initHotspots();
+
+            //精灵跳转我的文档
+            if ("" == "doc") {
+            	$("#main").attr("src", _ctxPath + "/doc.do?method=docIndex&openLibType=1");
+            }
+            if(_mainMenuId!=""){
+              var _currentMenuJson  = getMainMenuObj($.ctx.menu,_mainMenuId,_clickMenuId);
+                if(_currentMenuJson != null){
+                  //alert(_currentMenuJson.menuObj.url+"==="+_currentMenuJson.menuObj.name+"==="+_currentMenuJson.step)
+                  showMenu(_ctxPath+_currentMenuJson.menuObj.url,_currentMenuJson.menuObj.id,_currentMenuJson.step,_currentMenuJson.menuObj.target,_currentMenuJson.menuObj.name,_currentMenuJson.menuObj.resourceCode)
+                }
+            }
+
+            //在线列表、UC中心
+            if ("false" == "true") {
+            	$("#vst_online").click(function(){
+        			onlineMember();
+                });
+            } else {
+            	if("true" == "true"){
+            		$("#avatar").unbind("click").click(function(){
+                    	openWinUC("a8", "msg");
+                    });
+                    
+                    $("#online_uc").unbind("click").click(function(){
+                    	openWinUC("a8", "org");
+                    });
+                    
+                    setTimeout("initConnection()", 3000);
+                } else {
+                	$("#avatar").unbind("click").click(function(){
+            			onlineMember();
+                    });
+                    
+                    $("#online_uc").unbind("click").click(function(){
+                    	onlineMember();
+                    });
+                }
+            }
+        });
+        var sccolor = "";
+        var sbcolor = "";
+        function initHotspots(){
+          var templates = $.ctx.template;
+          //集团外文名称
+          var groupSecondName = new portalManager().getGroupSecondName();
+          //当前单位外文名称
+          var accountSecondName = new portalManager().getAccountSecondName();
+          //产品id
+          var productId = new portalManager().getProductId();
+          if(templates.length>0){
+            var template = templates[0];
+            var hotspots = template.portalHotspots;
+            var logoImg = "";
+            var logoImgtiling = 1;
+            var accountName = "";
+            var secondName = "";
+            var kbcolor = "";
+            var kccolor = "";
+            var defkbcolor = "#e6e6e6";
+            for(var i = 0;i < hotspots.length;i++){
+              var hotspot = hotspots[i];
+              var key = hotspot.hotspotkey;
+              var value = hotspot.hotspotvalue;
+              if(false){
+                //如果是集团管理员或超级管理员
+                if(key == "groupName"){
+                  if(hotspot.display == 1){
+                    accountName = value;
+                    if(productId == 2){
+                      secondName = groupSecondName;
+                    } else {
+                      secondName = accountSecondName;
+                    }
+                  } else {
+                    accountName = "";
+                    secondName = "";
+                  }
+                }                
+                if(key == "groupLogo"){
+                  if(hotspot.display == 1){
+                    logoImg = "/seeyon/main/frames/" + value + "?expand=" + hotspot.tiling;
+                    logoImgtiling = hotspot.tiling;
+                  } else {
+                    logoImg = "";
+                  }
+                }
+              } else if(false){
+                //系统管理员、审计管理员
+                if("A8" == productVersion){
+	                accountName = "";
+    	            secondName = "";
+                }else{
+                    if(key == "accountName") {
+                       if(hotspot.display == 1){
+                         if(accountName == ""){
+                           accountName = value;
+                         } else {
+                           if(productId == 2){
+                             accountName = accountName + "&nbsp;&nbsp;&nbsp;&nbsp;" + value;
+                           } else {
+                             accountName = value;
+                           }
+                         }
+                         secondName = accountSecondName;
+                       } else {
+                         secondName = "";
+                       }
+                     }                	
+                }
+                if(key == "accountLogo"){
+                  if(hotspot.display == 1){
+                    logoImg = "/seeyon/main/frames/" + value + "?expand=" + hotspot.tiling;
+                    logoImgtiling = hotspot.tiling;
+                  } else {
+                    logoImg = "";
+                  }
+                }
+
+              } else {
+                //单位管理员,普通人员
+                if(key == "groupName"){
+                  if(hotspot.display == 1){
+                    accountName = value;
+                  } else {
+                    accountName = "";
+                  }
+                }
+                if(key == "accountName") {
+                  if(hotspot.display == 1){
+                    if(accountName == ""){
+                      accountName = value;
+                    } else {
+                      if(productId == 2){
+                        accountName = accountName + "&nbsp;&nbsp;&nbsp;&nbsp;" + value;
+                      } else {
+                        accountName = value;
+                      }
+                    }
+                    secondName = accountSecondName;
+                  } else {
+                    secondName = "";
+                  }
+                }
+                if(key == "accountLogo"){
+                  if(hotspot.display == 1){
+                    logoImg = "/seeyon/main/frames/" + value + "?expand=" + hotspot.tiling;
+                    logoImgtiling = hotspot.tiling;
+                  } else {
+                    logoImg = "";
+                  }
+                }
+              }
+              if(key == "hbackpic"){
+                var hbackpic = "/seeyon/main/frames/" + value + "?expand=" + hotspot.tiling;
+                $("#head_banner").css("background-image","url("+hbackpic+")");
+                if(hotspot.tiling==1){
+                  $("#head_banner").css({ "background-repeat": "repeat" });
+                }else{
+                  $("#head_banner").css({ "background-repeat": "no-repeat" });
+                }
+              }
+              if(key == "kbcolor"){
+                //左面板背景颜色
+                $("#main_layout_left").css({"background":value});
+                $("#remind_msga").css({"background":value}); 
+                if(value == defkbcolor){
+                  $("#main_layout_left").attr("style", "");
+                }
+                kbcolor = value;
+              }
+              if(key == "kccolor"){
+                //左面板信息块选中颜色
+                $("head").append("<style>.frount_nav .shortItem:hover{background:"+value+"}</style>");
+                kccolor = value;
+              }
+              if(key == "mccolor"){
+                //一级菜单选中颜色
+                $("head").append("<style>.main_menu_li_hover{background:"+value+"}</style>");
+                if(value!="#f2f2f2"){
+                  menucolorset = true;
+                }
+              }
+              if(key == "backpic"){
+                //背景图
+                var backpic = "/seeyon/main/frames/" + value + "?expand=" + hotspot.tiling;
+                $("#stadic_layout").css("background-image","url("+backpic+")");
+                if(hotspot.tiling==1){
+                  $("#stadic_layout").css({ "background-repeat": "inherit" });
+                 }else{
+                  $("#stadic_layout").css({ "background-repeat": "no-repeat" });
+                 }
+              }
+              if(key == "sbcolor"){
+                //空间也签背景颜色
+                $("#space li").css({"background":value});
+                $("#space li.selected").css({"background-color":"none"});
+                $("#space li.selected").attr("style", "");
+                $("#spaceMoreBtn").css({"background":value});
+                sbcolor = value;
+              }
+              if(key == "sccolor"){
+                //空间页签选中颜色
+                sccolor=value;
+              }
+              if(key == "cbcolor"){
+                //工作区背景颜色
+                $("#content_layout").css({"background":value}); 
+              }
+            }
+            if(logoImg!=""){
+              $("#logo").attr("src",logoImg);
+              if(logoImgtiling==1){
+                $("#logo").css({ "background-repeat": "inherit" });
+              }else{
+                $("#logo").css({ "background-repeat": "no-repeat" });
+              }
+              $("#comDiv").css({"margin-left":"0px"});
+              $("#logo").show();
+            } else {
+              $("#comDiv").css({"margin-left":"30px"});
+              $("#logo").hide();
+            }
+            if(sccolor!=""){
+              $("#space .selected").css({"background":sccolor});
+            }
+            $("#accountNameDiv").html(accountName);
+            $("#accountSecondNameDiv").html(escapeStringToHTML(secondName,false));
+            if(secondName == null || $.trim(secondName) == ""){
+              $("#accountNameDiv").css("margin-top", "24px");
+            } else {
+              $("#accountNameDiv").css("margin-top", "13px");
+            }
+            $("#remind_msga").mouseout(function(){
+              if(kbcolor!=""){
+                $("#remind_msga").css({"background":kbcolor});
+              }
+            });
+            $("#remind_msga").mouseover(function(){
+              if(kccolor!=""){
+                $("#remind_msga").css({"background":kccolor});
+              }
+            }); 
+          }
+        }
+
+        //显示空间导航
+        function initSpaceNavigation(space,isBackToHome,redirectSpaceId,notShowSpace){
+          $("#space").html("");
+          var defaultSpace = 3;
+          var _spaceArray = [];
+          $(".spaceMore_area").empty();
+          if(space&&space.length>0){
+              var hasShowSpace = false;
+              for (var i = 0; i < space.length; i++) {
+                 if(!hasShowSpace&&!notShowSpace){
+	                  if(redirectSpaceId && (space[i][0] == redirectSpaceId || space[i][1] == redirectSpaceId)){
+	                     showSpace(i,space[i][0],space[i][2],space[i][6],space[i][7]);
+	                     hasShowSpace = true;
+	                  }else if(isBackToHome && currentSpaceId && (space[i][0] == currentSpaceId || space[i][1] == currentSpaceId)){
+	                    showSpace(i,space[i][0],space[i][2],space[i][6],space[i][7]);
+	                    hasShowSpace = true;
+	                  }else if(!redirectSpaceId&&!isBackToHome&&i==0){
+	                     showSpace(i,space[i][0],space[i][2],space[i][6],space[i][7]);
+	                     hasShowSpace == true;
+	                  }
+                }
+                  //NCPortal集成A8,隐藏A8集成的ERP空间
+                  if("false"=="true" && space[i][0]=="101"){
+                      continue;
+                  }
+                  
+                  if (i > defaultSpace) {
+                      _spaceArray.push(space[i]);
+                      continue;
+                  }
+                  
+                  var _curSpaceName = space[i][3].length < 5 ? space[i][3] : space[i][3].substring(0,5);
+                  _curSpaceName = replaceSpaceName(_curSpaceName);
+                  if (currentSpaceId == space[i][0]) {
+                      $("#space").append('<li title=\"' + escapeStringToHTML(space[i][3],false) + '\" class="selected" id="space_'+i+'" onclick="showSpace(\''+i+'\',\'' + space[i][0] + '\',\'' + space[i][2] + '\',\'' + space[i][6] + '\',\'' + space[i][7] + '\',\'true\')"><span>' +
+                      escapeStringToHTML(_curSpaceName,false) +
+                      '</span></li>');
+                      
+                  }
+                  else {
+                      $("#space").append('<li title=\"' + escapeStringToHTML(space[i][3],false) + '\" id="space_'+i+'" onclick="showSpace(\''+i+'\',\'' + space[i][0] + '\',\'' + space[i][2] + '\',\'' + space[i][6] + '\',\'' + space[i][7] + '\',\'true\')"><span>' +
+                      escapeStringToHTML(_curSpaceName,false) +
+                      '</span></li>');
+                      
+                  }
+                  if(!$.browser.msie){
+                	  if(/.*[\u4e00-\u9fa5]+.*$/.test(_curSpaceName)) 
+                      { 
+                        //alert("内容中含有汉字！"); 
+                      //return false; 
+                      } 
+                      else{
+                        $("#space li span:eq("+i+")").css("width","90px").css("-webkit-transform","rotate(90deg) translate(30px,40px)").css("-moz-transform","rotate(90deg) translate(30px,40px)").css("-ms-transform","rotate(90deg) translate(30px,40px)");
+                      }
+                  }
+              }
+              //IE下含有英文数字会旋转90度， 除IE外浏览器只有 不含中文字符才会旋转90度。
+              if($.browser.msie){
+                $("#space li span").css("writing-mode","tb-rl").css("letter-spacing","3px").css("line-height","130%").css("width","13px");
+              }
+          }
+          if (_spaceArray.length > 0) {
+              $("#spaceMoreBtn").show();
+              $("#spaceMoreBtn").showSpaceMore({
+                  data: _spaceArray
+              });
+          }else{
+              $("#spaceMoreBtn").hide();
+          }
+        }
+        //空间点击
+        function showSpace(i,spaceId,path,type,openType,reloadFlag){
+        	/**
+          //reloadFlag 点击空间第一个 刷新页面 默认第一次不传reloadFlag
+          if(i == 0 && reloadFlag == 'true'){
+        	  if ($.browser.msie) {
+       		    //if ($.browser.version == '6.0' || $.browser.version == '7.0') {
+	        	  spaceReloadPage("","",reloadFlag);
+	              return;
+       		    //}
+        	  }
+          }**/
+          
+          var changeSpace = false;
+          if(!(currentSpaceId&&currentSpaceId==spaceId)){
+            changeSpace = true;
+          }
+            currentSpaceId = spaceId;
+            $.each($("#space").children("li"),function(j,obj){
+                if($(obj).attr("id")=="space_"+i){
+                  $(obj).attr("class","selected");
+                  $(obj).attr("style", "");
+                  if(sccolor!=""){
+                    $(obj).css({"background":sccolor});
+                  }
+                }else{
+                  $(obj).attr("class","");
+                  if(sbcolor!=""){
+                    $(obj).css({"background":sbcolor});
+                  }
+                }
+            });
+            new portalManager().getSpaceMenusForPortal(spaceId,{
+              success : function(map){
+                var menus = map.menus;
+                var ownerMenu = map.ownerMenu;
+                //用户可以访问的菜单组总集合，不考虑个性化定制
+                if(map.memberMenus){
+                	memberMenus =  map.memberMenus;
+                   if(ownerMenu){
+                        //也存在自有菜单
+                        memberMenus.unshift(ownerMenu);
+                   }
+                }
+                    if(ownerMenu){
+                      $.removeData(document.body,"resourceMenuCache");
+                    }
+                    if(menus){
+                      //存在关联菜单
+                      if(ownerMenu){
+                        //也存在自有菜单
+                        menus.unshift(ownerMenu);
+                      }
+                      showMenus(menus);
+                    }else{
+                      //不存在关联菜单
+                      if(ownerMenu){
+                        //存在自有菜单，拷贝默认菜单，并把自有菜单加到最前面
+                        var defMenu = $.ctx.menu.slice(0);
+                        defMenu.unshift(ownerMenu);
+                        showMenus(defMenu);
+                      } else {
+                        //不存在自有菜单，仅显示默认菜单
+                        showMenus($.ctx.menu);
+                      }
+                    }
+              }
+            });
+          //变量，控制显示空间自有菜单,单位、自定义单位、集团、自定义集团空间隐藏左面板
+            /* setTimeout(function(){
+              if(type == "2" || type == "3" || type == "17" || type == "18"){
+                  hideLeftNavigation();
+              }else{
+                  showLeftNavigation();
+              }
+            },1000); */
+            //个人类型空间判断  type== "0" || type == "5" || type == "10" || type == "15" || type == "16"
+            if(type== "0" || type == "5" || type == "9" || type == "10" || type == "14" || type == "15" || type == "16"){
+              showTimeLine();
+            }else{
+              hideTimeLine();
+	        }
+            //$("#main").attr("src", "about:blank");
+            if(spaceId == "101"){
+               //判断浏览器版本，目前仅支持IE
+ 			   var bro=$.browser;
+ 			   if(!bro.msie){
+ 				    $.messageBox({
+ 						'type' : 0,
+ 						'title':"系统消息提示",
+ 						'msg' :"仅支持IE浏览器打开ERP空间，带来的不便敬请谅解！",
+ 						ok_fn : function() {
+ 						}
+ 					  });
+ 					  return;
+ 			   }	
+              //获取缓存信息
+              var cookieInf;
+			  try{
+					cookieInf =relPage();
+					 if(cookieInf != '' && cookieInf != undefined){
+						path = path+"&extendParam=" +encodeURIComponent(cookieInf);
+					}
+					destroy();
+			  }catch(e){
+			  }
+
+              hideLeftNavigation();
+              hideTimeLine();
+              hideMainMenu();
+              hideLocation();
+			  $('#closeopenleft').hide();
+			  if(openType == "1"){
+			    window.open(_ctxPath + path, "newWindow");
+			  } else {
+			    $("#main").attr("src", _ctxPath+path+"&width="+$("#main").width()+"&height="+$("#main").height());
+			  }
+            }else{
+              showMainMenu();
+              if(path.indexOf("/project.do") != -1||path.indexOf("/thirdpartyController.do")!= -1){
+                path = _ctxPath + path;
+              } else {
+                if(path.indexOf("?") == -1){
+                  path = path + "?showState=show";
+                } else {
+                  path = path + "&showState=show";
+                }
+              }
+              if(openType == "1"){
+                window.open(path, "newWindow");
+              } else {
+                  $("#main").attr("src", path);
+              }
+            }
+          
+        }
+        //显示快捷方式
+        function initShortcuts(shortcut){
+           $("#shortcut").html("");
+           if (shortcut) {
+                var shortcutArray = shortcut, cut;
+                for (var i = 0; i < shortcutArray.length; i++) {
+                    cut = shortcutArray[i];
+                    var _namestr = cut.nameKey;
+                    //if(_namestr.length>4){
+                     //   _namestr=cut.nameKey.substr(0,3)+'...';
+                    //}
+                    $("#shortcut").append('<a id="' + cut.idKey + '" title="'+cut.nameKey+'"  class="shortItem" onclick="showShortcut(\'' + cut.urlKey.escapeHTML() + '\')">'+
+                      '<em style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(main/menuIcon/'+cut.iconKey+') no-repeat;background-position: 0 0;"></em>'+
+                      '<span class="margin_l_5 v_aling">' +_namestr +'</span></a>');
+                    if(i < shortcutArray.length -1){
+                      $("#shortcut").append("<div class='frount_nav_seprater'></div>");
+                    }
+                }
+            }else{
+			$("#shortcut").hide();
+			}
+            $.resizeShortCut();
+            //新建二级
+            if(shortcut){
+               var shortcutArray = shortcut, cut;
+               for (var i = 0; i < shortcutArray.length; i++) {
+                   cut = shortcutArray[i];
+                   if(cut.items&&cut.items.length>0){
+                     $("#"+cut.idKey).getMenu(cut); //初始化新建菜单
+                   }else{
+               	     if(!cut.urlKey || cut.urlKey == ''){
+                         $("#"+cut.idKey).hide();
+                     }
+                   }
+               }
+            }
+        }
+        //快捷方式点击
+        function showShortcut(url,id){
+          if($.trim(url).length == 0){
+            return;
+          }
+          //隐藏时间轴
+          hideTimeLine();
+          showMainMenu();
+          showLocation();
+          $("#main").attr("src", _ctxPath+url);
+          setCurrentShortCut(id);
+       }
+        
+        var openWindowFlag = null;
+        function showMenu(url,id,step,target,tarName,resourceCode,currentId){
+        	//新建协同页面跳转到别的二级菜单页面，弹出提示，一级菜单定位不准OA-38216 
+            $('.main_menu_li').removeAttr('current').removeClass('main_menu_li_current');
+            $('#'+currentId).removeClass('main_menu_li_hover').removeClass('main_menu_li_down').addClass('main_menu_li_current').attr('current',true);
+            reloadPage(id,currentId);
+            showLeftNavigation();
+            //隐藏时间轴
+            hideTimeLine();
+            showMainMenu();
+            //公文应用设置在非IE下不允许进入
+            
+            if (!$.browser.msie&&url==_ctxPath+"/edocController.do?method=sysCompanyMain") {
+            	$.alert("公文应用设置页面不支持此浏览器！");
+            	return;
+            	
+           }
+            if(resourceCode) {
+              if(url.indexOf('?') == -1)
+                url += "?";
+              else
+                url +="&";
+              url+="_resourceCode="+resourceCode;
+            }
+            if("newWindow"==target){
+                if(url.indexOf('showAbout') > 0) {
+                	showAbout();
+                } else if(url.indexOf('showHelp') > 0) {
+                	showHelp();
+                } else {
+					window.open(url,"newWindow");
+                }
+            }else {
+            	showLocation();
+                if(url.indexOf("linkConnectForMenu") != -1){
+                  getCtpTop().showLocation("");
+                }
+            	$("#main").attr("src", url);
+			}
+            if("false" == "true"){
+              var _menuobj = getMenuObj(id,step);
+              if(_menuobj!=null){
+                  $.initBackNavigation(_menuobj);
+                  setCurrentShortCut(id);
+              }
+            }
+          }
+          
+          function setCurrentShortCut(id){
+            $('.shortItem').removeClass('shortItem_over');
+            $('#'+id).addClass('shortItem_over');
+          }
+          function getMenuObj(id, step){
+            for (var i = 0; i < menu.length; i++) {
+                var _menuTemp = menu[i];
+                if (_menuTemp.id == id) {
+                    return _menuTemp;
+                }
+                var _item = _menuTemp.items;
+                if (_item && _item.length > 0) {
+                    for (var f = 0; f < _item.length; f++) {
+                        var _temp = _item[f];
+                        if (_temp.id == id) {
+                            return _menuTemp;
+                        }
+                        var _tempItem = _temp.items;
+                        if (_tempItem && _tempItem.length) {
+                            for (var w = 0; w < _tempItem.length; w++) {
+                                if (_tempItem[w].id == id) {
+                                    return _menuTemp;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        function showMenus(menus){
+          if(menus){
+        	menu = menus;
+          }else{
+        	menu = $.ctx.menu;                
+          }
+          if(menu){
+            $.initNavigation(menu);
+          }
+        }
+        var LoginOpenWindow = false;
+    </script>
+</head>
+<body class="h100b over_hidden frount"><div id="madiv1"><button>请假单</button><button>个人</button><button>todo</button></div><div id="newMoremenu_-8830502753594488956" class="nav_sub display_none" style="top: 241px; left: 125px; display: none;"><div id="menu_border_lmenu_-8830502753594488956" class="menu_border_l absolute" style="height: 36px;"></div><a onclick='showShortcut("/collaboration/collaboration.do?method=newColl&amp;rescode=F01_newColl")' id="menu_-7732004021612100617" class="hand">新建事项</a><a onclick='showShortcut("/plan/plan.do?method=newPlan")' id="menu_9162200917700461620" class="hand">新建计划</a><a onclick='showShortcut("/meetingNavigation.do?method=entryManager&amp;entry=meetingArrange&amp;listType=create")' id="menu_-161633461972480845" class="hand">新建会议</a><a onclick='showShortcut("/webmail.do?method=create")' id="menu_4599441089782106533" class="hand">新建邮件</a></div>
+    <div id="second_menu" class="second_menu_contaner clearfix second_menu_contaner_shadow" style="left: 369px; top: 156px; display: none;"></div>
+    <iframe id="second_menu_iframe" class="menu_iframe" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/a.html" style="left: 369px; top: 156px; height: 156px; display: none;" frameborder="0"></iframe>
+    <iframe id="third_menu_iframe" class="menu_iframe" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/a.html" style="display: none;" frameborder="0"></iframe>
+    <iframe id="four_menu_iframe" class="menu_iframe" src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/a.html" style="display: none;" frameborder="0"></iframe>
+    <div id="spaceMore_area" class="spaceMore_area"></div>
+	<iframe id="space_more_iframe" class="space_more_iframe" frameborder="0"></iframe>
+    <iframe id="new_shortcut_iframe" class="new_shortcut_iframe" style="top: 241px; left: 125px; height: 144px; display: none;" frameborder="0"></iframe>
+    
+    <div id="stadic_layout" style="background-image: url(&quot;/seeyon/main/frames/default/images/index_bg.jpg?expand=1&quot;); background-repeat: inherit;">
+        <div id="stadic_layout_head">
+            <div class="area">
+                <div class="banner clearfix" id="head_banner" style="background-image: url(&quot;/seeyon/main/frames/default/11111111111.jpg?expand=0&quot;); background-repeat: no-repeat;">
+                    <div class="area_l clearfix" id="area_l">
+                        <div class="left logoDiv">
+                            <img src="" id="logo" style="display: none;" height="64" border="0">
+                        </div>
+                        <div id="comDiv" class="left comDiv" style="margin-left: 30px;">
+                            <div id="accountNameDiv" class="companyLabel" style="margin-top: 24px;"></div>
+                            <div id="accountSecondNameDiv" class="companyLabel2"></div>
+                        </div>
+                    </div>
+                    <div class="area_r" id="area_r">
+                        <div class="handle_icons" style="width: 200px;">
+                            <a class="right" id="logout"><em class="ico24 close_icon" title="退出"></em></a>
+                            <a class="right"><em id="collapse_banner" class="ico24 unfold_icon" title="收缩"></em></a>
+                            
+                            
+	                            <a onclick="startA8genius();" class="right" id="top-a8" title="关于">
+	                            	<em class="ico24 minimize_icon2"></em>
+	                            </a>
+                            
+                            <a class="right" id="productView_btn"><em class="ico24 productview_icon" title="产品导图"></em></a>
+                            <a class="right" id="refreshPage"><em class="ico24 refresh_icon" title="刷新"></em></a>
+                            <a class="right" id="historyForward"><em class="ico24 back_icon" title="前进"></em></a>
+                            <a class="right" id="historyBack"><em class="ico24 front_icon" title="返回"></em></a>
+                            
+                            <a class="right" id="searchIcon"><em class="ico24 seach_icon" title="搜索"></em></a>
+                            
+                        </div>
+                        <div class="right"><!-- id="accountSelector" -->
+                           
+                            <div id="accountSelector" style="display: none;"></div>
+                            
+                        </div>
+                    <div class="searchArea hidden" style="right: 210px;"><a title="高级" class="searchAreaA hand">高级</a><input id="keyword" name="keyword" class="searchAreaInput" type="text"><a class="hand"><em class="ico24 seach_icon_button">搜索</em></a></div></div>
+                </div>
+            </div>
+        </div>
+        <div id="stadic_layout_body">
+            <div id="main_layout">
+                <div id="main_layout_left" class="relative clearfix over_hidden" style="width: 130px;">
+                    
+                        
+                        
+                            <div id="frount_nav_div" class="frount_nav h100b left">
+                                <div class="vst" id="avatar" style="cursor:pointer;">
+                                    <img src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/pic.gif" height="104" width="104">
+                                </div>
+                                
+                                <div class="vst_online" id="vst_online">
+                                
+                                    <span id="vst_online_state">
+                                        <em class="ico16 online1 margin_r_5"></em><em class=" online_arrow"></em>
+                                    </span>
+                                    
+                                    <span id="vst_online_state_text" class="margin_l_5 display_inline-block"></span>
+                                    <span id="online_uc" style="cursor:pointer;" class="font_bold"><span id="onlineNum" name="onlineNum">8</span>人</span>
+                                    
+                                    <div class="vst_state" id="vst_state" style="display: none;">
+                                    	<div style="position: absolute;width:25px; height:104px; top:2px; left:2px; background:#e6eaed; z-index:1;"></div>
+                                        <a href="javascript:void(0)" id="online1" value="0" class="vst_state_item" style="position: relative;z-index:2;"><em class="ico16 online1 margin_lr_5"></em>&nbsp;在线</a>
+                                        <a href="javascript:void(0)" id="online2" value="1" class="vst_state_item" style="position: relative;z-index:2;"><em class="ico16 online2 margin_lr_5"></em>&nbsp;离开</a>
+                                        <a href="javascript:void(0)" id="online3" value="2" class="vst_state_item" style="position: relative;z-index:2;"><em class="ico16 online3 margin_lr_5"></em>&nbsp;忙碌</a>
+                                        <a href="javascript:void(0)" id="online4" value="3" class="vst_state_item" style="position: relative;z-index:2;"><em class="ico16 online4 margin_lr_5"></em>&nbsp;请勿打扰</a>
+                                    </div>
+                                </div>
+                                <div class="frount_nav_seprater_line"></div>
+
+								<div id="myShortcutArea" style="height: 357px;">
+                                
+
+									<div class="short_cut_content" id="shortcut"><a id="menu_-8830502753594488956" title="新建" class="shortItem" onclick="showShortcut('')" style="background-color: transparent; background-image: inherit;"><em style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(main/menuIcon/New.gif) no-repeat;background-position: 0 0;"></em><span class="margin_l_5 v_aling">新建</span><span class="shortMore"></span></a><div class="frount_nav_seprater"></div><a id="menu_6975672660502134921" title="时间安排" class="shortItem" onclick="showShortcut('/calendar/calEvent.do?method=arrangeTime')"><em style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(main/menuIcon/SchedulePlan.gif) no-repeat;background-position: 0 0;"></em><span class="margin_l_5 v_aling">时间安排</span></a><div class="frount_nav_seprater"></div><a id="menu_-7506057464002293794" title="绩效查询" class="shortItem" onclick="showShortcut('/performanceReport/performanceQuery.do?method=queryIndex')"><em style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(main/menuIcon/PerformanceQuery.gif) no-repeat;background-position: 0 0;"></em><span class="margin_l_5 v_aling">绩效查询</span></a><div class="frount_nav_seprater"></div><a id="menu_6483964819832588449" title="通讯录" class="shortItem" onclick="showShortcut('/addressbook.do?method=homeEntry')"><em style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(main/menuIcon/Contacts.gif) no-repeat;background-position: 0 0;"></em><span class="margin_l_5 v_aling">通讯录</span></a><div class="frount_nav_seprater"></div><a id="menu_5495680312369824433" title="关联系统" class="shortItem" onclick="showShortcut('/portal/linkSystemController.do?method=linkSystemMore&amp;doType=0')"><em style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(main/menuIcon/Related.gif) no-repeat;background-position: 0 0;"></em><span class="margin_l_5 v_aling">关联系统</span></a><div class="frount_nav_seprater"></div><a id="menu_-1676919384944393023" title="我的邮件" class="shortItem" onclick="showShortcut('/webmail.do?method=list&amp;jsp=inbox')"><em style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(main/menuIcon/Inbox.gif) no-repeat;background-position: 0 0;"></em><span class="margin_l_5 v_aling">我的邮件</span></a><div class="frount_nav_seprater"></div><a id="menu_7433919187500615362" title="综合查询" class="shortItem" onclick="showShortcut('/isearch.do?method=index')"><em style="width:16px;height:16px;display:inline-block;vertical-align:middle;background:url(main/menuIcon/SearchEngine.gif) no-repeat;background-position: 0 0;"></em><span class="margin_l_5 v_aling">综合查询</span></a></div>
+									
+					                <div class="frount_nav_seprater_line"></div>
+	                                    <a id="my_set" class="shortItem">
+						                      <em class="gerenshezhi "></em><span class="margin_l_5 v_aling">个人事务</span>
+						                </a>
+                                    <div class="frount_nav_seprater_line"></div>
+								</div>
+
+                                <div id="remind_msg" class="remind_msg">
+                                    <a id="remind_msga" style="background: rgb(230, 230, 230) none repeat scroll 0% 0%;"><em class="ico24 email_24 msg_24 margin_l_10 margin_r_5"></em>消 息</a>
+                                </div>
+                            </div>
+                        
+                    
+					<div class="frount_nav_close h100b ">
+						<div id="closeopenleft" class="closeLeft"></div>
+					</div>
+                </div>
+                <div id="main_layout_right" class="clearfix">
+                    <div class="area">
+                        <ul class="list" id="space"><li title="个人空间" class="selected" id="space_0" onclick="showSpace('0','2306505623437658455','/seeyon/personal/-9095585739310150737_D.psml','5','2','true')" style=""><span>个人空间</span></li><li title="北分空间" id="space_1" onclick="showSpace('1','1855866118197365620','/seeyon/corporation/-9095585739310150737.psml','2','2','true')" style="background: rgb(57, 122, 192) none repeat scroll 0% 0%;" class=""><span>北分空间</span></li><li title="纳克空间" id="space_2" onclick="showSpace('2','3542421856666798216','/seeyon/group/-1730833917365171641.psml','3','2','true')" style="background: rgb(57, 122, 192) none repeat scroll 0% 0%;" class=""><span>纳克空间</span></li><li title="财务空间(纳克职能部门)" id="space_3" onclick="showSpace('3','876852643659465907','/seeyon/custom/876852643659465907.psml','4','2','true')" style="background: rgb(57, 122, 192) none repeat scroll 0% 0%;" class=""><span>财务空间︵</span></li></ul>
+                        <div id="space_area">
+                            <div id="spaceMoreBtn" class="spaceMoreBtn" title="更多" style="display: none; background: rgb(57, 122, 192) none repeat scroll 0% 0%;">
+                                 <span class="spaceMoreBtn_span"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="content_layout">
+                    <div id="content_layout_top" style="height: 60px;">
+                        <div class="clearfix" id="menuDiv">
+                            <ul class="main_menu clearfix" id="menuUL"><li class="main_menu_separate_li"><em class="main_menu_separate"></em></li><li class="main_menu_li" id="-4751259066364441679"><a id="-4751259066364441679_a" class="main_menu_a"><em class="main_menu_em" icon="icon" style="width: 32px; height: 32px; display: inline-block; background: rgba(0, 0, 0, 0) url(&quot;main/menuIcon/Collaboration.png?V=5_0_5_23&quot;) no-repeat scroll 0px 0px;"></em><span class="main_menu_span">协同工作</span></a></li><li class="main_menu_separate_li"><em class="main_menu_separate"></em></li><li class="main_menu_li" id="-2480427965080909155"><a id="-2480427965080909155_a" class="main_menu_a"><em class="main_menu_em" icon="icon" style="width:32px;height:32px;display:inline-block;background:url(main/menuIcon/FormEngine.png?V=5_0_5_23) no-repeat;background-position: 0 0;"></em><span class="main_menu_span">表单应用</span></a></li><li class="main_menu_separate_li"><em class="main_menu_separate"></em></li><li class="main_menu_li" id="2345991731884477998"><a id="2345991731884477998_a" class="main_menu_a"><em class="main_menu_em" icon="icon" style="width:32px;height:32px;display:inline-block;background:url(main/menuIcon/BusinessSolutionsGenerator.png?V=5_0_5_23) no-repeat;background-position: 0 0;"></em><span class="main_menu_span">业务生成器</span></a></li><li class="main_menu_separate_li"><em class="main_menu_separate"></em></li><li class="main_menu_li" id="7928573621177172775"><a id="7928573621177172775_a" class="main_menu_a"><em class="main_menu_em" icon="icon" style="width:32px;height:32px;display:inline-block;background:url(main/menuIcon/OfficialDocument.png?V=5_0_5_23) no-repeat;background-position: 0 0;"></em><span class="main_menu_span">公文管理</span></a></li><li class="main_menu_separate_li"><em class="main_menu_separate"></em></li><li class="main_menu_li" id="3278273162661414918"><a id="3278273162661414918_a" class="main_menu_a"><em class="main_menu_em" icon="icon" style="width:32px;height:32px;display:inline-block;background:url(main/menuIcon/ManagementbyObjectives.png?V=5_0_5_23) no-repeat;background-position: 0 0;"></em><span class="main_menu_span">目标管理</span></a></li><li class="main_menu_separate_li"><em class="main_menu_separate"></em></li><li class="main_menu_li" id="-7662770484306425904"><a id="-7662770484306425904_a" class="main_menu_a"><em class="main_menu_em" icon="icon" style="width:32px;height:32px;display:inline-block;background:url(main/menuIcon/Conference.png?V=5_0_5_23) no-repeat;background-position: 0 0;"></em><span class="main_menu_span">会议管理</span></a></li><li class="main_menu_separate_li"><em class="main_menu_separate"></em></li><li class="main_menu_li" id="-339788257495134854"><a id="-339788257495134854_a" class="main_menu_a"><em class="main_menu_em" icon="icon" style="width:32px;height:32px;display:inline-block;background:url(main/menuIcon/KnowledgeCommunity.png?V=5_0_5_23) no-repeat;background-position: 0 0;"></em><span class="main_menu_span">知识社区</span></a></li><li class="main_menu_separate_li"><em class="main_menu_separate"></em></li><li class="main_menu_li" id="9027674737881466566"><a id="9027674737881466566_a" class="main_menu_a"><em class="main_menu_em" icon="icon" style="width:32px;height:32px;display:inline-block;background:url(main/menuIcon/CultureConstruction.png?V=5_0_5_23) no-repeat;background-position: 0 0;"></em><span class="main_menu_span">文化建设</span></a></li><li class="main_menu_separate_li"><em class="main_menu_separate"></em></li><li class="main_menu_li" id="7256192114101012975"><a id="7256192114101012975_a" class="main_menu_a"><em class="main_menu_em" icon="icon" style="width:32px;height:32px;display:inline-block;background:url(main/menuIcon/PerformanceAnalysis.png?V=5_0_5_23) no-repeat;background-position: 0 0;"></em><span class="main_menu_span">协同驾驶舱</span></a></li><li class="main_menu_separate_li"><em class="main_menu_separate"></em></li><li class="main_menu_li" id="6684467749913774069"><a id="6684467749913774069_a" class="main_menu_a"><em class="main_menu_em" icon="icon" style="width:32px;height:32px;display:inline-block;background:url(main/menuIcon/Service.png?V=5_0_5_23) no-repeat;background-position: 0 0;"></em><span class="main_menu_span">综合办公</span></a></li><li class="main_menu_separate_li"><em class="main_menu_separate"></em></li><li class="main_menu_li main_menu_li_more" id="menu_more"><a id="menumore_a" class="main_menu_a"><em class="main_menu_em_more"></em><span class="main_menu_span">更多</span></a></li><li class="main_menu_separate_li"><em class="main_menu_separate"></em></li></ul>
+                        </div>
+                    </div>
+                    <div id="content_layout_body" style="top: 60px;">
+                        <div id="content_layout_body_left">
+                            <div id="content_layout_body_left_content" class="bg_color_white relative" style="margin-right: 48px;">
+                                <div id="nowLocationDiv" class="bg_color border_b hidden" style="height: 19px; display: none;">
+                                    <span id="nowLocation" class="common_crumbs " style="display: none;"></span>
+                                </div>
+                               <div class="absolute w100b" id="main_div" style="top: 0px; bottom: 0px; left: 0px;">
+                                    <iframe src="%E9%92%A2%E7%A0%94%E7%BA%B3%E5%85%8B%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC%E8%BD%AF%E4%BB%B6%20V5.0SP2,%20%E9%A9%AC%E7%BA%A2%E6%9D%83,%E6%82%A8%E5%A5%BD!_files/-9095585739310150737_D.html" id="main" name="main" onload="setonbeforeunload()" class="w100b h100b absolute" frameborder="0"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="content_layout_body_right">
+                            
+                        <div class="time_line_box" id="timeLine_box" style="padding-bottom:10px"><div class="time_line_date" style="height:30px;letter-spacing:1px;"><span id="timeLine_date">03-17</span><div id="timeLine_time_line_date_set" class="hidden" style="height:20px"><select class="left timeLine_time_line_date_set_mouth" id="timeLine_time_line_date_set_mouth"><option>1</option><option>2</option><option selected="selected">3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select><span class="left font_size12" style="margin-top:2px;margin-right:10px;">月</span><select class="left timeLine_time_line_date_set_day" id="timeLine_time_line_date_set_day"><option value="1"> 1</option><option value="2"> 2</option><option value="3"> 3</option><option value="4"> 4</option><option value="5"> 5</option><option value="6"> 6</option><option value="7"> 7</option><option value="8"> 8</option><option value="9"> 9</option><option value="10"> 10</option><option value="11"> 11</option><option value="12"> 12</option><option value="13"> 13</option><option value="14"> 14</option><option value="15"> 15</option><option value="16"> 16</option><option selected="selected" value="17"> 17</option><option value="18"> 18</option><option value="19"> 19</option><option value="20"> 20</option><option value="21"> 21</option><option value="22"> 22</option><option value="23"> 23</option><option value="24"> 24</option><option value="25"> 25</option><option value="26"> 26</option><option value="27"> 27</option><option value="28"> 28</option><option value="29"> 29</option><option value="30"> 30</option><option value="31"> 31</option></select><span class="left font_size12 " style="margin-top:2px;margin-right:2px;">日</span><a class="tooltip_close font_size12 right margin_t_5 hand color_blue">取消</a><a class="tooltip_close font_size12 right margin_r_10 margin_t_5 hand color_blue">确定</a></div></div><div class="time_line_main relative" style="height:458px" id="timeLine_main"><div class="time_hour_scale absolute" style="top: -1px;"></div><div class="time_hour absolute clearfix" style="top: -13px;"><div class="time_hour_number" style="width:13px;">8</div><div class="time_hour_number_00" style="width:17px;">:00</div></div><div class="time_harf_hour_scale absolute" style="top: 22.9px;"></div><div class="time_hour_scale absolute" style="top: 44.8px;"></div><div class="time_hour absolute clearfix" style="top: 32.8px;"><div class="time_hour_number">9</div><div class="time_hour_number_00">00</div></div><div class="time_harf_hour_scale absolute" style="top: 68.7px;"></div><div class="time_hour_scale absolute" style="top: 90.6px;"></div><div class="time_hour absolute clearfix" style="top: 78.6px;"><div class="time_hour_number">10</div><div class="time_hour_number_00">00</div></div><div class="time_harf_hour_scale absolute" style="top: 114.5px;"></div><div class="time_hour_scale absolute" style="top: 136.4px;"></div><div class="time_hour absolute clearfix" style="top: 124.4px;"><div class="time_hour_number">11</div><div class="time_hour_number_00">00</div></div><div class="time_harf_hour_scale absolute" style="top: 160.3px;"></div><div class="time_hour_scale absolute" style="top: 182.2px;"></div><div class="time_hour absolute clearfix" style="top: 170.2px;"><div class="time_hour_number">12</div><div class="time_hour_number_00">00</div></div><div class="time_harf_hour_scale absolute" style="top: 206.1px;"></div><div class="time_hour_scale absolute" style="top: 228px;"></div><div class="time_hour absolute clearfix" style="top: 216px;"><div class="time_hour_number">13</div><div class="time_hour_number_00">00</div></div><div class="time_harf_hour_scale absolute" style="top: 251.9px;"></div><div class="time_hour_scale absolute" style="top: 273.8px;"></div><div class="time_hour absolute clearfix" style="top: 261.8px;"><div class="time_hour_number">14</div><div class="time_hour_number_00">00</div></div><div class="time_harf_hour_scale absolute" style="top: 297.7px;"></div><div class="time_hour_scale absolute" style="top: 319.6px;"></div><div class="time_hour absolute clearfix" style="top: 307.6px;"><div class="time_hour_number">15</div><div class="time_hour_number_00">00</div></div><div class="time_harf_hour_scale absolute" style="top: 343.5px;"></div><div class="time_hour_scale absolute" style="top: 365.4px;"></div><div class="time_hour absolute clearfix" style="top: 353.4px;"><div class="time_hour_number">16</div><div class="time_hour_number_00">00</div></div><div class="time_harf_hour_scale absolute" style="top: 389.3px;"></div><div class="time_hour_scale absolute" style="top: 411.2px;"></div><div class="time_hour absolute clearfix" style="top: 399.2px;"><div class="time_hour_number">17</div><div class="time_hour_number_00">00</div></div><div class="time_harf_hour_scale absolute" style="top: 435.1px;"></div><div class="time_hour absolute clearfix" style="top: 445px;"><div class="time_hour_number">18</div><div class="time_hour_number_00">00</div></div><div class="time_hour_scale absolute" style="top: 457px;"></div></div></div></div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<iframe id="DivShim4MsgWindow" scrolling="no" style="position:absolute; right:0px; bottom:0px; display:none; z-index:103;width:280px;" frameborder="0"></iframe>
+	
+	<div id="msgWindowDIV" style="width:280px; position:absolute; right:0px; bottom:0px; display:none; z-index:104;" class="page_color border_all">
+		<table id="helperTable" width="100%" cellspacing="0" cellpadding="0" border="0">
+			<tbody><tr>
+				<td class="title-background-1" height="32">
+					<table width="100%" cellspacing="0" cellpadding="0" border="0">
+						<tbody><tr>
+							<td class="msgTitle" width="84%">消息盒子</td>
+							<td title="最小化" onclick="changeMessageWindow('a8')" class="hand" width="8%"><span class="dialog_min right"></span></td>
+							<td title="关闭" onclick="destroyMessageWindow('true', 'a8')" class="hand" width="8%"><span class="dialog_close right"></span></td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+			<tr id="PerMsgContainerTR" style="display: none;"><td id="PerMsgContainer" align="right"></td></tr>
+			<tr id="SysMsgContainerTR" style="display: none;"><td id="SysMsgContainer" align="right"></td></tr>
+			
+				
+					<tr align="right" valign="middle">
+						<td class="bottom-background-1" style="padding: 0 5px;">
+							<span class="hand like-a div-float" onclick="showMessageSet('/seeyon/message.do?method=showMessageSettingModel')">设置...</span>						
+							<span class="hand like-a div-float-right" onclick='showMoreMessage("/seeyon/message.do?method=showMessages&amp;showType=0&amp;readType=notRead")'>[更多]</span>
+						</td>
+					</tr>
+				
+				
+			
+		</tbody></table>
+	</div>
+	
+	<div id="msgWindowMaxDIV" style="position:absolute; right:1px; bottom:1px; display:none; z-index:105;" class="td-background-sys_max_2 hand border_all padding_5" onclick="changeMessageWindow('a8')"></div>
+	
+	
+	<iframe id="playSoundHelper" class="hidden" scrolling="no" marginheight="0" marginwidth="0" height="0" frameborder="0" width="0"></iframe>
+
+
+
+
+
+ 
+ 
+ 
+
+ 
+<div class="time_line_edit hidden over_hidden" style="left: 1022.5px; top: 140px; display: none;"><div class="clearfix"> </div></div><div class="time_line_edit hidden over_hidden"><div class="clearfix"> </div></div><div class="time_line_edit hidden over_hidden" style="left: 541.5px; top: 140px; display: none;"><div class="clearfix"><span id="timeLine_editor" class="ico16 editor_16 left"></span><span id="timeLine_maximize" class="ico16 maximize_16 right"></span> </div></div></body></html>
+<!--加载NC Applet-->

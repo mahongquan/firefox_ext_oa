@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html class="h100b over_hidden"><head><script type="text/javascript">
+  var _ctxPath = '/seeyon', _ctxServer = 'http://oa.ncschina.com:80/seeyon';
+  var _locale = 'zh_CN',_isDevelop = false,_sessionid = 'ACBA94B0BDC376D603A9D0F0060F7239',_isModalDialog = false;
+  
+  var _resourceCode = "";
+  var seeyonProductId="2";
+</script>
+<link rel="stylesheet" href="all-min.css">
+
+<link rel="stylesheet" href="skin_003.css">
+
+
+<script type="text/javascript" src="../i18n_zh_CN.js"></script>
+
+<script type="text/javascript" src="all-min.js"></script>
+
+<script type="text/javascript" src="calendar-zh_CN.js"></script>
+
+<script type="text/javascript" src="calEvent_data/main.html"></script>
+<script type="text/javascript">
+$.ctx._currentPathId = 'collaboration_pending_transPendingMain';
+$.ctx._pageSize = 20;
+$.ctx.fillmaps = null;
+</script>
+<script type="text/javascript" src="ajax_002.txt"></script>
+
+
+<script type="text/javascript" src="pending_data/ajax.txt"></script>
+<script type="text/javascript" src="pending_data/AnyChart.js"></script>
+<script type="text/javascript" src="pending_data/AnyChartHTML5.js"></script>
+<script type="text/javascript" src="pending_data/seeyon.js"></script>
+
+<script type="text/javascript">
+<!--
+/**
+ * æ§è¡Flashå¾è¡¨çæå°é¢è§æä½
+ * @chartObjs å¾è¡¨å¯¹è±¡æ°ç»(new SeeyonChart()[])
+ */
+function printFlashChart2IMG(chartObjS){
+  	if ( $.browser.msie ){
+   		if($.browser.version<8){//å¯¹ä¸èµ·ï¼å½åæ¨çæµè§å¨çæ¬è¿ä½æ æ³æ¯æå¾è¡¨çæå°ä¸è½¬åï¼è¯·åçº§è³IE8åä»¥ä¸çæ¬
+   			$.alert("对不起，当前您的浏览器版本过低无法支持图表的打印与转发，请升级至IE8及以上版本!");
+   			return;
+   		}
+   	}
+  var contentBody = "";
+  if(chartObjS != null && chartObjS.length>0){
+    var png = null;
+    for(var i=0;i<chartObjS.length;i++){
+      try{//é²æ¤ï¼å¦æå¾è¡¨æªå è½½å®å¨æ¯ä¸ä¼çæPNGç
+        png = chartObjS[i].chart.getPNG();
+      }catch(e){
+        png = null;
+        continue;
+      }
+      if(png != null){
+        contentBody+="<img src='data:image/png;base64,"+png+"'>";
+      }
+     }
+  }
+  
+  var printContentBody = "";
+  var cssList = new ArrayList();
+  var pl = new ArrayList();
+  var contentBodyFrag = "" ;
+  contentBodyFrag = new PrintFragment(printContentBody, contentBody);
+  pl.add(contentBodyFrag);
+  
+  cssList.add("/seeyon/common/skin/default/skin.css");
+  
+  printList(pl,cssList);
+}
+//-->
+</script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+
+	function showMeetingReplyCard2() {
+		$("div.replyCard").each(function() {
+			
+			var objectId = $(this).attr("objectId"); 
+			
+			$(this).mouseover(function() {
+		        var requestCaller = new XMLHttpRequestCaller(this, "replyManager", "getJoinMeetingAffair", false);
+				requestCaller.addParameter(1, "String", objectId);
+				var jsonObj = requestCaller.serviceRequest();
+				if(jsonObj != null ) {
+					var list = $.parseJSON(jsonObj);
+	            	var allList = new ArrayList();
+	            	var joinList = new ArrayList();
+	            	var notJoinList = new ArrayList();
+	            	var waitJoinList = new ArrayList();
+	            	
+	            	for(var i=0; i<list.length; i++) {
+	            		if(list[i].replyState==10) {//不参加
+	            			notJoinList.add(list[i]);
+							waitJoinList.add(list[i]);
+	            		} else {
+							if(list[i].replySubState==31) {
+								joinList.add(list[i]);
+							} else if(list[i].replySubState==32) {//不参加
+								waitJoinList.add(list[i]);
+							} else if(list[i].replySubState==33) {//待定
+								waitJoinList.add(list[i]);
+							} else {
+								waitJoinList.add(list[i]);//未查看+已查看
+							}
+						}		            		
+	            		allList.add(list[i]);
+	            	}
+	            	
+	            	$("#joinTable").html('');
+	            	$("#waitJoinTable").html('');
+	            	$("#joinTable").append('<tr><td valign="top">参加:<span id="joinCount"></span></td></tr>');
+	            	$("#waitJoinTable").append('<tr><td valign="top">待回执:<span id="waitJoinCount"></span></td></tr>');
+	            	
+	            	$("#allCount").html(allList.size());
+	            	$("#joinCount").html(joinList.size());
+	            	$("#notJoinCount").html(notJoinList.size());
+	            	$("#waitJoinCount").html(waitJoinList.size());
+	            	
+	            	var maxLen = 4;
+	            	for(var i=0; i<joinList.size(); i++) {
+	            		var replyClass = "ico16 margin_l_5 left participate_16";
+	            		//$("#joinTable").append("<tr isMore='"+(i>maxLen)+"'><td width='100%' valign='middle'><span class='"+replyClass+"'></span>"+joinList.get(i).userName+"</td></tr>");
+	            		$("#joinTable").append("<tr><td width='100%' valign='middle'><span title='参加' class='"+replyClass+"'></span>"+joinList.get(i).userName+"</td></tr>");
+					}
+	            	
+	            	for(var i=0; i<waitJoinList.size(); i++) {
+	            		var replyClass = "ico16 unviewed_16";//未查看
+	            		var replyTitle = "未查看"
+						if(waitJoinList.get(i).replySubState == 32) {//不参加
+							replyClass = "ico16 unparticipate_16";
+							replyTitle = "不参加";
+						} else if(waitJoinList.get(i).replySubState == 33) {//待定
+							replyClass = "ico16 determined_16";
+							replyTitle = "待定";
+						} else if(waitJoinList.get(i).replySubState == 12) {//已读
+							replyClass = "ico16 viewed_16";
+							replyTitle = "未回执";
+						}
+	            		$("#waitJoinTable").append("<tr><td width='100%' valign='middle'><span title='"+replyTitle+"' class='"+replyClass+"'></span>"+waitJoinList.get(i).userName+"</td></tr>");
+	            		//$("#waitJoinTable").append("<tr isMore='"+(i>maxLen)+"'><td width='100%' valign='middle'><span class='"+replyClass+"'></span>"+waitJoinList.get(i).userName+"</td></tr>");
+				    }
+	            	
+	            	/** 屏蔽掉更多按钮
+					$("tr[isMore='true']").each(function(i) {
+						$(this).hide();
+					});**/
+	            	
+	            	var panel = $.dialog({
+	    				id:'replyPanel',
+	    			    width: 300,
+	    			    height: 150,
+	    			    type: 'panel',
+	    			    htmlId: 'meetingReplyCard',
+	    			    targetId: 'replyCard'+objectId,
+	    				shadow:false
+	    			});
+	    			$("#replyPanel").mouseleave(function() {
+	    				panel.close();
+	    			});
+				}
+			});
+		});
+		
+		/** 屏蔽掉更多按钮
+		$("#moreReply").click(function() {
+			if($("#moreReply").attr("showAll")=="false") {
+				$("#moreReply").attr("showAll", "true");
+				$("#joinTable").find("tr[isMore='true']").each(function(i) {
+					$(this).show();
+				});
+				$("#waitJoinTable").find("tr[isMore='true']").each(function(i) {
+					$(this).show();
+				});
+			} else {
+				$("#moreReply").attr("showAll", "false");
+				$("#joinTable").find("tr[isMore='true']").each(function(i) {
+					$(this).hide();
+				});
+				$("#waitJoinTable").find("tr[isMore='true']").each(function(i) {
+					$(this).hide();
+				});
+			}
+		});**/
+	}
+
+	
+	function showMeetingReplyCard() {
+		$("div.replyCard").each(function() {
+			var meetingId = $(this).attr("objectId");
+			$(this).mouseover(function() {
+				showMeetingCardDetail(meetingId, "pendingSection", $(this).attr("id"));
+			});
+			$(this).mouseleave(function() {
+				mouseOutOfReply();
+			});
+		});
+	}
+	
+	var replyCard, meetingReplyObj;
+	function showMeetingCardDetail(meetingId, entityId, objectId) {
+		var url = _ctxPath+"/meeting.do?method=showReplyCardDetail&entityId="+entityId+"&meetingId="+meetingId;
+		if (replyCard) { replyCard.close(); }
+		meetingReplyObj = $('#replyCard' + objectId);
+		replyCard = $.dialog({
+			id:'replyDetailDialog',
+	        width: 239,
+	        height: 200,
+		    type: 'panel',
+		    targetId: 'replyCard' + meetingId,
+		    url: url,
+			shadow:false,
+			checkMax:false,
+			transParams:{sectionId:'pendingSection', callbackOfPendingSection:closeAndFresh, pwindow:window},
+			panelParam:{
+				'show':false,
+				'margins': false,
+				'inside':true
+			}
+		});
+	}
+	
+	function mouseOutOfReply(){
+		if (replyCard) {
+			var dialog = $("#" + replyCard.id);
+			mouseBind(dialog, meetingReplyObj, replyCard, "meetingReplyDetailDialog");
+		}
+	}
+	
+</script>
+</head>
+
+<body scroll="" onunload="removeChart()" class="h100b">
+
+
+
+
+<script>
+var whereFrom = {
+		//å¾å  å·²å 
+	    'peopleCard' : 'peopleCard'
+	}
+/**
+ * å¶ä»åè¿ç¨è½¬ååæ¥å£
+ * æ¯æä¸¤ç§æ¹å¼,ä¸ç§æ¯å¶ä»åå°Controllerè¯·æ±CollaborationServiceè¿åé¡µé¢
+ * ä¸ç§æ¯å¼å¥è¯¥jspè°ç¨apptoCollè¯¥JSæ¹æ³
+ * @param from  åè¿ç¨ä»åªéæ¥ eg:äººåå¡ç from="peopleCard"
+ * åç»­å¶ä»åè¿ç¨éè¦jsæ¥å£è½¬ååçä¸èµ·å¢å æä¸¾éååæ°
+ * copy ç±F1è´è´£ç»´æ¤ä¸ä¿®æ¹ 
+ */
+ function appToColl(wfrom,peopleCardId){
+	  if (!wfrom || !whereFrom[wfrom]) {
+	        alert('request is illegal:' + wfrom);
+	        return;
+	    }
+	    var url = _ctxPath+"/collaboration/collaboration.do?method=appToColl"+"&wfrom="+wfrom;
+	    if(peopleCardId && "" != peopleCardId){
+	    url += "&peopleCard="+peopleCardId;
+	  }
+	    if($(getA8Top().document).find("#main").length==0){
+	    	$(getA8Top().getParentWindow().getA8Top().document).find("#main").attr("src",url);
+	    	window.close();
+	    }else{
+	    	$(getA8Top().document).find("#main").attr("src",url);
+	    }
+	    
+	}
+/**
+ * éè¿urlæå¼ååæ­£æ
+ * dialogæ¹å¼æå¼
+ */
+function showSummayDialogByURL(url,title,isPortal,transParams){
+	var width = $(getA8Top().document).width() - 60;
+	var height = $(getA8Top().document).height() - 50;
+    url+="&isDialog=true";
+    var transParamsObj = [$('#summary'),$('.slideDownBtn'),$('#listPending')];
+    if(transParams){
+      transParamsObj = transParams;
+    }
+	dialogDealColl = $.dialog({
+        url: url,
+        width: width,
+        height: height,
+        title: title,
+        id:'dialogDealColl',
+        transParams:transParamsObj,
+        targetWindow:getCtpTop(),
+        closeParam: {
+          'show':true, 
+          autoClose:false, 
+          handler:function(){
+	        var isWorkflowChange = getCtpTop().$('#dialogDealColl_main_iframe_content')[0].contentWindow.isWorkflowChange;
+            if(!isWorkflowChange){
+                  if(isPortal){
+                        if(url.indexOf("inquirybasic.do?method=showInquiryFrame") != -1){
+                          parent.sectionHandler.reload("pendingSection", true);
+                        }
+                  }
+                dialogDealColl.close();
+            }else{
+              var confirm = $.confirm({
+                'msg': "若直接关闭窗口,您做的修改将不再保留",
+                ok_fn: function () {
+                    if(isPortal){
+                      if(url.indexOf("inquirybasic.do?method=showInquiryFrame") != -1){
+                        parent.sectionHandler.reload("pendingSection", true);
+                      }
+                    }
+                    dialogDealColl.close();
+                    dialogDealColl = null;
+                },
+                cancel_fn:function(){
+                    return;
+                }
+              });
+            }
+          }
+        }
+    });
+}
+/**
+ * 	è·åæå¼æ­£æåå®¹çurl
+ *
+ *	affairId,summaryId,processId ä¸ä¸ªåæ°å¦ææaffairIdä¼åä¼ affairIdï¼å¦æ åä¸å°affairIdä¼  summaryIdæèprocessId
+ * 	openFrom  		ä»åªéæå¼ç,ç¨æ¥æ§å¶ååå¤ççé¢å³ä¾§å¤çåºåæ¯å¦æ¾ç¤º  ä»å¦ä¸å­ç¬¦ä¸²ä¸­åå¼ï¼
+ *					formStatistical è¡¨åæ¥è¯¢ç»è®¡
+ *					docLib	ææ¡£ä¸­å¿
+ *					supervise ç£å
+ *					listDone å·²ååè¡¨
+ *					listPending å¾ååè¡¨
+ *                  F8Reprot F8ç©¿éç»è®¡
+ *					subFlow å­æµç¨æ¥çä¸»æµç¨ï¼æèä¸»æµç¨æ¥çå­æµç¨
+ *	operationId		è¡¨åä½¿ç¨çå­æ®µï¼æ²¡æå¯ä»¥ä¼  null
+ *  docAcl          ææ¡£ä¸­å¿æéä¸²
+ */
+function getCollDetailUrl(affairId,summaryId,processId,openFrom,operationId,docAcl){
+	var url = _ctxPath + "/collaboration/collaboration.do?method=summary";
+	if(affairId!=null&&typeof(affairId)!='undefined'){
+		url+="&affairId="+affairId;
+	}
+	if(summaryId!=null&&typeof(summaryId)!='undefined'){
+		url+="&summaryId="+summaryId;
+	}
+	if(processId!=null&&typeof(processId)!='undefined'){
+		url+="&processId="+processId;
+	}
+	if(openFrom!=null&&typeof(openFrom)!='undefined'){
+		url+="&openFrom="+openFrom;
+	}
+	if(operationId!=null&&typeof(operationId)!='undefined'){
+		url+="&operationId="+operationId;
+	}
+	if(docAcl!=null&&typeof(docAcl)!='undefined'){
+        url+="&lenPotent="+docAcl;
+    }
+	return url;
+}
+/**
+ * 	æå¼æ­£æåå®¹ï¼dialogæ¹å¼æå¼ï¼
+ *
+ *	affairId,summaryId,processId ä¸ä¸ªåæ°å¦ææaffairIdä¼åä¼ affairIdï¼å¦æ åä¸å°affairIdä¼  summaryIdæèprocessId
+ * 	openFrom  		ä»åªéæå¼ç,ç¨æ¥æ§å¶ååå¤ççé¢å³ä¾§å¤çåºåæ¯å¦æ¾ç¤º  ä»å¦ä¸å­ç¬¦ä¸²ä¸­åå¼ï¼
+ *					formStatistical è¡¨åæ¥è¯¢ç»è®¡
+ *					docLib	ææ¡£ä¸­å¿
+ *					supervise ç£å
+ *					listDone å·²ååè¡¨
+ *					noNeedForAudit éè¦å®¡è®¡
+ *					listPending å¾ååè¡¨
+ *	operationId		è¡¨åä½¿ç¨çå­æ®µï¼æ²¡æå¯ä»¥ä¼  null
+ *  docAcl          ææ¡£ä¸­å¿æéä¸²
+ *  title		    dialogçæ é¢ï¼ç¨affairçsubjectå¼
+ */
+function showSummayDialog(affairId,summaryId,processId,openFrom,operationId,docAcl,title){
+	//TODO å¦ætitleä¸ºç©º aJaxæ¥è¯¢
+	var url = getCollDetailUrl(affairId,summaryId,processId,openFrom,operationId);
+	var width = $(getA8Top().document).width() - 60;
+	var height = $(getA8Top().document).height() - 50;
+	dialogDealColl = $.dialog({
+        url: url,
+        width: width,
+        height: height,
+        title: title,
+        id:'dialogDealColl',
+        transParams:[$('#summary'),$('.slideDownBtn'),$('#listPending')],
+        targetWindow:getCtpTop()
+    });
+}
+</script>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+<script type="text/javascript" src="pending_data/ajax_002.txt"></script>
+<script type="text/javascript" src="pending_data/ajax_003.txt"></script>
+<script type="text/javascript" charset="UTF-8" src="pending_data/pendingMain.js"></script>
+<script type="text/javascript">
+var iframe_w=0;
+var iframe_h=0;
+var columnHeaderStr="[subject, receiveTime, sendUser, category]";
+var columnsStyleStr="listAndStatisticalGraph";
+var currentPanel="all";
+var pageSize="8";
+var dueToRemind="0";
+var fragmentId="6833566363075629018";
+var ordinal="0";
+var width="10";
+var sectionId="7070437510171084007";
+var resultMap;
+var hasHandleType=false;
+var hasImportantLevel=false;
+var hasExigency=false;
+var hasOverdue=false;
+var hasHandlingState=false;
+var defaultSelectedId="";
+var selectChartId="";
+var dataNameTemp="";
+var dialogDealColl;
+var widthSize="10";
+var iframeWidth=$(window).width();
+var iframeHeight=$(window).height();
+
+$(function(){
+	//收起待办事项的时候点击刷新问题兼容
+	try{
+		var divObj=$("div[panelid='"+sectionId+"']",window.parent.document).parents(".common_tabs");//取到展现和收起按钮所在的div
+		//把待办事项的刷新事件绑定到，展现收缩按钮的点击事件上，在点击展现、收缩按钮的同时，刷新整个待办栏目
+		divObj.find("li:eq(0)").click(function(){
+			divObj.find(".current").trigger("click");
+		});
+	}catch(e){}
+	
+	$("#leftListIframe").css('display','none');
+	var colStyle=columnsStyleStr;
+	if(colStyle!="listAndStatisticalGraph"){
+		$("#statisticalChart").css('display','none');
+	}
+	//初始化统计图数据
+    if("listAndStatisticalGraph"==columnsStyleStr){
+    	initChart("");
+    }
+	
+	showMeetingReplyCard();
+	
+	
+	$("html").addClass("h100b");
+	$("body").attr('scroll','');
+	$("body").css({"overflow":""});
+	
+	
+	var isChangeSize=false;
+	isChangeSize=resetSize(isChangeSize);
+	if(isChangeSize){
+		$.portalChannel(".channel_content");
+	}else{
+		isChangeSize=$.portalChannel(".channel_content");
+	}
+	//IE8浏览器时，当单列表通栏的时候，外层iframe的大小会被portal框架 resize需要手动设置里面的div宽度并重新计算
+	if("listAndStatisticalGraph" == 'orderList'){
+		$(window).resize(function(){
+			var iframeWidth1=$(window).width();
+			$(".channel_content").width(iframeWidth1);
+			$.portalChannel(".channel_content");
+		});
+	}
+	//如果出现了横向滚动条，增加纵向的高度 
+	if(isChangeSize&&widthSize>=5){//当widthSize<5的时候，也就是三栏的时候肯定会出横向滚动条 ，从后台java代码中增加高度20px
+		$("body").attr('scroll','auto');
+		var secId=0;
+		try{
+			secId=sectionId;
+		}catch(e){
+			secId=parent.sectionId;
+		}
+		var templeteObj=window.parent.$("#"+secId+"TD iframe");//iframe对象
+		templeteObj.height(templeteObj.height()*1+20);
+	}
+	var chartCount=iframeHeight/208;
+	var graphicalListStr="[importantLevel, overdue, handlingState, handleType, exigency]";
+	var graphicalListArr=new Array();
+	if(graphicalListStr){
+		graphicalListStr=graphicalListStr.substring(1,graphicalListStr.length-1);
+		graphicalListArr=graphicalListStr.split(",");
+	}
+	//按顺序生成统计图
+	for(var i=0;i<chartCount;i++){
+		if(i>=5){
+			break;
+		}
+		initCharByName(graphicalListArr[i],resultMap);
+	}
+	var leftListDivObj=$("#leftListDiv");
+	iframe_w=leftListDivObj.width();
+	iframe_h=leftListDivObj.height();
+	$("#statisticalChart,.rolling_area_zong").height($("#leftListDiv").height());
+	$("#contentDiv").css("visibility","visible");
+})
+
+</script>
+
+
+<div id="contentDiv" class="h100b w100b" style="position: absolute; z-index: 1; overflow-x: auto; overflow-y: hidden; visibility: visible;">
+<table id="pendingTable" width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr>
+		<!--单列表 -->
+		
+		<!-- 双列表  -->
+		
+		<!-- 列表加统计图  -->
+		
+			<td id="leftListTd" width="66%" valign="top" nowrap="nowrap">
+				<div id="leftListIframe" style="display: none; height: 208px;">
+					<iframe id="leftList" style="width:100%;height:100%" frameborder="0"></iframe>
+				</div>
+				<div id="leftListDiv" class="channel_content font_size12" style="width: 574px;">
+					 	<style>
+ 	.v_align{
+ 		vertical-align: -1px;
+ 	}
+ 	.left{float:left;}
+ 	</style>
+ 	<script>
+	function showMemberCard(obj,_memberID){
+        $(obj).PeopleCard({memberId:_memberID});
+	}
+	
+ 	</script>
+ 	<ul>
+	
+		<li class="sectionSubjectIcon_2 clear over_hidden" style="display:inline;border-bottom: 1px solid #ECEEEB;display:block;height:25px;line-height:25px;padding-left:7px;vertical-align: bottom;padding:0 0 0 0;">
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="channel_title left" style="margin-left: 13px; width: 410px; display: inline-block; height: 25px; overflow: hidden;">
+						
+						
+						
+						
+                        
+                        
+                        
+                        
+						<a id="row-5121757174459183332" class="left hand " title="营销部近期离职人员名单" onclick='javascript:checkAndOpen("-5121757174459183332","/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=-5121757174459183332","营销部近期离职人员名单", "", "1",this)'> 营销部近期离职人员名单 </a>
+		                
+		                
+		                
+		                
+		                 
+		                
+                        
+		                
+		                
+					</span>
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="color_gray2 left flagClass text_overflow" title="2018-03-09" style="width:65px;">
+						2018-03-09
+					</span>
+                
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow senderflag" style="width: 36px;">
+						<span class="left hasIconSpan hand text_overflow" style="padding: 0px; margin: 0px; width: 36px;">
+	                       <span class="senderTitle" id="-5121757174459183332senderId" title="张萃" style="margin:0;">
+	                    		<script type="text/javascript">
+	                     			$("#-5121757174459183332senderId").click(function(){
+	                               	 	$.PeopleCard({memberId:"-4672230965090891291"});
+	                                });
+	                    		</script>
+	                       	张萃
+                    	 	</span>
+	                     </span>
+                     	
+						
+                     </span>
+				
+				
+				
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow" title="协同" style="width:38px;">
+						
+							
+								<a href="javascript:openLink('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending')">协同</a>
+							
+							
+						
+					</span>
+				
+				
+				
+				
+				
+				
+				
+			
+		</li>
+	
+		<li class="sectionSubjectIcon_2 clear over_hidden" style="display:inline;border-bottom: 1px solid #ECEEEB;display:block;height:25px;line-height:25px;padding-left:7px;vertical-align: bottom;padding:0 0 0 0;">
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="channel_title left" style="margin-left: 13px; width: 410px; display: inline-block; height: 25px; overflow: hidden;">
+						
+						
+						
+						
+                        
+                        
+                        
+                        
+						<a id="row-3743740303143188456" class="left hand " title="20171229erp" onclick='javascript:checkAndOpen("-3743740303143188456","/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=-3743740303143188456","20171229erp", "", "1",this)'> 20171229erp </a>
+		                
+		                
+		                
+		                
+		                 
+		                
+                        
+		                
+		                
+					</span>
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="color_gray2 left flagClass text_overflow" title="2017-12-29" style="width:65px;">
+						2017-12-29
+					</span>
+                
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow senderflag" style="width: 36px;">
+						<span class="left hasIconSpan hand text_overflow" style="padding: 0px; margin: 0px; width: 36px;">
+	                       <span class="senderTitle" id="-3743740303143188456senderId" title="吴振宁" style="margin:0;">
+	                    		<script type="text/javascript">
+	                     			$("#-3743740303143188456senderId").click(function(){
+	                               	 	$.PeopleCard({memberId:"-2147742594505095138"});
+	                                });
+	                    		</script>
+	                       	吴振宁
+                    	 	</span>
+	                     </span>
+                     	
+						
+                     </span>
+				
+				
+				
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow" title="协同" style="width:38px;">
+						
+							
+								<a href="javascript:openLink('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending')">协同</a>
+							
+							
+						
+					</span>
+				
+				
+				
+				
+				
+				
+				
+			
+		</li>
+	
+		<li class="sectionSubjectIcon_2 clear over_hidden" style="display:inline;border-bottom: 1px solid #ECEEEB;display:block;height:25px;line-height:25px;padding-left:7px;vertical-align: bottom;padding:0 0 0 0;">
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="channel_title left" style="margin-left: 13px; width: 410px; display: inline-block; height: 25px; overflow: hidden;">
+						
+						
+						
+						
+                        
+                        
+                        
+                        
+						<a id="row-1013267702093952225" class="left hand " title="公积金提取通知" onclick='javascript:checkAndOpen("-1013267702093952225","/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=-1013267702093952225","公积金提取通知", "", "1",this)'> 公积金提取通知 </a>
+		                
+		                
+		                	<span class="ico16 margin_l_5 v_align affix_16 left"></span>
+		                
+		                
+		                
+		                 
+		                
+                        
+		                
+		                
+					</span>
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="color_gray2 left flagClass text_overflow" title="2017-11-14" style="width:65px;">
+						2017-11-14
+					</span>
+                
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow senderflag" style="width: 36px;">
+						<span class="left hasIconSpan hand text_overflow" style="padding: 0px; margin: 0px; width: 36px;">
+	                       <span class="senderTitle" id="-1013267702093952225senderId" title="连志强" style="margin:0;">
+	                    		<script type="text/javascript">
+	                     			$("#-1013267702093952225senderId").click(function(){
+	                               	 	$.PeopleCard({memberId:"-1498192678241549556"});
+	                                });
+	                    		</script>
+	                       	连志强
+                    	 	</span>
+	                     </span>
+                     	
+						
+                     </span>
+				
+				
+				
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow" title="协同" style="width:38px;">
+						
+							
+								<a href="javascript:openLink('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending')">协同</a>
+							
+							
+						
+					</span>
+				
+				
+				
+				
+				
+				
+				
+			
+		</li>
+	
+		<li class="sectionSubjectIcon_2 clear over_hidden" style="display:inline;border-bottom: 1px solid #ECEEEB;display:block;height:25px;line-height:25px;padding-left:7px;vertical-align: bottom;padding:0 0 0 0;">
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="channel_title left" style="margin-left: 13px; width: 410px; display: inline-block; height: 25px; overflow: hidden;">
+						
+						
+						
+						
+                        
+                        
+                        
+                        
+						<a id="row7790099290269502297" class="left hand font_bold" title="近期（营销）离入职人员情况" onclick='javascript:checkAndOpen("7790099290269502297","/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=7790099290269502297","近期（营销）离入职人员情况", "", "1",this)'> 近期（营销）离入职人员情况 </a>
+		                
+		                
+		                
+		                
+		                 
+		                
+                        
+		                
+		                
+					</span>
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="color_gray2 left flagClass text_overflow" title="2017-09-01" style="width:65px;">
+						2017-09-01
+					</span>
+                
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow senderflag" style="width: 36px;">
+						<span class="left hasIconSpan hand text_overflow" style="padding: 0px; margin: 0px; width: 36px;">
+	                       <span class="senderTitle" id="7790099290269502297senderId" title="张萃" style="margin:0;">
+	                    		<script type="text/javascript">
+	                     			$("#7790099290269502297senderId").click(function(){
+	                               	 	$.PeopleCard({memberId:"-4672230965090891291"});
+	                                });
+	                    		</script>
+	                       	张萃
+                    	 	</span>
+	                     </span>
+                     	
+						
+                     </span>
+				
+				
+				
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow" title="协同" style="width:38px;">
+						
+							
+								<a href="javascript:openLink('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending')">协同</a>
+							
+							
+						
+					</span>
+				
+				
+				
+				
+				
+				
+				
+			
+		</li>
+	
+		<li class="sectionSubjectIcon_2 clear over_hidden" style="display:inline;border-bottom: 1px solid #ECEEEB;display:block;height:25px;line-height:25px;padding-left:7px;vertical-align: bottom;padding:0 0 0 0;">
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="channel_title left" style="margin-left: 13px; width: 410px; display: inline-block; height: 25px; overflow: hidden;">
+						
+						
+						
+						
+                        
+                        
+                        
+                        
+						<a id="row-7724370740944288865" class="left hand " title="NC如遇问题&nbsp;请下载再安装附件中的客户端" onclick='javascript:checkAndOpen("-7724370740944288865","/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=-7724370740944288865","NC如遇问题 请下载再安装附件中的客户端", "", "1",this)'> NC如遇问题&nbsp;请下载再安装附件中的客户端 </a>
+		                
+		                
+		                	<span class="ico16 margin_l_5 v_align affix_16 left"></span>
+		                
+		                
+		                
+		                 
+		                
+                        
+		                
+		                
+					</span>
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="color_gray2 left flagClass text_overflow" title="2017-08-04" style="width:65px;">
+						2017-08-04
+					</span>
+                
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow senderflag" style="width: 36px;">
+						<span class="left hasIconSpan hand text_overflow" style="padding: 0px; margin: 0px; width: 36px;">
+	                       <span class="senderTitle" id="-7724370740944288865senderId" title="李燕" style="margin:0;">
+	                    		<script type="text/javascript">
+	                     			$("#-7724370740944288865senderId").click(function(){
+	                               	 	$.PeopleCard({memberId:"8860239346555112697"});
+	                                });
+	                    		</script>
+	                       	李燕
+                    	 	</span>
+	                     </span>
+                     	
+						
+                     </span>
+				
+				
+				
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow" title="协同" style="width:38px;">
+						
+							
+								<a href="javascript:openLink('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending')">协同</a>
+							
+							
+						
+					</span>
+				
+				
+				
+				
+				
+				
+				
+			
+		</li>
+	
+		<li class="sectionSubjectIcon_2 clear over_hidden" style="display:inline;border-bottom: 1px solid #ECEEEB;display:block;height:25px;line-height:25px;padding-left:7px;vertical-align: bottom;padding:0 0 0 0;">
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="channel_title left" style="margin-left: 13px; width: 410px; display: inline-block; height: 25px; overflow: hidden;">
+						
+						
+						
+						
+                        
+                        
+                        
+                        
+						<a id="row4836362935276882642" class="left hand " title="ERP20170803" onclick='javascript:checkAndOpen("4836362935276882642","/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=4836362935276882642","ERP20170803", "", "1",this)'> ERP20170803 </a>
+		                
+		                
+		                
+		                
+		                 
+		                
+                        
+		                
+		                
+					</span>
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="color_gray2 left flagClass text_overflow" title="2017-08-03" style="width:65px;">
+						2017-08-03
+					</span>
+                
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow senderflag" style="width: 36px;">
+						<span class="left hasIconSpan hand text_overflow" style="padding: 0px; margin: 0px; width: 36px;">
+	                       <span class="senderTitle" id="4836362935276882642senderId" title="吴振宁" style="margin:0;">
+	                    		<script type="text/javascript">
+	                     			$("#4836362935276882642senderId").click(function(){
+	                               	 	$.PeopleCard({memberId:"-2147742594505095138"});
+	                                });
+	                    		</script>
+	                       	吴振宁
+                    	 	</span>
+	                     </span>
+                     	
+						
+                     </span>
+				
+				
+				
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow" title="协同" style="width:38px;">
+						
+							
+								<a href="javascript:openLink('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending')">协同</a>
+							
+							
+						
+					</span>
+				
+				
+				
+				
+				
+				
+				
+			
+		</li>
+	
+		<li class="sectionSubjectIcon_2 clear over_hidden" style="display:inline;border-bottom: 1px solid #ECEEEB;display:block;height:25px;line-height:25px;padding-left:7px;vertical-align: bottom;padding:0 0 0 0;">
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="channel_title left" style="margin-left: 13px; width: 410px; display: inline-block; height: 25px; overflow: hidden;">
+						
+						
+						
+						
+                        
+                        
+                        
+                        
+						<a id="row7145170547774605020" class="left hand " title="关于对周建国职称评审冒用他人著作作假的通报批评" onclick='javascript:checkAndOpen("7145170547774605020","/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=7145170547774605020","关于对周建国职称评审冒用他人著作作假的通报批评", "", "1",this)'> 关于对周建国职称评审冒用他人著作作假的通报批评 </a>
+		                
+		                
+		                	<span class="ico16 margin_l_5 v_align affix_16 left"></span>
+		                
+		                
+		                
+		                 
+		                
+                        
+		                
+		                
+					</span>
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="color_gray2 left flagClass text_overflow" title="2017-07-31" style="width:65px;">
+						2017-07-31
+					</span>
+                
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow senderflag" style="width: 36px;">
+						<span class="left hasIconSpan hand text_overflow" style="padding: 0px; margin: 0px; width: 36px;">
+	                       <span class="senderTitle" id="7145170547774605020senderId" title="张萃" style="margin:0;">
+	                    		<script type="text/javascript">
+	                     			$("#7145170547774605020senderId").click(function(){
+	                               	 	$.PeopleCard({memberId:"-4672230965090891291"});
+	                                });
+	                    		</script>
+	                       	张萃
+                    	 	</span>
+	                     </span>
+                     	
+						
+                     </span>
+				
+				
+				
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow" title="协同" style="width:38px;">
+						
+							
+								<a href="javascript:openLink('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending')">协同</a>
+							
+							
+						
+					</span>
+				
+				
+				
+				
+				
+				
+				
+			
+		</li>
+	
+		<li class="sectionSubjectIcon_2 clear over_hidden" style="display:inline;border-bottom: 1px solid #ECEEEB;display:block;height:25px;line-height:25px;padding-left:7px;vertical-align: bottom;padding:0 0 0 0;">
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="channel_title left" style="margin-left: 13px; width: 410px; display: inline-block; height: 25px; overflow: hidden;">
+						
+						
+						
+						
+                        
+                        
+                        
+                        
+						<a id="row-5450308693094021355" class="left hand font_bold" title="ERP进度表2017.07.17" onclick='javascript:checkAndOpen("-5450308693094021355","/collaboration/collaboration.do?method=summary&amp;openFrom=listPending&amp;affairId=-5450308693094021355","ERP进度表2017.07.17", "", "1",this)'> ERP进度表2017.07.17 </a>
+		                
+		                
+		                
+		                
+		                 
+		                
+                        
+		                
+		                
+					</span>
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="color_gray2 left flagClass text_overflow" title="2017-07-17" style="width:65px;">
+						2017-07-17
+					</span>
+                
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow senderflag" style="width: 36px;">
+						<span class="left hasIconSpan hand text_overflow" style="padding: 0px; margin: 0px; width: 36px;">
+	                       <span class="senderTitle" id="-5450308693094021355senderId" title="吴振宁" style="margin:0;">
+	                    		<script type="text/javascript">
+	                     			$("#-5450308693094021355senderId").click(function(){
+	                               	 	$.PeopleCard({memberId:"-2147742594505095138"});
+	                                });
+	                    		</script>
+	                       	吴振宁
+                    	 	</span>
+	                     </span>
+                     	
+						
+                     </span>
+				
+				
+				
+				
+				
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+					<span class="left flagClass text_overflow" title="协同" style="width:38px;">
+						
+							
+								<a href="javascript:openLink('/collaboration/collaboration.do?method=listPending&amp;openFrom=listPending')">协同</a>
+							
+							
+						
+					</span>
+				
+				
+				
+				
+				
+				
+				
+			
+		</li>
+	
+	</ul>	
+
+				</div>
+			</td>
+			<!-- 统计图 -->
+			<td class="border_l_gray2" align="center" valign="top" nowrap="nowrap">
+				<div id="statisticalChart" class="type_chart" style="width: 310px; margin: 0px auto; height: 208px; overflow: hidden;">
+						<div class="type_chart align_left">
+							<div class="front_rolling_flash clearfix">
+								<div class="rolling_area_zong" style="height: 208px;">
+									<ul class="rolling_box">
+										
+											
+											
+												<li id="importantLevelGraph" class="rolling_item"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="260" height="204"><defs><linearGradient x1="0.5" y1="0" x2="0.5" y2="1" gradientUnits="objectBoundingBox" id="gradient_0"><stop offset="0%" style="stop-color:rgb(255, 255, 255);stop-opacity:1"></stop><stop offset="50%" style="stop-color:rgb(243, 243, 243);stop-opacity:1"></stop><stop offset="100%" style="stop-color:rgb(255, 255, 255);stop-opacity:1"></stop></linearGradient><linearGradient x1="0.5" y1="0" x2="0.5" y2="1" gradientUnits="objectBoundingBox" id="gradient_1"><stop offset="0%" style="stop-color:rgb(221, 221, 221);stop-opacity:1"></stop><stop offset="100%" style="stop-color:rgb(208, 208, 208);stop-opacity:1"></stop></linearGradient><linearGradient x1="0.5" y1="0" x2="0.5" y2="1" gradientUnits="objectBoundingBox" id="gradient_2"><stop offset="0%" style="stop-color:rgb(255, 255, 255);stop-opacity:1"></stop><stop offset="50%" style="stop-color:rgb(243, 243, 243);stop-opacity:1"></stop><stop offset="100%" style="stop-color:rgb(255, 255, 255);stop-opacity:1"></stop></linearGradient><linearGradient x1="0.5" y1="0" x2="0.5" y2="1" gradientUnits="objectBoundingBox" id="gradient_3"><stop offset="0%" style="stop-color:rgb(221, 221, 221);stop-opacity:1"></stop><stop offset="100%" style="stop-color:rgb(208, 208, 208);stop-opacity:1"></stop></linearGradient><linearGradient x1="0.5" y1="0" x2="0.5" y2="1" gradientUnits="objectBoundingBox" id="gradient_4"><stop offset="0%" style="stop-color:rgb(255, 255, 255);stop-opacity:1"></stop><stop offset="50%" style="stop-color:rgb(243, 243, 243);stop-opacity:1"></stop><stop offset="100%" style="stop-color:rgb(255, 255, 255);stop-opacity:1"></stop></linearGradient><linearGradient x1="0.5" y1="0" x2="0.5" y2="1" gradientUnits="objectBoundingBox" id="gradient_5"><stop offset="0%" style="stop-color:rgb(221, 221, 221);stop-opacity:1"></stop><stop offset="100%" style="stop-color:rgb(208, 208, 208);stop-opacity:1"></stop></linearGradient><linearGradient x1="0.5" y1="0" x2="0.5" y2="1" gradientUnits="objectBoundingBox" id="gradient_6"><stop offset="0%" style="stop-color:rgb(255, 255, 255);stop-opacity:1"></stop><stop offset="50%" style="stop-color:rgb(243, 243, 243);stop-opacity:1"></stop><stop offset="100%" style="stop-color:rgb(255, 255, 255);stop-opacity:1"></stop></linearGradient><linearGradient x1="0.5" y1="0" x2="0.5" y2="1" gradientUnits="objectBoundingBox" id="gradient_7"><stop offset="0%" style="stop-color:rgb(221, 221, 221);stop-opacity:1"></stop><stop offset="100%" style="stop-color:rgb(208, 208, 208);stop-opacity:1"></stop></linearGradient></defs><g transform="translate(0,0) rotate(0 0 0)"><g><g><path d="M0,-10 L260,-10 A10,10 0 0 1 270,0 L270,204 A10,10 0 0 1 260,214 L0,214 A10,10 0 0 1 -10,204 L-10,0 A10,10 0 0 1 0,-10 Z" style="fill:none;stroke:none;"></path><path d="M0,-10 L260,-10 A10,10 0 0 1 270,0 L270,204 A10,10 0 0 1 260,214 L0,214 A10,10 0 0 1 -10,204 L-10,0 A10,10 0 0 1 0,-10 Z" style="fill:none;stroke:none;"></path></g><g transform="translate(104,5) rotate(0 0 0)"><g transform="translate(0,0) rotate(0 0 0)"><g><path></path><path></path></g><text font-family="tahoma" font-size="12" font-weight="bold" fill="rgb(35, 35, 35)" stroke="none" x="2" y="2" pointer-events="none"><tspan x="2" dy="1em">重要程度</tspan></text><path d="M0,0 L52,0 L52,19 L0,19 L0,0" style="fill:white;fill-opacity:.002;"></path></g></g><g transform="translate(5,29) rotate(0 0 0)"><g></g><g></g><g><g cursor="pointer"><path style="fill:rgb(248, 63, 61);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke:rgb(171, 7, 6);" d="M125,63.0001M182.27272727272725,63 A57.272727272727266,57.272727272727266 0 0 1 182.01557639760355,68.42119334696979 L125,63 Z"></path></g><g cursor="pointer"><path style="fill:rgb(255, 222, 0);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke:rgb(165, 143, 0);" d="M125,63.0001M182.06071365534572,67.92343847314466 A57.272727272727266,57.272727272727266 0 0 1 180.24427901158714,78.10744603651158 L125,63 Z"></path></g><g cursor="pointer"><path style="fill:rgb(169, 224, 81);fill-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke:rgb(102, 150, 26);" d="M125,63.0001M180.3740111428477,77.62477962938162 A57.272727272727266,57.272727272727266 0 1 1 182.27054650276617,63.499792487634096 L125,63 Z"></path></g></g><g><g></g></g><g><g cursor="pointer" transform="translate(145.60984965974566,55.232000308766104) rotate(0 0 0)"><g visibility="visible"><g transform="translate(0,0) rotate(0 0 0)"><g><path></path><path></path></g><text font-family="verdana" font-size="12" font-weight="bold" fill="rgb(35, 35, 35)" stroke="none" x="2" y="2" pointer-events="none"><tspan x="2" dy="1em">1</tspan></text><path d="M0,0 L16,0 L16,18 L0,18 L0,0" style="fill:white;fill-opacity:.002;"></path></g></g></g><g cursor="pointer" transform="translate(145.21312123892355,58.905212765196865) rotate(0 0 0)"><g visibility="visible"><g transform="translate(0,0) rotate(0 0 0)"><g><path></path><path></path></g><text font-family="verdana" font-size="12" font-weight="bold" fill="rgb(35, 35, 35)" stroke="none" x="2" y="2" pointer-events="none"><tspan x="2" dy="1em">2</tspan></text><path d="M0,0 L16,0 L16,18 L0,18 L0,0" style="fill:white;fill-opacity:.002;"></path></g></g></g><g cursor="pointer" transform="translate(84.10196765742943,50.313120372948816) rotate(0 0 0)"><g visibility="visible"><g transform="translate(0,0) rotate(0 0 0)"><g><path></path><path></path></g><text font-family="verdana" font-size="12" font-weight="bold" fill="rgb(35, 35, 35)" stroke="none" x="2" y="2" pointer-events="none"><tspan x="2" dy="1em">70</tspan></text><path d="M0,0 L25,0 L25,18 L0,18 L0,0" style="fill:white;fill-opacity:.002;"></path></g></g></g></g><g></g></g><g><g transform="translate(5,165) rotate(0 0 0)"><g><path d="M0,0 L250,0 L250,34 L0,34 L0,0 Z" style="fill:url(#gradient_6);stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke:url(#gradient_7);"></path><path d="M0,0 L250,0 L250,34 L0,34 L0,0 Z" style="fill:none;stroke:none;"></path></g><g transform="translate(5,5) rotate(0 0 0)"><g><g></g><g transform="translate(4,0) rotate(0 0 0)"><g transform="translate(0,4.5) rotate(0 0 0)"><rect x="0" y="0" width="20" height="10" style="stroke:none;fill:rgb(248, 63, 61);"></rect></g><g transform="translate(20,0) rotate(0 0 0)"><g transform="translate(0,0) rotate(0 0 0)"><g><path></path><path></path></g><text font-family="verdana" font-size="12" fill="rgb(35, 35, 35)" stroke="none" x="2" y="2" pointer-events="none"><tspan x="2" dy="1em">非常重要</tspan></text></g></g></g><g transform="translate(96,0) rotate(0 0 0)"><g transform="translate(0,4.5) rotate(0 0 0)"><rect x="0" y="0" width="20" height="10" style="stroke:none;fill:rgb(255, 222, 0);"></rect></g><g transform="translate(20,0) rotate(0 0 0)"><g transform="translate(0,0) rotate(0 0 0)"><g><path></path><path></path></g><text font-family="verdana" font-size="12" fill="rgb(35, 35, 35)" stroke="none" x="2" y="2" pointer-events="none"><tspan x="2" dy="1em">重要</tspan></text></g></g></g><g transform="translate(176,0) rotate(0 0 0)"><g transform="translate(0,4.5) rotate(0 0 0)"><rect x="0" y="0" width="20" height="10" style="stroke:none;fill:rgb(169, 224, 81);"></rect></g><g transform="translate(20,0) rotate(0 0 0)"><g transform="translate(0,0) rotate(0 0 0)"><g><path></path><path></path></g><text font-family="verdana" font-size="12" fill="rgb(35, 35, 35)" stroke="none" x="2" y="2" pointer-events="none"><tspan x="2" dy="1em">普通</tspan></text></g></g></g></g></g></g></g></g><g transform="translate(5,29) rotate(0 0 0)"><g><g visibility="hidden"><g transform="translate(0,0) rotate(0 0 0)"><g><path d="M0,0 L87,0 L87,29 L0,29 L0,0 Z" style="fill:url(#gradient_0);stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke:url(#gradient_1);"></path><path d="M0,0 L87,0 L87,29 L0,29 L0,0 Z" style="fill:none;stroke:none;"></path></g><text font-family="verdana" font-size="12" font-weight="bold" fill="rgb(35, 35, 35)" stroke="none" x="12" y="7" pointer-events="none"><tspan x="12" dy="1em">非常重要 1</tspan></text></g></g></g><g><g visibility="hidden"><g transform="translate(0,0) rotate(0 0 0)"><g><path d="M0,0 L63,0 L63,29 L0,29 L0,0 Z" style="fill:url(#gradient_2);stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke:url(#gradient_3);"></path><path d="M0,0 L63,0 L63,29 L0,29 L0,0 Z" style="fill:none;stroke:none;"></path></g><text font-family="verdana" font-size="12" font-weight="bold" fill="rgb(35, 35, 35)" stroke="none" x="12" y="7" pointer-events="none"><tspan x="12" dy="1em">重要 2</tspan></text></g></g></g><g transform="translate(0,0) rotate(0 0 0)"><g visibility="hidden"><g transform="translate(0,0) rotate(0 0 0)"><g><path d="M0,0 L72,0 L72,29 L0,29 L0,0 Z" style="fill:url(#gradient_4);stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;stroke:url(#gradient_5);"></path><path d="M0,0 L72,0 L72,29 L0,29 L0,0 Z" style="fill:none;stroke:none;"></path></g><text font-family="verdana" font-size="12" font-weight="bold" fill="rgb(35, 35, 35)" stroke="none" x="12" y="7" pointer-events="none" text-anchor="start"><tspan x="12" dy="1em">普通 70</tspan></text></g></g></g></g><g transform="translate(97,94.5) rotate(0 0 0)"></g></g></svg></li>
+											
+											
+											
+											
+										
+											
+											
+											
+											
+												<li id="overdueGraph" class="rolling_item"></li>
+											
+											
+										
+											
+											
+											
+											
+											
+												<li id="handlingStateGraph" class="rolling_item"></li>
+											
+										
+											
+												<li id="handleTypeGraph" class="rolling_item"></li>
+											
+											
+											
+											
+											
+										
+											
+											
+											
+												<li id="exigencyGraph" class="rolling_item"></li>
+											
+											
+											
+										
+									</ul>
+								</div>
+								<div class="rolling_btn_area">
+									<span class="ico16 rolling_btn_t"></span>
+									<ul id="rollingBtnArea">
+										
+											
+											
+												<li id="importantLevel"><em class="ico16 rolling_current" title="重要程度"></em>
+												</li>
+												<!-- 重要程度 -->
+											
+											
+											
+											
+										
+											
+											
+											
+											
+												<li id="overdue"><em class="ico16 rolling_uncurrent" title="是否超期"></em>
+												</li>
+												<!-- 是否超期 -->
+											
+											
+										
+											
+											
+											
+											
+											
+												<li id="handlingState"><em class="ico16 rolling_uncurrent" title="办理状态"></em>
+												</li>
+												<!-- 办理状态 -->
+											
+										
+											
+												<li id="handleType"><em class="ico16 rolling_uncurrent" title="办理类型"></em>
+												</li>
+												<!-- 办理类型 -->
+											
+											
+											
+											
+											
+										
+											
+											
+											
+												<li id="exigency"><em class="ico16 rolling_uncurrent" title="紧急程度"></em>
+												</li>
+												<!-- 紧急程度 -->
+											
+											
+											
+										
+									</ul>
+									<span class="ico16 rolling_btn_b"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</td>
+		
+	</tr>
+</tbody></table>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="AnyChart SVG element for text measure" width="0" height="0"><text visibility="hidden" x="0" y="0"></text></svg></body></html>
+<!-- ä½¿ç¨è¯¥æä»¶å¿é¡»å¾å¼ç¨ common.jsp -->

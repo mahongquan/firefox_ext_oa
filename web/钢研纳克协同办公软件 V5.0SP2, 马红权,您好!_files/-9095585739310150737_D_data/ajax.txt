@@ -1,0 +1,60 @@
+var sectionManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=sectionManager",
+     doProjection: function(){
+                  return this.ajaxCall(arguments,"doProjection");
+},
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     isThisSpaceExist: function(){
+                  return this.ajaxCall(arguments,"isThisSpaceExist");
+},
+     selectAsyncSectionTreeNode: function(){
+                  return this.ajaxCall(arguments,"selectAsyncSectionTreeNode");
+},
+     selectSectionTreeNode: function(){
+                  return this.ajaxCall(arguments,"selectSectionTreeNode");
+},
+     selectedSectionTreeNode: function(){
+                  return this.ajaxCall(arguments,"selectedSectionTreeNode");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+}
+});
+var sectionRegisterManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=sectionRegisterManager",
+     getFragmentProp: function(){
+                  return this.ajaxCall(arguments,"getFragmentProp");
+},
+     getPortletDecorator: function(){
+                  return this.ajaxCall(arguments,"getPortletDecorator");
+},
+     getPortletTitle: function(){
+                  return this.ajaxCall(arguments,"getPortletTitle");
+},
+     getSection: function(){
+                  return this.ajaxCall(arguments,"getSection");
+},
+     getSectionBeanId: function(){
+                  return this.ajaxCall(arguments,"getSectionBeanId");
+},
+     getSectionPreferences: function(){
+                  return this.ajaxCall(arguments,"getSectionPreferences");
+},
+     getSections: function(){
+                  return this.ajaxCall(arguments,"getSections");
+},
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+}
+});

@@ -1,0 +1,71 @@
+body {
+	margin: 0px;
+	padding: 0px;
+}
+a {
+	color: #1858ba;
+	text-decoration: none;
+}
+a:HOVER {
+	color: #ff6633;	
+}
+.portal-layout-TwoColumns
+{
+	float: left;
+	border: 0px solid blue;
+	width: 100%;
+}
+.portal-layout-TwoColumns #banner
+{
+	width: 100%;
+	float: left;
+	display: inline;
+	border: 0px solid red;
+}
+.portal-layout-TwoColumns #column0
+{
+	width: 49.9%;
+	_width: 49.6%;
+	float: left;
+}
+.portal-layout-TwoColumns #column1
+{
+	width: 49.5%;
+	float: right;
+	margin-left: 4px;
+	position:relative;
+	_position:static;
+	 right:2px;
+	 right:0px\9; 
+}
+.cell-edit{
+	wdith:96%;
+}
+.layout-edit{
+	width:99%;
+}
+.banner-layout{
+	overflow: hidden;
+	margin-bottom: 4px;
+}
+.topPadding{
+	padding-top:20px;
+}
+.layout-edit #banner{
+	width: 100%;
+	float: left;
+	display: inline;
+	border: 0px solid red;
+	margin-bottom: 8px;
+}
+.layout-edit #column0{
+	width: 49%;
+	float: left;
+	margin-bottom: 8px;
+	margin-right: 8px;
+}
+.layout-edit #column1{
+	width: 49%;
+	float: left;
+	margin-bottom: 8px;
+}

@@ -1,0 +1,21 @@
+var drawChartManager=RemoteJsonService.extend({
+jsonGateway:"/seeyon/ajax.do?method=ajaxAction&managerName=drawChartManager",
+     getTargetClass: function(){
+                  return this.ajaxCall(arguments,"getTargetClass");
+},
+     isPreFiltered: function(){
+                  return this.ajaxCall(arguments,"isPreFiltered");
+},
+     parseGaugesToXML: function(){
+                  return this.ajaxCall(arguments,"parseGaugesToXML");
+},
+     parseToXML: function(){
+                  return this.ajaxCall(arguments,"parseToXML");
+},
+     setPreFiltered: function(){
+                  return this.ajaxCall(arguments,"setPreFiltered");
+},
+     transToXML: function(){
+                  return this.ajaxCall(arguments,"transToXML");
+}
+});
