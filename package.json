@@ -1,0 +1,7 @@
+{
+  "name": "custom-server-express",
+  "version": "1.0.0",
+  "scripts": {
+      "start:firefox": "web-ext run --source-dir ./extension-dist/"
+    }   
+}

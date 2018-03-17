@@ -1,0 +1,35 @@
+{
+
+  "manifest_version": 2,
+  "name": "beastify",
+  "version": "1.0",
+  "applications": {
+    "gecko": {
+      "id": "beastify@example.com"
+    }
+  },
+  "description": "Adds a red border to all webpages matching mozilla.org.",
+
+  "icons": {
+    "32": "icons/beasts-32.png",
+    "48": "icons/beasts-48.png",
+    "96": "icons/beasts-96.png"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/beasts-32.png",
+    "default_title": "Beastify",
+    "default_popup": "popup/choose_beast.html"
+  },
+
+  "web_accessible_resources": [
+    "beasts/frog.jpg",
+    "beasts/turtle.jpg",
+    "beasts/snake.jpg"
+  ]
+
+}

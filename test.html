@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="./content_scripts/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div>body</div>
+<button onclick="copyText()">Copy Text</button>
+<a class="defaulttitlecss" href="javascript:openLink('/seeyon/collaboration/collaboration.do?method=newColl&amp;templateId=1090989576030342145')">
+	<span class="ico16 form_temp_16 margin_r_5"></span>档案借阅登记表(纳克职能部门)
+</a>
+    <script type="text/javascript">
+    	function openLink(){
+    		console.log("openLink");
+    		console.log($);
+    		
+    	}
+    	function copyText(){
+    		console.log($);
+    		var a=$("a");
+    		var href=a.attr("href");//.split(":")[1]);
+    		//a.trigger("mousedown");
+    		window.location.href = href;
+    	}
+    	function frm_unload() {
+		  console.log("removeEverything");
+		  var beastImage = document.getElementById("madiv1");
+		  beastImage.remove();
+		}
+
+		/*
+		Given a URL to a beast image, create and style an IMG node pointing to
+		that image, then insert the node into the document.
+		*/
+		function frm_load(beastURL) {
+		  console.log("insertBeast")
+		  var beastImage = document.getElementById("madiv1");
+		  if (!beastImage) {
+		    beastImage = document.createElement("div");
+		    beastImage.setAttribute("id", "madiv1");
+		    var existingItem = document.body.firstElementChild;
+		    document.body.insertBefore(beastImage, existingItem);
+		  }
+		    // beastImage.setAttribute("style", "height: 100vh");
+		  var newe = document.createElement("button");
+		  beastImage.appendChild(newe);
+		  newe.insertAdjacentText("afterBegin","请假单");
+		  newe.onclick=qingjia;
+		}
+		function qingjia(){
+			console.log("qingjia");
+		}
+		//frm_load();
+    </script>
+</body>
+</html>
