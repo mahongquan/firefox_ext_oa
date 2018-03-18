@@ -39,6 +39,7 @@ function frm_load(beastURL) {
   if (!beastImage) {
     beastImage = document.createElement("div");
     beastImage.setAttribute("id", "madiv1");
+    beastImage.setAttribute("style", "background:#66FF66");// style="font-size:14px;width:600px;background-color:#FF0066
     var existingItem = document.body.firstElementChild;
     document.body.insertBefore(beastImage, existingItem);
   }
@@ -84,17 +85,19 @@ function personSpace() {
 
 function qingjia() {
   console.log("=======================================");
-  console.log(window[5]);
+  //console.log(window[5]);
  var iframeMain = document.getElementById('main');
  var mainw=iframeMain.contentWindow;
- console.log(window.main);
+ //console.log(window.main);
  //window.maw=mainw;
  var maindoc=iframeMain.contentWindow.document;
  console.log(maindoc);
  var normalDiv=maindoc.getElementById("normalDiv");
  var ma=$(normalDiv)
+ 
  //console.log(ma.find(".common_tabs"));
  var area5=$(ma.find(".common_content_area")[5]);
+ console.log(area5);
  var tab2=$(area5.find(".color_black_nohover")[2]);
  tab2.trigger("click");
  setTimeout(function(){
